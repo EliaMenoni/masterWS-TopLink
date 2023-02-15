@@ -31,8 +31,15 @@
             <!-- @wild addr | OPZIONALE -->
             <!-- @wild telecom | OPZIONALE -->
             <patient>
-
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                </name>
+                <administrativeGenderCode code="@wild" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="@wild"/>
+                <birthTime value="@wild"/>
+                <!-- @wild birthPlace | OPZIONALE -->
             </patient>
+            <!-- @? GUARDIAN -->
         </patientRole>
     </recordTarget>
 
