@@ -35,7 +35,7 @@ def recParseXML(XMLRoot : ET.Element, FolderRoot : str) -> ET.Element:
                 files.remove(item.name)
                 XMLRoot.insert(index, recParseXML(ET.parse(FolderRoot + item.name + ".xml").getroot(), FolderRoot + item.name + "/"))
             else:
-                name = item.name.split("_")[1][0:-4]
+                name = item.name.split("_")[1]
                 XMLRoot.insert(index, recParseXML(ET.Element(name), FolderRoot + item.name + "/"))
 
     return XMLRoot
