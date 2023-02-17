@@ -20,7 +20,7 @@ def recParseXML(XMLRoot : ET.Element, FolderRoot : str) -> ET.Element:
         if item.name[0] == '.':
             continue
         index = int(re.split(r"\.|\_", item.name)[0])
-        print(item.name)
+        print(item)
         if item.is_file() and item.name[0:-4] in files:
             files.remove(item.name[0:-4])
             if item.name[0:-4] in folders:
