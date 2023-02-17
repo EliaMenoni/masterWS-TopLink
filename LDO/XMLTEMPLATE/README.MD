@@ -9,4 +9,6 @@ Ogni file viene riporta come segue:
 > Separato da `_` 
 - nome tag
 
+- Se un file comincia con `.` non viene considerato
+
 Se il file non esiste allora il tag non ha attributi. Se esiste una cartella con lo stesso nome allora quel tag contiene altri elementi
