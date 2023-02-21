@@ -11,4 +11,8 @@ Ogni file viene riporta come segue:
 
 - Se un file comincia con `.` non viene considerato
 
+
+### Esempio
+- `1_setId.xml` --> Tag obbligatorio da mettere in posizione 1 all'interno del suo blocco
+- `2.O_addr.xml` --> Tag **OPZIONALE** da mettere in posizione 2 all'interno del suo blocco
 Se il file non esiste allora il tag non ha attributi. Se esiste una cartella con lo stesso nome allora quel tag contiene altri elementi
