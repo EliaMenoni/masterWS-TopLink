@@ -1,6 +1,20 @@
 from django.db import models
 
+
+class BodySectionManager(models.Model):
+    """ Manager Sezioni modi XML """
+    code = models.CharField(max_length=10, primary_key=True)
+    name = models.CharField(max_length=100, blank=False, null=False)
+    description = models.TextField(name="Descrizioni LOINC", blank=False, null=True)
+    required = models.BooleanField(name="Obbligatorieta", default=True)
+    father = models.ForeignKey("BodySectionManager", on_delete=models.CASCADE, name="Padre", null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.code} | {self.name}"
+
+
 class Log(models.Model):
+    """ LOG """
     ID = models.AutoField(name="ID", primary_key=True)
     time = models.DateTimeField(name="Timestamp", auto_now=True)
     user = models.CharField(name="User", max_length=50)
