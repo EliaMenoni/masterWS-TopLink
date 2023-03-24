@@ -253,7 +253,58 @@
 		"component": {
 			"structuredBody": {
 				"_calassCode": "DOCBODY",
-				"_moodCode": "EVN"
+				"_moodCode": "EVN",
+				"__value": [
+					"__MOTIVO DEL RICOVERO",
+					{
+						"code": {
+							"_code": "46241-6",
+							"_codeSystem": "2.16.840.1.113883.6.1",
+							"codeSystemName": "LOINC",
+							"_displayName": "Diagnosi di Accettazione"
+						},
+						"title": "Motivo del ricovero",
+						"text": {
+							"list": [
+								{
+									"item": {
+										"component": {
+											"_ID": "DIAG-x",
+											"__value": "@wild"
+										}
+									}
+								}
+							]
+						},
+						"C": "__ENTRY CON OBSERVATION OPZIONALE"
+					},
+					"__DECORSO OSPEDALIERO",
+					{
+						"code": {
+							"_code": "8648-8",
+							"_codeSystem": "2.16.840.1.113883.6.1",
+							"codeSystemName": "LOINC",
+							"_displayName": "Decorso Ospedaliero"
+						},
+						"title": "Decorso Ospedaliero",
+						"text": {
+							"paragraph": "@wild"
+						}
+					},
+					"__CONDIZIONI DEL PAZIENTE E DIAGNOSI ALLA DIMISSIONE",
+					{
+						"code": {
+							"_code": "11535-2",
+							"_codeSystem": "2.16.840.1.113883.6.1",
+							"codeSystemName": "LOINC",
+							"_displayName": "Diagnosi di Dimissione"
+						},
+						"title": "Condizioni del paziente e diagnosi alla dimissione",
+						"text": "@wild",
+						"C": "__OBSERVATION RACCOMANDATO"
+					},
+					"__Tutti i component richiesti"
+				]
 			}
 		}
 	}
