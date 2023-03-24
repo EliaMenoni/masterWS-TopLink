@@ -1,151 +1,260 @@
 {
-    "schemaLocation": "urn:hl7-org:v3 CDA.xsd",
-    "header": {
-        "setId_": {
-            "_root": "@set",
-            "_extension": "@set",
-            "_assigningAuthorityName": "@set"
-        },
-        "realmCode_": {
-            "code": "IT"
-        },
-        "typeId_": {
-            "_root": "2.16.840.1.11.113883.1.3",
-            "_extensioni": "@wild"
-        },
-        "templateId_": {
-            "_root": "2.16.840.1.113883.2.9.10.2.10.1.5",
-            "_extension": "1.2"
-        },
-        "id_": {
-            "_root": "@set",
-            "_extension": "@set",
-            "_assignedAuthorityName": "@set"
-        },
-        "code_": {
-            "_code": "34105-7",
-            "_codeSystem": "2.16.840.1.113883.6.1",
-            "_codeSystemName": "LOINC",
-            "_displayName": "Lettera di dimissione ospedaliera"
-        },
-        "title_": "@wild",
-        "effectiveTime_": {
-            "value": "@wild"
-        },
-        "confidentialityCode_": {
-            "_code": "@wild",
-            "_codeSystem": "2.16.840.1.113883.5.25",
-            "_codeSystemNam": "HL7 Confidentialy",
-            "_displayName": "Normal"
-        },
-        "languageCode_": {
-            "code": "id-IT"
-        },
-        "versionNumber_": {
-            "value": "@wild"
-        },
-        "relatedDocument": {
-            "_typeCode": "@wild",
-            "setId_": {
-                "_root": "@wild",
-                "_extension": "@wild",
-                "_assignedAuthorityName": "@wild"
-            },
-            "versionNumber_": {
-                "value": "@wild"
-            },
-            "parentDocument": {
-                "id_": {
-                    "_root": "@set",
-                    "_extension": "@set"
-                },
-                "setId_": {
-                    "_root": "@wild",
-                    "_extension": "@wild",
-                    "_assignedAuthorityName": "@wild"
-                },
-                "versionNumber_": {
-                    "value": "@wild"
-                }
-            }
-        },
-        "recordTarget": {
-            "patientRole": {
-                "id_": {
-                    "_root": "@wild",
-                    "_extension": "@wild",
-                    "_assigningAuthorityName": "@wild"
-                },
-                "telecom_": [
-                    {
-                        "_use": "@wild",
-                        "_value": "@wild"
-                    },
-                    "__Possono esserci piu' telecom con formato precedente"
-                ],
-                "patient": {
-                    "name": {
-                        "family": "@wild",
-                        "given": "@wild"
-                    },
-                    "administrativeGenderCode_": {
-                        "_code": "@wild",
-                        "_codeSystem": "2.16.840.1.113883.5.1",
-                        "_codeSystemName": "H7 AdministrativeGender",
-                        "_displayName": "@wild"
-                    },
-                    "birthTime_": {
-                        "value": "@wild"
-                    },
-                    "birthPlace": {
-                        "addr": "@wild",
-                        "censusTract": "@wild"
-                    }
-                }
-            }
-        },
-        "author": {
-            "time_": {
-                "_value": "@wild"
-            },
-            "assignedAuthor": {
-                "_classCode": "ASSIGNED",
-                "id_": {
-                    "_root": "2.16.840.1.113883.2.9.4.3.2",
-                    "_assigningAuthorityName": "MEF",
-                    "_extension": "@wild"
-                },
-                "telecom_": [
-                    {
-                        "_use": "HP",
-                        "_value": "@wild"
-                    },{
-                        "_use": "HP",
-                        "_value": "@wild"
-                    },{
-                        "_use": "HP",
-                        "_value": "@wild"
-                    },
-                    "__Almeno 3"
-                ]
-            }
-        },
-        "custodian": {
-            "assignedCustodian": {
-                "representedCustodianOrganization": {
-                    "id": {
-                        "_root": "2.16.840.1.113883.2.9.4.1.1",
-                        "__value": "@wild"
-                    },
-                    "name": {
-                        "family": "@wild",
-                        "given": "@wild"
-                    }
-                }
-            }
-        },
-        "legalAuthenticator": {},
-        "componentOf": {}
-    },
-    "body": {}
+	"schemaLocation": "urn:hl7-org:v3 CDA.xsd",
+	"header": {
+		"setId_": {
+			"_root": "@set",
+			"_extension": "@set",
+			"_assigningAuthorityName": "@set"
+		},
+		"realmCode_": {
+			"code": "IT"
+		},
+		"typeId_": {
+			"_root": "2.16.840.1.11.113883.1.3",
+			"_extensioni": "@wild"
+		},
+		"templateId_": {
+			"_root": "2.16.840.1.113883.2.9.10.2.10.1.5",
+			"_extension": "1.2"
+		},
+		"id_": {
+			"_root": "@set",
+			"_extension": "@set",
+			"_assignedAuthorityName": "@set"
+		},
+		"code_": {
+			"_code": "34105-7",
+			"_codeSystem": "2.16.840.1.113883.6.1",
+			"_codeSystemName": "LOINC",
+			"_displayName": "Lettera di dimissione ospedaliera"
+		},
+		"title_": "@wild",
+		"effectiveTime_": {
+			"value": "@wild"
+		},
+		"confidentialityCode_": {
+			"_code": "@wild",
+			"_codeSystem": "2.16.840.1.113883.5.25",
+			"_codeSystemNam": "HL7 Confidentialy",
+			"_displayName": "Normal"
+		},
+		"languageCode_": {
+			"code": "id-IT"
+		},
+		"versionNumber_": {
+			"value": "@wild"
+		},
+		"relatedDocument": {
+			"_typeCode": "@wild",
+			"setId_": {
+				"_root": "@wild",
+				"_extension": "@wild",
+				"_assignedAuthorityName": "@wild"
+			},
+			"versionNumber_": {
+				"value": "@wild"
+			},
+			"parentDocument": {
+				"id_": {
+					"_root": "@set",
+					"_extension": "@set"
+				},
+				"setId_": {
+					"_root": "@wild",
+					"_extension": "@wild",
+					"_assignedAuthorityName": "@wild"
+				},
+				"versionNumber_": {
+					"value": "@wild"
+				}
+			}
+		},
+		"recordTarget": {
+			"patientRole": {
+				"id_": {
+					"_root": "@wild",
+					"_extension": "@wild",
+					"_assigningAuthorityName": "@wild"
+				},
+				"telecom_": [
+					{
+						"_use": "@wild",
+						"_value": "@wild"
+					},
+					"__Possono esserci piu' telecom con formato precedente"
+				],
+				"patient": {
+					"name": {
+						"family": "@wild",
+						"given": "@wild"
+					},
+					"administrativeGenderCode_": {
+						"_code": "@wild",
+						"_codeSystem": "2.16.840.1.113883.5.1",
+						"_codeSystemName": "H7 AdministrativeGender",
+						"_displayName": "@wild"
+					},
+					"birthTime_": {
+						"value": "@wild"
+					},
+					"birthPlace": {
+						"addr": "@wild",
+						"censusTract": "@wild"
+					}
+				}
+			}
+		},
+		"author": {
+			"time_": {
+				"_value": "@wild"
+			},
+			"assignedAuthor": {
+				"_classCode": "ASSIGNED",
+				"id_": {
+					"_root": "2.16.840.1.113883.2.9.4.3.2",
+					"_assigningAuthorityName": "MEF",
+					"_extension": "@wild"
+				},
+				"telecom_": [
+					{
+						"_use": "HP",
+						"_value": "@wild"
+					},
+					{
+						"_use": "HP",
+						"_value": "@wild"
+					},
+					{
+						"_use": "HP",
+						"_value": "@wild"
+					},
+					"__Almeno 3"
+				]
+			}
+		},
+		"custodian": {
+			"assignedCustodian": {
+				"representedCustodianOrganization": {
+					"id": {
+						"_root": "2.16.840.1.113883.2.9.4.1.1",
+						"__value": "@wild"
+					},
+					"name": {
+						"family": "@wild",
+						"given": "@wild"
+					}
+				}
+			}
+		},
+		"legalAuthenticator": {
+			"time_": {
+				"_value": "@wild"
+			},
+			"signatureCode_": {
+				"_code": "S"
+			},
+			"assignedEntity": {
+				"id_": {
+					"_root": "2.16.840.1.113883.2.9.4.3.2",
+					"_extension": "@wild",
+					"_assigningAuthorityName": "MEF"
+				},
+				"telecom_": [
+					{
+						"_use": "@wild",
+						"_value": "@wild"
+					},
+					"__Potrebbero essercene ulteriori"
+				],
+				"assignedPerson": {
+					"name": {
+						"family": "@wild",
+						"given": "@wild",
+						"prefic": "@wild"
+					}
+				}
+			}
+		},
+		"componentOf": {
+			"encompassingEcounter": {
+				"id_": {
+					"_root": "2.16.840.1.113883.2.9.4.3.2",
+					"_extension": "@wild",
+					"assigningAuthorityName": "MEF"
+				},
+				"effectiveTime": {
+					"low": {
+						"_value": "@wild"
+					},
+					"high": {
+						"_value": "@wild"
+					}
+				},
+				"responsibleParty": {
+					"assignedEntity": {
+						"id": {
+							"_root": "2.16.1.113883.2.9.4.3.2",
+							"_extension": "@wild",
+							"_assigningAuthorityName": "@wild"
+						},
+						"code": "RESPRSN",
+						"assignedPerson": {
+							"name": {
+								"family": "@wild",
+								"given": "@wild"
+							}
+						},
+						"telecom_": [
+							{
+								"_use": "HP",
+								"_value": "@wild"
+							},
+							"__Potrebbero essercene ulteriori"
+						]
+					}
+				},
+				"location": {
+					"healthCareFacility": {
+						"id": {
+							"_root": "2.16.840.1.113883.2.9.4.1.6",
+							"_extension": "@wild",
+							"_assigningAuthorityName": "Ministero della Salute"
+						},
+						"location": {
+							"name": "@wild"
+						},
+						"serviceProviderOrganization": {
+							"id": {
+								"_root": "2.16.840.1.113883.2.9.4.1.6",
+								"_extension": "@wild",
+								"_assigningAuthorityName": "Ministero della Salute"
+							},
+							"name": "@wild",
+							"telecom_": [
+								{
+									"_value": "@wild:@wild"
+								},
+								"__Potrebbero essercene ulteriori"
+							],
+							"asOrganizationPartOf": {
+								"id": {
+									"_root": "2.16.840.1.113883.2.9.4.1.6",
+									"_extension": "@wild",
+									"_assigningAuthorityName": "Ministero della Salute"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"body": {
+		"component": {
+			"structuredBody": {
+				"_calassCode": "DOCBODY",
+				"_moodCode": "EVN"
+			}
+		}
+	}
 }
