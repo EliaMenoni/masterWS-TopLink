@@ -1,18 +1,6 @@
 from django.db import models
-
-
-class BodySectionManager(models.Model):
-    """ Manager Sezioni modi XML """
-    code = models.CharField(max_length=10, primary_key=True)
-    name = models.CharField(max_length=100, blank=False, null=False)
-    description = models.TextField(name="Descrizioni LOINC", blank=False, null=True)
-    required = models.BooleanField(name="Obbligatorieta", default=True)
-    father = models.ForeignKey("BodySectionManager", on_delete=models.CASCADE, name="Padre", null=True, blank=True)
-
-    def __str__(self):
-        return f"{self.code} | {self.name}"
-
-
+from . import tools
+from dict2xml import dict2xml
 class Log(models.Model):
     """ LOG """
     ID = models.AutoField(name="ID", primary_key=True)
@@ -30,130 +18,130 @@ class Log(models.Model):
         else:
             return "[" + self.time + "] " + self.user + " - " + self.status + " [" + self.error_code + "]"
 
+class ID():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
 
-class LDO(models.Model):
-    """
-        LDO data class
-    """
-    NOSOLOGICO = models.CharField(max_length=20, null=True)
-    COD_SERVIZIO = models.CharField(max_length=20, null=True)
-    DATA_DIMISSIONE = models.DateField(auto_now=False)
-    DATA_DIMISSIONE_VC = models.CharField(max_length=10, null=True)
-    ORARIO_DIMISSIONE = models.CharField(max_length=5, null=True)
-    DIAGNOSI = models.TextField(null=True)
-    ANAMNESI = models.TextField(null=True)
-    ESAME_OBIETTIVO = models.TextField()
-    DECORSO = models.TextField()
-    TERAPIA = models.TextField()
-    INDICAZIONI = models.TextField()
-    STILE_DI_VITA = models.CharField(max_length=500, null=True)
-    STILE_DI_VITA_VALORE = models.CharField(max_length=4000, null=True)
-    DIETA = models.CharField(max_length=500, null=True)
-    DIETA_VALORE = models.CharField(max_length=4000, null=True)
-    PROBLEMI_DOMICILIARI = models.CharField(max_length=500, null=True)
-    EDUCAZIONE_PAZIENTE = models.CharField(max_length=500, null=True)
-    EDUCAZIONE_PAZIENTE_VALORE = models.CharField(max_length=4000, null=True)
-    DESTINAZIONE_DIM = models.CharField(max_length=100, null=True)
-    DESTINAZIONE_DIM_VALORE = models.CharField(max_length=4000, null=True)
-    RICHIESTA_PRESIDI = models.CharField(max_length=100, null=True)
-    RICHIESTA_PRESIDI_VALORE = models.CharField(max_length=4000, null=True)
-    PROGRAMMA = models.TextField()
-    COD_MEDICO = models.CharField(max_length=20, null=True)
-    DATA_MODIFICA = models.DateField(auto_now=False)
-    MOD_UTENTE = models.CharField(max_length=20, null=True)
-    WS_UTENTE = models.CharField(max_length=50, null=True)
-    COD_UTENTE_VALIDAZIONE = models.CharField(max_length=20, null=True)
-    DATA_VALIDAZIONE = models.DateField()
-    PROTETTA = models.TextField()
-    INTERVENTI = models.TextField()
-    ESAMI_EMATOCHIMICI = models.TextField()
-    ESAMI_STRUMENTALI = models.TextField()
-    ALLERGIE = models.TextField()
-    PROFILASSI = models.CharField(max_length=100, null=True)
-    PROFILASSI_VALORE = models.CharField(max_length=4000, null=True)
-    ESAMI_IN_CORSO = models.CharField(max_length=500, null=True)
-    CONDIZIONI = models.CharField(max_length=100, null=True)
-    CONDIZIONI_VALORE = models.CharField(max_length=4000, null=True)
-    CANNULE_NASALI = models.IntegerField(null=True)
-    CANNULE_NASALI_LMIN= models.IntegerField(null=True)
-    MASCHERA_VENTURI = models.IntegerField(null=True)
-    MASCHERA_VENTURI_FIO2 = models.IntegerField(null=True)
-    MASCHERA_VENTURI_LMIN = models.IntegerField(null=True)
-    CPAP = models.IntegerField(null=True)
-    CPAP_PEEP_MMHG = models.IntegerField(null=True)
-    CPAP_LMIN = models.IntegerField(null=True)
-    BPAP = models.IntegerField(null=True)
-    BPAP_IPAP_MMHG = models.IntegerField(null=True)
-    BPAP_EPAP_MMHG = models.IntegerField(null=True)
-    BPAP_LMIN = models.IntegerField(null=True)
-    STR_STR = models.CharField(max_length=5, null=True)
-    RIC_ANNO = models.CharField(max_length=4, null=True)
-    RIC_CARTELLA = models.CharField(max_length=8, null=True)
-    NOSOLOGICO_1 = models.CharField(max_length=17, null=True)
-    DATA_RICOVERO = models.DateField(auto_now=False)
-    DIAGNOSI_RICOVERO = models.CharField(max_length=4000, null=True)
-    REP_REPARTO_ACC = models.CharField(max_length=10, null=True)
-    REP_SEZIONE_ACC = models.CharField(max_length=4, null=True)
-    COGNOME = models.CharField(max_length=50, null=True)
-    NOME = models.CharField(max_length=50, null=True)
-    SESSO = models.CharField(max_length=1, null=True)
-    DATA_NASCITA = models.DateField(auto_now=False)
-    DATA_NASCITA_VC = models.CharField(max_length=10, null=True)
-    COD_FISCALE = models.CharField(max_length=16, null=True)
-    COD_COM_NASCITA = models.CharField(max_length=6, null=True)
-    COD_COM_RESIDENZA = models.CharField(max_length=6, null=True)
-    COD_NAZIONE = models.CharField(max_length=8, null=True)
-    INDIRIZZO_RESIDENZA = models.CharField(max_length=60, null=True)
-    NUMCIV_RESIDENZA = models.CharField(max_length=10, null=True)
-    CAP_RESIDENZA = models.CharField(max_length=5, null=True)
-    TELEFONO = models.CharField(max_length=61, null=True)
-    COD_ASL = models.CharField(max_length=6, null=True)
-    DATA_DIMISSIONE_1 = models.DateField(auto_now=False)
-    DESC_REPARTO = models.CharField(max_length=60, null=True)
-    DATA_RICOVERO_1 = models.DateField(auto_now=False)
-    DATA_RICOVERO_VC = models.CharField(max_length=10, null=True)
-    EQUIPE = models.CharField(max_length=4000, null=True)
-    PROGRESSIVO = models.IntegerField(null=False)
-    COD_SERVIZIO_1 = models.CharField(max_length=10, null=False)
-    DATA_INIZIO = models.DateField(auto_now=False, null=False)
-    DATA_FINE = models.DateField(auto_now=False)
-    RIGA1 = models.CharField(max_length=100, null=True)
-    FONT_RIGA1 = models.CharField(max_length=50, null=True)
-    FONT_SIZE_RIGA1 = models.IntegerField(null=True)
-    GRASSETTO_RIGA1 = models.IntegerField(null=True)
-    CORSIVO_RIGA1 = models.IntegerField(null=True)
-    RIGA2 = models.CharField(max_length=100, null=True)
-    FONT_RIGA2 = models.CharField(max_length=50, null=True)
-    FONT_SIZE_RIGA2 = models.IntegerField(null=True)
-    GRASSETTO_RIGA2 = models.IntegerField(null=True)
-    CORSIVO_RIGA2 = models.IntegerField(null=True)
-    RIGA3 = models.CharField(max_length=100, null=True)
-    FONT_RIGA3 = models.CharField(max_length=50, null=True)
-    FONT_SIZE_RIGA3 = models.IntegerField(null=True)
-    GRASSETTO_RIGA3 = models.IntegerField(null=True)
-    CORSIVO_RIGA3 = models.IntegerField(null=True)
-    RIGA4 = models.CharField(max_length=100, null=True)
-    FONT_RIGA4 = models.CharField(max_length=50, null=True)
-    FONT_SIZE_RIGA4 = models.IntegerField(null=True)
-    GRASSETTO_RIGA4 = models.IntegerField(null=True)
-    CORSIVO_RIGA4 = models.IntegerField(null=True)
-    RIGA5 = models.CharField(max_length=100, null=True)
-    FONT_RIGA5 = models.CharField(max_length=50, null=True)
-    FONT_SIZE_RIGA5 = models.IntegerField(null=True)
-    GRASSETTO_RIGA5 = models.IntegerField(null=True)
-    CORSIVO_RIGA5 = models.IntegerField(null=True)
-    RIGA6 = models.CharField(max_length=100, null=True)
-    FONT_RIGA6 = models.CharField(max_length=50, null=True)
-    FONT_SIZE_RIGA6 = models.IntegerField(null=True)
-    GRASSETTO_RIGA6 = models.IntegerField(null=True)
-    CORSIVO_RIGA6 = models.IntegerField(null=True)
-    LOGO_SINISTRA = models.IntegerField(null=True)
-    LOGO_DESTRA = models.IntegerField(null=True)
-    DATA_MODIFICA_1 = models.DateField(auto_now=False, null=False)
-    MOD_UTENTE_1 = models.CharField(max_length=20, null=False)
-    WS_UTENTE_1 = models.CharField(max_length=50, null=False)
-    COGNOME_FIRMA = models.CharField(max_length=50, null=True)
-    NOME_FIRMA = models.CharField(max_length=50, null=True)
+        self.assigningAuthorityName = json_data.get("assigningAuthorityName")
+        self.assignedAuthorityName = json_data.get("assignedAuthorityName")
+        self.extension = json_data.get("extension")
+        self.root = json_data.get("root")
 
-    class Meta:
-        managed = False
+class CODE():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.displayName = json_data.get("displayName")
+        self.codeSystemName = json_data.get("codeSystemName")
+        self.codeSystem = json_data.get("codeSystem")
+        self.code = json_data.get("code")
+
+class DATA():
+    def __init__(self, name:str, data):
+        data = data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        if not isinstance(data, dict):
+            self._TEXT = data
+        else:
+            self._TEXT = ""
+            self.value = data.get("value")
+
+class DOCUMENT():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.id = ID("id", json_data) if json_data.get("id") is not None else None
+
+        self.typeCode = json_data.get("typeCode")
+        self.setId = ID("setId", json_data) if json_data.get("setId") is not None else None
+        self.versionNumber = DATA("versionNumber", json_data) if json_data.get("versionNumber") is not None else None
+        self.parentDocument = DOCUMENT("parentDocument", json_data) if json_data.get("parentDocument") is not None else None
+
+class TELECOM():
+    def __init__(self, name:str, json_data, index:int = None):
+        json_data = json_data.get(name) if index == None else json_data.get(name)[index]
+        self._NAME = name
+        self._TEXT = ""
+
+        self.use = json_data.get("use")
+        self.value = json_data.get("value")
+
+class NAME():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.family = DATA("family", json_data)
+        self.given = DATA("given", json_data)
+        self.prefix = DATA("prefix", json_data) if json_data.get("prefix") is not None else None
+
+class LOCATION():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.addr = DATA("addr", json_data)
+        self.censusTract = DATA("censusTract", json_data)
+class PATIENT():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.name = NAME("name", json_data)
+        self.administrativeGenderCode = CODE("administrativeGenderCode", json_data)
+        self.birthTime = DATA("birthTime", json_data)
+        self.birthPlace = LOCATION("birthPlace", json_data)
+
+class ROLE():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.id = ID("id", json_data)
+        self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
+        self.patient = PATIENT("patient", json_data)
+class TARGET():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.patientRole = ROLE("patientRole", json_data)
+class LDO_HEADER():
+    def __init__(self, json_data):
+        # print(json_data.get("realmCode"))
+        self._NAME = "HEADER"
+        self._TEXT = ""
+
+        # self.componentOf = None
+        # self.legalAuthenticator = None
+        # self.custodian = None
+        # self.author = None
+        self.recordTarget = TARGET("recordTarget", json_data)
+        # self.relatedDocument = DOCUMENT("relatedDocument", json_data)
+        # self.versionNumber = DATA("versionNumber", json_data)
+        # self.languageCode = CODE("languageCode", json_data)
+        # self.confidentialityCode = CODE("confidentialityCode", json_data)
+        # self.effectiveTime = DATA("effectiveTime", json_data)
+        # self.title = DATA("title", json_data)
+        # self.code = CODE("code", json_data)
+        # self.id = ID("id", json_data)
+        # self.templateId = ID("templateId", json_data)
+        # self.typeId = ID("typeId", json_data)
+        # self.realmCode = CODE("realmCode", json_data)
+        # self.setId = ID("setId", json_data)
+
+    def to_XML(self):
+        return tools.object_to_xml(self)

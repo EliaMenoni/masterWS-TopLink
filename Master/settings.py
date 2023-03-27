@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tte%z4k7*$+)cy$e23fy21xoyq$txj!l)!@-nkvt!+7xi158hv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'rest_framework.authtoken',
     'LDO',
 ]
 
@@ -49,6 +50,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# CSRF_TRUSTED_ORIGINS = ['http://*']
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     ),
+# }
 
 ROOT_URLCONF = 'Master.urls'
 
