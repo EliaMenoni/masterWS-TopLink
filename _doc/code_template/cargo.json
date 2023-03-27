@@ -114,6 +114,12 @@
 					"assigningAuthorityName": "MEF",
 					"extension": "@wild"
 				},
+				"assignedPerson": {
+					"name": {
+						"family": "@wild",
+						"given": "@wild"
+					}
+				},
 				"telecom": [
 					{
 						"use": "HP",
@@ -140,7 +146,13 @@
 					"name": {
 						"family": "@wild",
 						"given": "@wild"
-					}
+					},
+					"telecom": [
+						{
+							"use": "HP",
+							"value": "@wild"
+						}
+					]
 				}
 			}
 		},
@@ -167,13 +179,46 @@
 					"name": {
 						"family": "@wild",
 						"given": "@wild",
-						"prefic": "@wild"
+						"prefix": "@wild"
 					}
+				}
+			},
+			"representedOrganization": {
+				"time": {
+					"value": "@wild"
+				},
+				"assignedAuthor": {
+					"classCode": "ASSIGNED",
+					"id": {
+						"root": "2.16.840.1.113883.2.9.4.3.2",
+						"assigningAuthorityName": "MEF",
+						"extension": "@wild"
+					},
+					"assignedPerson": {
+						"name": {
+							"family": "@wild",
+							"given": "@wild"
+						}
+					},
+					"telecom": [
+						{
+							"use": "HP",
+							"value": "@wild"
+						},
+						{
+							"use": "HP",
+							"value": "@wild"
+						},
+						{
+							"use": "HP",
+							"value": "@wild"
+						}
+					]
 				}
 			}
 		},
 		"componentOf": {
-			"encompassingEcounter": {
+			"encompassingEncounter": {
 				"id": {
 					"root": "2.16.840.1.113883.2.9.4.3.2",
 					"extension": "@wild",

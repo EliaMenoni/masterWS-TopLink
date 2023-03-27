@@ -19,10 +19,10 @@ class Log(models.Model):
             return "[" + self.time + "] " + self.user + " - " + self.status + " [" + self.error_code + "]"
 
 class ID():
-    def __init__(self, name:str, json_data):
+    def __init__(self, name:str, json_data, value:str = ""):
         json_data = json_data.get(name)
         self._NAME = name
-        self._TEXT = ""
+        self._TEXT = value
 
         self.assigningAuthorityName = json_data.get("assigningAuthorityName")
         self.assignedAuthorityName = json_data.get("assignedAuthorityName")
@@ -48,9 +48,12 @@ class DATA():
 
         if not isinstance(data, dict):
             self._TEXT = data
-        else:
+        elif "value" in data:
             self._TEXT = ""
             self.value = data.get("value")
+        elif "code" in data:
+            self._TEXT = ""
+            self.code = data.get("code")
 
 class DOCUMENT():
     def __init__(self, name:str, json_data):
@@ -84,14 +87,46 @@ class NAME():
         self.given = DATA("given", json_data)
         self.prefix = DATA("prefix", json_data) if json_data.get("prefix") is not None else None
 
+class ORGANIZATIONPART():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.id = ID("id", json_data)
+
+class SERVICEPROVIDER():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.id = ID("id", json_data)
+        self.name = DATA("name", json_data)
+        self.asOrganizationPartOf = ORGANIZATIONPART("asOrganizationPartOf", json_data)
+        self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
+class HEALTHCAREFACILITY():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.id = ID("id", json_data)
+        self.location = LOCATION("location", json_data)
+        self.serviceProviderOrganization = SERVICEPROVIDER("serviceProviderOrganization", json_data)
+
 class LOCATION():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self.addr = DATA("addr", json_data)
-        self.censusTract = DATA("censusTract", json_data)
+        self.addr = DATA("addr", json_data) if json_data.get("addr") is not None else None
+        self.censusTract = DATA("censusTract", json_data) if json_data.get("censusTract") is not None else None
+        self.name = DATA("name", json_data) if json_data.get("name") is not None else None
+
+        self.healthCareFacility = HEALTHCAREFACILITY("healthCareFacility", json_data) if json_data.get("healthCareFacility") is not None else None
+
 class PATIENT():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
@@ -111,7 +146,54 @@ class ROLE():
 
         self.id = ID("id", json_data)
         self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
+
+        # For Patient
         self.patient = PATIENT("patient", json_data)
+
+class REPRESENTED():
+    def __init__(self, name: str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+        print(json_data)
+        self.id = ID("id", json_data) if json_data.get("id") is not None else None
+        self.name = NAME("name", json_data) if json_data.get("name") is not None else None
+        self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))] if json_data.get("telecom") is not None else None
+        self.time = DATA("time", json_data) if json_data.get("time") is not None else None
+        self.assignedAuthor = ASSIGNED("assignedAuthor", json_data) if json_data.get("assignedAuthor") is not None else None
+
+class ASSIGNED():
+    def __init__(self, name: str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        # For AUTHOR
+        self.classCode = json_data.get("classCode")
+        self.id = ID("id", json_data) if json_data.get("id") is not None else None
+        self.assignedPerson = ASSIGNED("assignedPerson", json_data) if json_data.get("assignedPerson") is not None else None
+        self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))] if json_data.get("telecom") is not None else None
+        self.name = NAME("name", json_data) if json_data.get("name") is not None else None
+        self.assignedAuthor = REPRESENTED("assignedAuthor", json_data) if json_data.get("assignedAuthor") is not None else None
+        self.representedCustodianOrganization = REPRESENTED("representedCustodianOrganization", json_data) if json_data.get("representedCustodianOrganization") is not None else None
+
+
+class AUTHOR():
+    def __init__(self, name: str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.time = DATA("time", json_data)
+        self.assignedAuthor = ASSIGNED("assignedAuthor", json_data)
+
+class CUSTODIAN():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.assignedCustodian = ASSIGNED("assignedCustodian", json_data)
 class TARGET():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
@@ -119,29 +201,79 @@ class TARGET():
         self._TEXT = ""
 
         self.patientRole = ROLE("patientRole", json_data)
+
+class AUTHENTICATOR():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.time = DATA("time", json_data)
+        self.signatureCode = DATA("signatureCode", json_data)
+        self.assignedEntity = ASSIGNED("assignedEntity", json_data)
+        self.representedOrganization = REPRESENTED("representedOrganization", json_data)
+
+class TIME():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        if json_data is None:
+            self.low = DATA("low", {"low": {"value": "null"}})
+            self.high = DATA("high", {"high": {"value": "null"}})
+        else:
+            self.low = DATA("low", json_data) if json_data.get("low") is not None else DATA("low", {"low": {"value": "null"}})
+            self.high = DATA("high", json_data) if json_data.get("high") is not None else DATA("high", {"high": {"value": "null"}})
+
+class RESPONSIBLE():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.assignedEntity = ASSIGNED("assignedEntity", json_data) if json_data.get("assignedEntity") is not None else None
+class ENCOUNTER():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.id = ID("id", json_data)
+        self.effectiveTime = TIME("effectiveTime", json_data)
+        self.responsibleParty = RESPONSIBLE("responsibleParty", json_data)
+        self.location = LOCATION("location", json_data)
+class COMPONENTOF():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self.encompassingEncounter = ENCOUNTER("encompassingEncounter", json_data)
+
 class LDO_HEADER():
     def __init__(self, json_data):
         # print(json_data.get("realmCode"))
         self._NAME = "HEADER"
         self._TEXT = ""
 
-        # self.componentOf = None
-        # self.legalAuthenticator = None
-        # self.custodian = None
-        # self.author = None
-        self.recordTarget = TARGET("recordTarget", json_data)
-        # self.relatedDocument = DOCUMENT("relatedDocument", json_data)
-        # self.versionNumber = DATA("versionNumber", json_data)
-        # self.languageCode = CODE("languageCode", json_data)
-        # self.confidentialityCode = CODE("confidentialityCode", json_data)
-        # self.effectiveTime = DATA("effectiveTime", json_data)
-        # self.title = DATA("title", json_data)
-        # self.code = CODE("code", json_data)
-        # self.id = ID("id", json_data)
-        # self.templateId = ID("templateId", json_data)
-        # self.typeId = ID("typeId", json_data)
-        # self.realmCode = CODE("realmCode", json_data)
-        # self.setId = ID("setId", json_data)
+        self._10setId = ID("setId", json_data)
+        self._11realmCode = CODE("realmCode", json_data)
+        self._12typeId = ID("typeId", json_data)
+        self._13templateId = ID("templateId", json_data)
+        self._14id = ID("id", json_data)
+        self._15code = CODE("code", json_data)
+        self._16title = DATA("title", json_data)
+        self._17effectiveTime = DATA("effectiveTime", json_data)
+        self._18confidentialityCode = CODE("confidentialityCode", json_data)
+        self._19languageCode = CODE("languageCode", json_data)
+        self._20versionNumber = DATA("versionNumber", json_data)
+        self._21relatedDocument = DOCUMENT("relatedDocument", json_data)
+        self._22recordTarget = TARGET("recordTarget", json_data)
+        self._23author = AUTHOR("author", json_data)
+        self._24custodian = CUSTODIAN("custodian", json_data)
+        self._25legalAuthenticator = AUTHENTICATOR("legalAuthenticator", json_data)
+        self._26componentOf = COMPONENTOF("componentOf", json_data)
 
     def to_XML(self):
         return tools.object_to_xml(self)
