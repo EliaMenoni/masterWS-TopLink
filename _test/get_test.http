@@ -1,2 +1,8 @@
 # @name Basic Request
-GET http://{{host}}:{{port}}/LDO/compose/{{test_id}}
+POST http://{{host}}:{{port}}/LDO/compose/
+Content-Type: application/json
+
+#< ../_doc/code_template/cargo.json
+
+< ./test_generator/OK/Test1/test.json
+

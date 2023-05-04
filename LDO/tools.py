@@ -35,7 +35,7 @@ def to_xml(obj: Any) -> Any:
         # if object is None, add empty tag
         if item is not None:
             # Add list sub-elements
-            if isinstance(item, (list, set, tuple)):
+            if isinstance(item, (list, set)):
                 subelements[member] = []
                 for list_object in item:
                     subelements[member].append(to_xml(list_object))
@@ -43,6 +43,8 @@ def to_xml(obj: Any) -> Any:
             elif not isinstance(item, (str, list, set, tuple)):
                 subelements[member] = to_xml(item)
             # Add element's tag name
+            elif isinstance(item, (tuple)):
+                tags[item[0]] = item[1]
             else:
                 tags[member] = item
 
@@ -59,14 +61,10 @@ def to_xml(obj: Any) -> Any:
     if subelements:
         for name, values in subelements.items():
             if isinstance(values, list):  # if list of elements. Add all sub-elements
-                sub = et.SubElement(root, name)
                 for value in values:
-                    sub.append(value)
-            else:  # single sub-child or None
-                if values is None:  # if None, add empty tag with name
-                    sub = et.SubElement(root, name)
-                else:  # else add object
-                    root.append(values)
+                    root.append(value)
+            else: # else add object
+                root.append(values)
 
     try:
         if obj._TEXT:
@@ -83,7 +81,6 @@ def object_to_xml(obj: Any) -> Any:
     return et.tostring(element=to_xml(obj), encoding="UTF-8")
 
 def compose_LDO(json_data):
-    HEADER = models.LDO_HEADER(json_data.get("header"))
-    # BODY = models.LDO_HEADER(json_data.get("body"))
+    LDO = models.LDO(json_data)
 
-    return HEADER
+    return LDO

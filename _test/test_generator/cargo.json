@@ -295,63 +295,7 @@
 				"classCode": "DOCBODY",
 				"moodCode": "EVN",
 				"component": [
-					{
-						"ID": "Motivo_Ricovero",
-						"typeCode": "COMP",
-						"section": {
-							"classCode": "DOCSET",
-							"moodCode": "EVN",
-							"code": {
-								"code": "46241-6",
-								"codeSystem": "2.16.840.1.113883.6.1",
-								"codeSystemName": "LOINC",
-								"displayName": "Diagnosi di Accettazione"
-							},
-							"title": "Motivo del ricovero",
-							"text": {
-								"list": [
-									{
-										"item": {
-											"component": {
-												"ID": "DIAG-x",
-												"value": "@wild"
-											}
-										}
-									}
-								]
-							}
-						}
-					},
-					{
-						"ID": "Decorso_Ospedaliero",
-						"typeCode": "COMP",
-						"section": {
-							"code": {
-								"code": "8648-8",
-								"codeSystem": "2.16.840.1.113883.6.1",
-								"codeSystemName": "LOINC",
-								"displayName": "Decorso Ospedaliero"
-							},
-							"title": "Decorso Ospedaliero",
-							"text": {
-								"paragraph": "@wild"
-							}
-						}
-					},
-					{
-						"ID": "Condizioni_paziente_diagnosi_dimissione",
-						"typeCode": "COMP",
-						"section": {
-							"code": {
-								"code": "11535-2",
-								"codeSystem": "2.16.840.1.113883.6.1",
-								"codeSystemName": "LOINC",
-								"displayName": "Diagnosi di Dimissione"
-							},
-							"title": "Condizioni del paziente e diagnosi alla dimissione",
-							"text": "@wild"
-						}
-					}
+				
 				]
 			}
 		}
