@@ -300,30 +300,30 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr32",
+                "codeSystem": "@attr33",
+                "codeSystemName": "@attr34",
+                "displayName": "@attr35"
               },
-              "title": "@value",
-              "text": "@value",
+              "title": "@value7",
+              "text": "@value8",
               "entry": {
                 "observation": [
                   {
-                    "classCode": "@attr",
-                    "moodCode": "@attr",
+                    "classCode": "@attr36",
+                    "moodCode": "@attr37",
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr38",
+                      "codeSystem": "@attr39",
+                      "codeSystemName": "@attr40",
+                      "displayName": "@attr41"
                     },
                     "value": {
-                      "xsi:type": "@attr",
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "xsi:type": "@attr42",
+                      "code": "@attr43",
+                      "codeSystem": "@attr44",
+                      "codeSystemName": "@attr45",
+                      "displayName": "@attr46"
                     }
                   }
                 ]
@@ -335,119 +335,125 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr47",
+                "codeSystem": "@attr48",
+                "codeSystemName": "@attr49",
+                "displayName": "@attr50"
               },
-              "title": "@value",
-              "text": "@value",
+              "title": "@value9",
+              "text": "@value10",
               "component": {
                 "section": [
                   {
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr51",
+                      "codeSystem": "@attr52",
+                      "codeSystemName": "@attr53",
+                      "displayName": "@attr54"
                     },
                     "ID": "Anamnesi",
-                    "title": "@value",
-                    "text": "@value",
+                    "title": "@value11",
+                    "text": "@value12",
                     "entry": {
                       "observation": [
                         {
-                          "classCode": "@attr",
-                          "moodCode": "@attr",
+                          "classCode": "@attr55",
+                          "moodCode": "@attr56",
                           "code": {
-                            "code": "@attr",
-                            "codeSystem": "@attr",
-                            "codeSystemName": "@attr",
-                            "displayName": "@attr"
+                            "code": "@attr57",
+                            "codeSystem": "@attr58",
+                            "codeSystemName": "@attr59",
+                            "displayName": "@attr60"
                           },
                           "statusCode": {
-                            "code": "@attr"
+                            "code": "@attr61"
                           },
                           "effectiveTime": {
-                            "low": "@value"
+                            "low": {
+                              "value": "@attr62"
+                            }
                           },
-                          "value": "@value",
+                          "value": "@value13",
                           "entryRelationship": {
                             "observation": [
                               {
                                 "code": {
-                                  "code": "@attr",
-                                  "codeSystem": "@attr",
-                                  "codeSystemName": "@attr",
-                                  "displayName": "@attr"
+                                  "code": "@attr63",
+                                  "codeSystem": "@attr64",
+                                  "codeSystemName": "@attr65",
+                                  "displayName": "@attr66"
                                 },
                                 "statusCode": {
-                                  "code": "@attr"
+                                  "code": "@attr67"
                                 },
                                 "value": {
-                                  "code": "@attr",
-                                  "codeSystem": "@attr"
+                                  "code": "@attr68",
+                                  "codeSystem": "@attr69"
                                 }
                               }
                             ]
                           }
                         },
                         {
-                          "classCode": "@attr",
-                          "moodCode": "@attr",
+                          "classCode": "@attr70",
+                          "moodCode": "@attr71",
                           "code": {
-                            "code": "@attr",
-                            "codeSystem": "@attr",
-                            "codeSystemName": "@attr",
-                            "displayName": "@attr"
+                            "code": "@attr72",
+                            "codeSystem": "@attr73",
+                            "codeSystemName": "@attr74",
+                            "displayName": "@attr75"
                           },
                           "statusCode": {
-                            "code": "@attr"
+                            "code": "@attr76"
                           },
                           "effectiveTime": {
-                            "low": "@value",
-                            "high": "@value"
+                            "low": {
+                              "value": "@attr77"
+                            },
+                            "high": {
+                              "value": "@attr78"
+                            }
                           },
-                          "value": "@value",
+                          "value": "@value14",
                           "entryRelationship": {
                             "observation": [
                               {
                                 "code": {
-                                  "code": "@attr",
-                                  "codeSystem": "@attr",
-                                  "codeSystemName": "@attr",
-                                  "displayName": "@attr"
+                                  "code": "@attr79",
+                                  "codeSystem": "@attr80",
+                                  "codeSystemName": "@attr81",
+                                  "displayName": "@attr82"
                                 },
                                 "statusCode": {
-                                  "code": "@attr"
+                                  "code": "@attr83"
                                 },
                                 "value": {
-                                  "code": "@attr",
-                                  "codeSystem": "@attr"
+                                  "code": "@attr84",
+                                  "codeSystem": "@attr85"
                                 },
                                 "text": {
                                   "reference": {
-                                    "value": "@attr"
+                                    "value": "@attr86"
                                   }
                                 }
                               },
                               {
                                 "code": {
-                                  "code": "@attr",
-                                  "codeSystem": "@attr",
-                                  "codeSystemName": "@attr",
-                                  "displayName": "@attr"
+                                  "code": "@attr87",
+                                  "codeSystem": "@attr88",
+                                  "codeSystemName": "@attr89",
+                                  "displayName": "@attr90"
                                 },
                                 "statusCode": {
-                                  "code": "@attr"
+                                  "code": "@attr91"
                                 },
                                 "value": {
-                                  "code": "@attr",
-                                  "codeSystem": "@attr"
+                                  "code": "@attr92",
+                                  "codeSystem": "@attr93"
                                 },
                                 "text": {
                                   "reference": {
-                                    "value": "@attr"
+                                    "value": "@attr94"
                                   }
                                 }
                               }
@@ -459,25 +465,25 @@
                   },
                   {
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr95",
+                      "codeSystem": "@attr96",
+                      "codeSystemName": "@attr97",
+                      "displayName": "@attr98"
                     },
                     "ID": "Esame_Obiettivo",
-                    "title": "@value",
-                    "text": "@value"
+                    "title": "@value15",
+                    "text": "@value16"
                   },
                   {
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr99",
+                      "codeSystem": "@attr100",
+                      "codeSystemName": "@attr101",
+                      "displayName": "@attr102"
                     },
                     "ID": "Terapia_Farmacologica_Ingresso",
-                    "title": "@value",
-                    "text": "@value"
+                    "title": "@value17",
+                    "text": "@value18"
                   }
                 ]
               }
@@ -488,13 +494,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr103",
+                "codeSystem": "@attr104",
+                "codeSystemName": "@attr105",
+                "displayName": "@attr106"
               },
-              "title": "@value",
-              "text": "@value"
+              "title": "@value19",
+              "text": "@value20"
             }
           },
           {
@@ -502,13 +508,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr107",
+                "codeSystem": "@attr108",
+                "codeSystemName": "@attr109",
+                "displayName": "@attr110"
               },
-              "title": "@value",
-              "text": "@value"
+              "title": "@value21",
+              "text": "@value22"
             }
           },
           {
@@ -516,30 +522,30 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr111",
+                "codeSystem": "@attr112",
+                "codeSystemName": "@attr113",
+                "displayName": "@attr114"
               },
-              "title": "@value",
-              "text": "@value",
+              "title": "@value23",
+              "text": "@value24",
               "entry": {
                 "observation": [
                   {
-                    "moodCode": "@attr",
-                    "classCode": "@attr",
+                    "moodCode": "@attr115",
+                    "classCode": "@attr116",
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr117",
+                      "codeSystem": "@attr118",
+                      "codeSystemName": "@attr119",
+                      "displayName": "@attr120"
                     },
                     "value": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr",
-                      "translation": "@value"
+                      "code": "@attr121",
+                      "codeSystem": "@attr122",
+                      "codeSystemName": "@attr123",
+                      "displayName": "@attr124",
+                      "translation": "@value25"
                     }
                   }
                 ]
@@ -551,67 +557,75 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr125",
+                "codeSystem": "@attr126",
+                "codeSystemName": "@attr127",
+                "displayName": "@attr128"
               },
-              "title": "@value",
-              "text": "@value",
+              "title": "@value26",
+              "text": "@value27",
               "entry": {
                 "substanceAdministration": [
                   {
-                    "moodCode": "@attr",
-                    "classCode": "@attr",
+                    "moodCode": "@attr129",
+                    "classCode": "@attr130",
                     "text": {
                       "reference": {
-                        "value": "@attr"
+                        "value": "@attr131"
                       }
                     },
                     "statusCode": {
-                      "code": "@attr"
+                      "code": "@attr132"
                     },
                     "effectiveTime": {
-                      "low": "@value",
-                      "high": "@value"
+                      "low": {
+                        "value": "@attr133"
+                      },
+                      "high": {
+                        "value": "@attr134"
+                      }
                     },
                     "routeCode": {
-                      "code": "@attr"
+                      "code": "@attr135"
                     },
                     "doseQuantity": {
                       "low": {
-                        "value": "@attr",
-                        "unit": "@attr"
+                        "value": "@attr136",
+                        "unit": "@attr137"
                       },
                       "high": {
-                        "value": "@attr",
-                        "unit": "@attr"
+                        "value": "@attr138",
+                        "unit": "@attr139"
                       }
                     },
                     "rateQuantity": {
-                      "low": "@value",
-                      "high": "@value"
+                      "low": {
+                        "value": "@attr140"
+                      },
+                      "high": {
+                        "value": "@attr141"
+                      }
                     },
                     "administrationUnitCode": {
-                      "code": "@value"
+                      "code": "@value28"
                     },
                     "consumable": {
                       "manufacturedProduct": {
                         "manufacturedMaterial": {
                           "code": {
-                            "code": "@attr",
-                            "codeSystem": "@attr",
-                            "codeSystemName": "@attr",
-                            "displayName": "@attr",
+                            "code": "@attr142",
+                            "codeSystem": "@attr143",
+                            "codeSystemName": "@attr144",
+                            "displayName": "@attr145",
                             "translation": {
-                              "code": "@attr",
-                              "codeSystem": "@attr",
-                              "codeSystemName": "@attr",
-                              "displayName": "@attr"
+                              "code": "@attr146",
+                              "codeSystem": "@attr147",
+                              "codeSystemName": "@attr148",
+                              "displayName": "@attr149"
                             },
                             "originalText": {
                               "reference": {
-                                "value": "@attr"
+                                "value": "@attr150"
                               }
                             }
                           }
@@ -619,13 +633,13 @@
                       }
                     },
                     "participant": {
-                      "time": "@value",
+                      "time": "@value29",
                       "participantRole": {
-                        "id": "@value",
+                        "id": "@value30",
                         "playingEntity": {
                           "name": {
-                            "family": "@value",
-                            "given": "@value"
+                            "family": "@value31",
+                            "given": "@value32"
                           }
                         }
                       }
@@ -634,34 +648,36 @@
                       "observation": [
                         {
                           "code": {
-                            "code": "@attr",
-                            "codeSystem": "@attr",
-                            "codeSystemName": "@attr",
-                            "displayName": "@attr"
+                            "code": "@attr151",
+                            "codeSystem": "@attr152",
+                            "codeSystemName": "@attr153",
+                            "displayName": "@attr154"
                           },
                           "value": {
-                            "value": "@attr"
+                            "value": "@attr155"
                           }
                         },
                         {
                           "code": {
-                            "code": "@attr",
-                            "codeSystem": "@attr",
-                            "codeSystemName": "@attr",
-                            "displayName": "@attr"
+                            "code": "@attr156",
+                            "codeSystem": "@attr157",
+                            "codeSystemName": "@attr158",
+                            "displayName": "@attr159"
                           },
                           "value": {
-                            "value": "@attr"
+                            "value": "@attr160"
                           }
                         }
                       ],
-                      "supply": {
-                        "classCode": "@attr",
-                        "moodCode": "@attr",
-                        "quantity": {
-                          "value": "@attr"
+                      "supply": [
+                        {
+                          "classCode": "@attr161",
+                          "moodCode": "@attr162",
+                          "quantity": {
+                            "value": "@attr163"
+                          }
                         }
-                      }
+                      ]
                     }
                   }
                 ]
@@ -673,13 +689,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr164",
+                "codeSystem": "@attr165",
+                "codeSystemName": "@attr166",
+                "displayName": "@attr167"
               },
-              "title": "@value",
-              "text": "@value"
+              "title": "@value33",
+              "text": "@value34"
             }
           }
         ]

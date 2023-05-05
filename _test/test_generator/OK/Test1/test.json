@@ -300,30 +300,30 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr0",
+                "codeSystem": "@attr1",
+                "codeSystemName": "@attr2",
+                "displayName": "@attr3"
               },
-              "title": "@value",
-              "text": "@value",
+              "title": "@value0",
+              "text": "@value1",
               "entry": {
                 "observation": [
                   {
-                    "classCode": "@attr",
-                    "moodCode": "@attr",
+                    "classCode": "@attr4",
+                    "moodCode": "@attr5",
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr6",
+                      "codeSystem": "@attr7",
+                      "codeSystemName": "@attr8",
+                      "displayName": "@attr9"
                     },
                     "value": {
-                      "xsi:type": "@attr",
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "xsi:type": "@attr10",
+                      "code": "@attr11",
+                      "codeSystem": "@attr12",
+                      "codeSystemName": "@attr13",
+                      "displayName": "@attr14"
                     }
                   }
                 ]
@@ -335,13 +335,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr15",
+                "codeSystem": "@attr16",
+                "codeSystemName": "@attr17",
+                "displayName": "@attr18"
               },
-              "title": "@value",
-              "text": "@value"
+              "title": "@value2",
+              "text": "@value3"
             }
           },
           {
@@ -349,29 +349,29 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr",
-                "codeSystem": "@attr",
-                "codeSystemName": "@attr",
-                "displayName": "@attr"
+                "code": "@attr19",
+                "codeSystem": "@attr20",
+                "codeSystemName": "@attr21",
+                "displayName": "@attr22"
               },
-              "title": "@value",
-              "text": "@value",
+              "title": "@value4",
+              "text": "@value5",
               "entry": {
                 "observation": [
                   {
-                    "moodCode": "@attr",
+                    "moodCode": "@attr23",
                     "code": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr"
+                      "code": "@attr24",
+                      "codeSystem": "@attr25",
+                      "codeSystemName": "@attr26",
+                      "displayName": "@attr27"
                     },
                     "value": {
-                      "code": "@attr",
-                      "codeSystem": "@attr",
-                      "codeSystemName": "@attr",
-                      "displayName": "@attr",
-                      "translation": "@value"
+                      "code": "@attr28",
+                      "codeSystem": "@attr29",
+                      "codeSystemName": "@attr30",
+                      "displayName": "@attr31",
+                      "translation": "@value6"
                     }
                   }
                 ]

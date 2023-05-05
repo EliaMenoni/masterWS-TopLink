@@ -1,0 +1,884 @@
+{
+  "schemaLocation": "urn:hl7-org:v3 CDA.xsd",
+  "header": {
+    "setId": {
+      "root": "@set",
+      "extension": "@set",
+      "assigningAuthorityName": "@set"
+    },
+    "realmCode": {
+      "code": "IT"
+    },
+    "typeId": {
+      "root": "2.16.840.1.11.113883.1.3",
+      "extension": "@wild"
+    },
+    "templateId": {
+      "root": "2.16.840.1.113883.2.9.10.2.10.1.5",
+      "extension": "1.2"
+    },
+    "id": {
+      "root": "@set",
+      "extension": "@set",
+      "assignedAuthorityName": "@set"
+    },
+    "code": {
+      "code": "34105-7",
+      "codeSystem": "2.16.840.1.113883.6.1",
+      "codeSystemName": "LOINC",
+      "displayName": "Lettera di dimissione ospedaliera"
+    },
+    "title": "@wild",
+    "effectiveTime": {
+      "value": "@wild"
+    },
+    "confidentialityCode": {
+      "code": "@wild",
+      "codeSystem": "2.16.840.1.113883.5.25",
+      "codeSystemName": "HL7 Confidentialy",
+      "displayName": "Normal"
+    },
+    "languageCode": {
+      "code": "it-IT"
+    },
+    "versionNumber": {
+      "value": "@wild"
+    },
+    "relatedDocument": {
+      "typeCode": "@wild",
+      "setId": {
+        "root": "@wild",
+        "extension": "@wild",
+        "assignedAuthorityName": "@wild"
+      },
+      "versionNumber": {
+        "value": "@wild"
+      },
+      "parentDocument": {
+        "id": {
+          "root": "@set",
+          "extension": "@set"
+        },
+        "setId": {
+          "root": "@wild",
+          "extension": "@wild",
+          "assignedAuthorityName": "@wild"
+        },
+        "versionNumber": {
+          "value": "@wild"
+        }
+      }
+    },
+    "recordTarget": {
+      "patientRole": {
+        "id": {
+          "root": "@wild",
+          "extension": "@wild",
+          "assigningAuthorityName": "@wild"
+        },
+        "telecom": [
+          {
+            "use": "@wild",
+            "value": "@wild"
+          }
+        ],
+        "patient": {
+          "name": {
+            "family": "@wild",
+            "given": "@wild"
+          },
+          "administrativeGenderCode": {
+            "code": "@wild",
+            "codeSystem": "2.16.840.1.113883.5.1",
+            "codeSystemName": "H7 AdministrativeGender",
+            "displayName": "@wild"
+          },
+          "birthTime": {
+            "value": "@wild"
+          },
+          "birthPlace": {
+            "addr": "@wild",
+            "censusTract": "@wild"
+          }
+        }
+      }
+    },
+    "author": {
+      "time": {
+        "value": "@wild"
+      },
+      "assignedAuthor": {
+        "classCode": "ASSIGNED",
+        "id": {
+          "root": "2.16.840.1.113883.2.9.4.3.2",
+          "assigningAuthorityName": "MEF",
+          "extension": "@wild"
+        },
+        "assignedPerson": {
+          "name": {
+            "family": "@wild",
+            "given": "@wild"
+          }
+        },
+        "telecom": [
+          {
+            "use": "HP",
+            "value": "@wild"
+          },
+          {
+            "use": "HP",
+            "value": "@wild"
+          },
+          {
+            "use": "HP",
+            "value": "@wild"
+          }
+        ]
+      }
+    },
+    "custodian": {
+      "assignedCustodian": {
+        "representedCustodianOrganization": {
+          "id": {
+            "root": "2.16.840.1.113883.2.9.4.1.1",
+            "value": "@wild"
+          },
+          "name": {
+            "family": "@wild",
+            "given": "@wild"
+          },
+          "telecom": [
+            {
+              "use": "HP",
+              "value": "@wild"
+            }
+          ]
+        }
+      }
+    },
+    "legalAuthenticator": {
+      "time": {
+        "value": "@wild"
+      },
+      "signatureCode": {
+        "code": "S"
+      },
+      "assignedEntity": {
+        "id": {
+          "root": "2.16.840.1.113883.2.9.4.3.2",
+          "extension": "@wild",
+          "assigningAuthorityName": "MEF"
+        },
+        "telecom": [
+          {
+            "use": "@wild",
+            "value": "@wild"
+          }
+        ],
+        "assignedPerson": {
+          "name": {
+            "family": "@wild",
+            "given": "@wild",
+            "prefix": "@wild"
+          }
+        }
+      },
+      "representedOrganization": {
+        "time": {
+          "value": "@wild"
+        },
+        "assignedAuthor": {
+          "classCode": "ASSIGNED",
+          "id": {
+            "root": "2.16.840.1.113883.2.9.4.3.2",
+            "assigningAuthorityName": "MEF",
+            "extension": "@wild"
+          },
+          "assignedPerson": {
+            "name": {
+              "family": "@wild",
+              "given": "@wild"
+            }
+          },
+          "telecom": [
+            {
+              "use": "HP",
+              "value": "@wild"
+            },
+            {
+              "use": "HP",
+              "value": "@wild"
+            },
+            {
+              "use": "HP",
+              "value": "@wild"
+            }
+          ]
+        }
+      }
+    },
+    "componentOf": {
+      "encompassingEncounter": {
+        "id": {
+          "root": "2.16.840.1.113883.2.9.4.3.2",
+          "extension": "@wild",
+          "assigningAuthorityName": "MEF"
+        },
+        "effectiveTime": {
+          "low": {
+            "value": "@wild"
+          },
+          "high": {
+            "value": "@wild"
+          }
+        },
+        "responsibleParty": {
+          "assignedEntity": {
+            "id": {
+              "root": "2.16.1.113883.2.9.4.3.2",
+              "extension": "@wild",
+              "assigningAuthorityName": "@wild"
+            },
+            "code": "RESPRSN",
+            "assignedPerson": {
+              "name": {
+                "family": "@wild",
+                "given": "@wild"
+              }
+            },
+            "telecom": [
+              {
+                "use": "HP",
+                "value": "@wild"
+              }
+            ]
+          }
+        },
+        "location": {
+          "healthCareFacility": {
+            "id": {
+              "root": "2.16.840.1.113883.2.9.4.1.6",
+              "extension": "@wild",
+              "assigningAuthorityName": "Ministero della Salute"
+            },
+            "location": {
+              "name": "@wild"
+            },
+            "serviceProviderOrganization": {
+              "id": {
+                "root": "2.16.840.1.113883.2.9.4.1.6",
+                "extension": "@wild",
+                "assigningAuthorityName": "Ministero della Salute"
+              },
+              "name": "@wild",
+              "telecom": [
+                {
+                  "value": "@wild:@wild"
+                }
+              ],
+              "asOrganizationPartOf": {
+                "id": {
+                  "root": "2.16.840.1.113883.2.9.4.1.6",
+                  "extension": "@wild",
+                  "assigningAuthorityName": "Ministero della Salute"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "body": {
+    "component": {
+      "structuredBody": {
+        "classCode": "DOCBODY",
+        "moodCode": "EVN",
+        "component": [
+          {
+            "ID": "Motivo_Ricovero",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr168",
+                "codeSystem": "@attr169",
+                "codeSystemName": "@attr170",
+                "displayName ": "@attr171"
+              },
+              "title": "@value35",
+              "text": "@value36",
+              "entry": {
+                "observation": [
+                  {
+                    "classCode": "@attr172",
+                    "moodCode ": "@attr173",
+                    "code": {
+                      "code": "@attr174",
+                      "codeSystem": "@attr175",
+                      "codeSystemName": "@attr176",
+                      "displayName": "@attr177"
+                    },
+                    "value": {
+                      "xsi:type": "@attr178",
+                      "code": "@attr179",
+                      "codeSystem": "@attr180",
+                      "codeSystemName": "@attr181",
+                      "displayName": "@attr182"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Inquadramento_clinico_iniziale",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr183",
+                "codeSystem": "@attr184",
+                "codeSystemName": "@attr185",
+                "displayName ": "@attr186"
+              },
+              "title": "@value37",
+              "text": "@value38",
+              "component": {
+                "section": [
+                  {
+                    "code": {
+                      "code": "@attr187",
+                      "codeSystem": "@attr188",
+                      "codeSystemName": "@attr189",
+                      "displayName ": "@attr190"
+                    },
+                    "ID": "Anamnesi",
+                    "title": "@value39",
+                    "text": "@value40",
+                    "entry": {
+                      "observation": [
+                        {
+                          "classCode": "@attr191",
+                          "moodCode": "@attr192",
+                          "code": {
+                            "code": "@attr193",
+                            "codeSystem": "@attr194",
+                            "codeSystemName": "@attr195",
+                            "displayName": "@attr196"
+                          },
+                          "statusCode": {
+                            "code": "@attr197"
+                          },
+                          "effectiveTime": {
+                            "low": {
+                              "value": "@attr198"
+                            },
+                            "high": {
+                              "value": "@attr199"
+                            }
+                          },
+                          "value": "@value41",
+                          "entryRelationship": {
+                            "observation": [
+                              {
+                                "code": {
+                                  "code": "@attr200",
+                                  "codeSystem": "@attr201",
+                                  "codeSystemName": "@attr202",
+                                  "displayName": "@attr203"
+                                },
+                                "value": {
+                                  "code": "@attr204",
+                                  "codeSystem": "@attr205"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "classCode": "@attr206",
+                          "moodCode": "@attr207",
+                          "code": {
+                            "code": "@attr208",
+                            "codeSystem": "@attr209",
+                            "codeSystemName": "@attr210",
+                            "displayName": "@attr211"
+                          },
+                          "statusCode": {
+                            "code": "@attr212"
+                          },
+                          "effectiveTime": {
+                            "low": {
+                              "value": "@attr213"
+                            },
+                            "high": {
+                              "value": "@attr214"
+                            }
+                          },
+                          "value": "@value42",
+                          "entryRelationship": {
+                            "observation": [
+                              {
+                                "code": {
+                                  "code": "@attr215",
+                                  "codeSystem": "@attr216",
+                                  "codeSystemName": "@attr217",
+                                  "displayName": "@attr218"
+                                },
+                                "statusCode": {
+                                  "code": "@attr219"
+                                },
+                                "value": {
+                                  "code": "@attr220",
+                                  "codeSystem": "@attr221"
+                                },
+                                "text": {
+                                  "reference": {
+                                    "value": "@attr222"
+                                  }
+                                }
+                              },
+                              {
+                                "code": {
+                                  "code": "@attr223",
+                                  "codeSystem": "@attr224",
+                                  "codeSystemName": "@attr225",
+                                  "displayName": "@attr226"
+                                },
+                                "statusCode": {
+                                  "code": "@attr227"
+                                },
+                                "value": {
+                                  "code": "@attr228",
+                                  "codeSystem": "@attr229"
+                                },
+                                "text": {
+                                  "reference": {
+                                    "value": "@attr230"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "code": {
+                      "code": "@attr231",
+                      "codeSystem": "@attr232",
+                      "codeSystemName": "@attr233",
+                      "displayName ": "@attr234"
+                    },
+                    "ID": "Esame_Obiettivo",
+                    "title": "@value43",
+                    "text": "@value44"
+                  },
+                  {
+                    "code": {
+                      "code": "@attr235",
+                      "codeSystem": "@attr236",
+                      "codeSystemName": "@attr237",
+                      "displayName ": "@attr238"
+                    },
+                    "ID": "Terapia_Farmacologica_Ingresso",
+                    "title": "@value45",
+                    "text": "@value46"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Decorso_ospedaliero",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr239",
+                "codeSystem": "@attr240",
+                "codeSystemName": "@attr241",
+                "displayName ": "@attr242"
+              },
+              "title": "@value47",
+              "text": "@value48"
+            }
+          },
+          {
+            "ID": "Complicanze",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr243",
+                "codeSystem": "@attr244",
+                "codeSystemName": "@attr245",
+                "displayName ": "@attr246"
+              },
+              "title": "@value49",
+              "text": "@value50",
+              "entry": {
+                "observation": [
+                  {
+                    "classCode": "@attr247",
+                    "moodCode": "@attr248",
+                    "code": {
+                      "code": "@attr249",
+                      "codeSystem": "@attr250",
+                      "codeSystemName": "@attr251",
+                      "displayName": "@attr252"
+                    },
+                    "effectiveTime": {
+                      "value": "@attr253",
+                      "low": {
+                        "value": "@attr254"
+                      },
+                      "high": {
+                        "value": "@attr255"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Riscontri_accertamenti_significativi",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr256",
+                "codeSystem": "@attr257",
+                "codeSystemName": "@attr258",
+                "displayName ": "@attr259"
+              },
+              "title": "@value51",
+              "text": "@value52"
+            }
+          },
+          {
+            "ID": "Procedure_eseguite_durante_ricovero",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr260",
+                "codeSystem": "@attr261",
+                "codeSystemName": "@attr262",
+                "displayName ": "@attr263"
+              },
+              "title": "@value53",
+              "text": "@value54",
+              "entry": {
+                "procedure": [
+                  {
+                    "code": {
+                      "code": "@attr264",
+                      "codeSystem": "@attr265",
+                      "codeSystemName": "@attr266",
+                      "displayName": "@attr267"
+                    },
+                    "text": {
+                      "reference": {
+                        "value": "@attr268"
+                      }
+                    },
+                    "statusCode": {
+                      "code": "@attr269"
+                    },
+                    "effectiveTime": {
+                      "value": "@attr270",
+                      "low": {
+                        "value": "@attr271"
+                      },
+                      "high": {
+                        "value": "@attr272"
+                      }
+                    },
+                    "entryRelationship": {
+                      "typeCode": "@attr273",
+                      "observation": [
+                        {
+                          "code": "@value55"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Terapia_farmacologica_effettuata_durante_ricovero",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr274",
+                "codeSystem": "@attr275",
+                "codeSystemName": "@attr276",
+                "displayName ": "@attr277"
+              },
+              "title": "@value56",
+              "text": "@value57",
+              "entry": {
+                "substanceAdministration": [
+                  {
+                    "moodCode ": "@attr278",
+                    "classCode": "@attr279",
+                    "text": {
+                      "reference": {
+                        "value": "@attr280"
+                      }
+                    },
+                    "statusCode": {
+                      "code": "@attr281"
+                    },
+                    "effectiveTime": {
+                      "period": {
+                        "value": "@attr282",
+                        "unit": "@attr283"
+                      }
+                    },
+                    "routeCode": {
+                      "code": "@attr284"
+                    },
+                    "consumable": {
+                      "manufacturedProduct": {
+                        "manufacturedMaterial": {
+                          "code": {
+                            "code": "@attr285",
+                            "codeSystem": "@attr286",
+                            "codeSystemName": "@attr287",
+                            "displayName": "@attr288",
+                            "translation": {
+                              "code": "@attr289",
+                              "codeSystem": "@attr290",
+                              "codeSystemName": "@attr291",
+                              "displayName": "@attr292"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "performer": {
+                      "time": "@value58",
+                      "assignedEntity": {
+                        "id": "@value59",
+                        "assignedPerson": {
+                          "name": {
+                            "family": "@value60",
+                            "given": "@value61"
+                          }
+                        }
+                      }
+                    },
+                    "participant": {
+                      "time": "@value62",
+                      "participantRole": {
+                        "id": "@value63",
+                        "playingEntity": {
+                          "name": {
+                            "family": "@value64",
+                            "given": "@value65"
+                          }
+                        }
+                      }
+                    },
+                    "entryRelationship": {
+                      "observation": [
+                        {
+                          "code": {
+                            "code": "@attr293",
+                            "codeSystem": "@attr294",
+                            "codeSystemName": "@attr295",
+                            "displayName": "@attr296"
+                          },
+                          "value": {
+                            "value": "@attr297"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Condizioni_paziente_diagnosi_dimissione",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr298",
+                "codeSystem": "@attr299",
+                "codeSystemName": "@attr300",
+                "displayName ": "@attr301"
+              },
+              "title": "@value66",
+              "text": "@value67",
+              "entry": {
+                "observation": [
+                  {
+                    "moodCode ": "@attr302",
+                    "classCode": "@attr303",
+                    "code": {
+                      "code": "@attr304",
+                      "codeSystem": "@attr305",
+                      "codeSystemName": "@attr306",
+                      "displayName": "@attr307"
+                    },
+                    "value": {
+                      "code": "@attr308",
+                      "codeSystem": "@attr309",
+                      "codeSystemName": "@attr310",
+                      "displayName": "@attr311",
+                      "translation": "@value68"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Terapia_farmacologica_dimissione",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr312",
+                "codeSystem": "@attr313",
+                "codeSystemName": "@attr314",
+                "displayName ": "@attr315"
+              },
+              "title": "@value69",
+              "text": "@value70",
+              "entry": {
+                "substanceAdministration": [
+                  {
+                    "moodCode ": "@attr316",
+                    "classCode": "@attr317",
+                    "text": {
+                      "reference": {
+                        "value": "@attr318"
+                      }
+                    },
+                    "statusCode": {
+                      "code": "@attr319"
+                    },
+                    "effectiveTime": {
+                      "low": {
+                        "value": "@attr320"
+                      },
+                      "high": {
+                        "value": "@attr321"
+                      }
+                    },
+                    "routeCode": {
+                      "code": "@attr322"
+                    },
+                    "approachSiteCode": {
+                      "code": "@attr323"
+                    },
+                    "doseQuantity": {
+                      "low": {
+                        "value": "@attr324",
+                        "unit": "@attr325"
+                      },
+                      "high": {
+                        "value": "@attr326",
+                        "unit": "@attr327"
+                      }
+                    },
+                    "rateQuantity": {
+                      "low": {
+                        "value": "@attr328"
+                      },
+                      "high": {
+                        "value": "@attr329"
+                      }
+                    },
+                    "consumable": {
+                      "manufacturedProduct": {
+                        "manufacturedMaterial": {
+                          "code": {
+                            "code": "@attr330",
+                            "codeSystem": "@attr331",
+                            "codeSystemName": "@attr332",
+                            "displayName": "@attr333",
+                            "translation": {
+                              "code": "@attr334",
+                              "codeSystem": "@attr335",
+                              "codeSystemName": "@attr336",
+                              "displayName": "@attr337"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "participant": {
+                      "time": "@value71",
+                      "participantRole": {
+                        "id": "@value72",
+                        "playingEntity": {
+                          "name": {
+                            "family": "@value73",
+                            "given": "@value74"
+                          }
+                        }
+                      }
+                    },
+                    "entryRelationship": {
+                      "observation": [
+                        {
+                          "code": {
+                            "code": "@attr338",
+                            "codeSystem": "@attr339",
+                            "codeSystemName": "@attr340",
+                            "displayName": "@attr341"
+                          },
+                          "value": {
+                            "value": "@attr342"
+                          }
+                        },
+                        {
+                          "code": {
+                            "code": "@attr343",
+                            "codeSystem": "@attr344",
+                            "codeSystemName": "@attr345",
+                            "displayName": "@attr346"
+                          },
+                          "value": {
+                            "value": "@attr347"
+                          }
+                        }
+                      ],
+                      "supply": [
+                        {
+                          "classCode": "@attr348",
+                          "moodCode": "@attr349",
+                          "quantity": {
+                            "value": "@attr350"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Istruzioni_followup",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr351",
+                "codeSystem": "@attr352",
+                "codeSystemName": "@attr353",
+                "displayName ": "@attr354"
+              },
+              "title": "@value75",
+              "text": "@value76"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

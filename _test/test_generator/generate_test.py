@@ -1,6 +1,11 @@
 import os
 import json
 
+settings = {
+    "value": 0,
+    "attribute": 0
+}
+
 def insert_sub(root, sub:str, edited = None):
     subs = sub.split("/")
     back = None
@@ -20,15 +25,17 @@ def insert_sub(root, sub:str, edited = None):
     if len(subs) == 1 and "_" not in subs[0]:
         # print(subs[0])
         if "@" in subs[0]:
-            root[subs[0][1:-1]] = "@attr"
+            root[subs[0][1:-1]] = "@attr" + str(settings["attribute"])
+            settings["attribute"] = settings["attribute"] + 1
         else:
-            root[subs[0][:-1]] = "@value"
+            root[subs[0][:-1]] = "@value" + str(settings["value"])
+            settings["value"] = settings["value"] + 1
     elif subs[0] in root:
         root[subs[0]] = insert_sub(root[subs[0]], "/".join(subs[1:]), edit)
     else:
         if len(subs) == 1 and "_" in subs[0]:
             # print(subs[1])
-            # print(root[subs[0]])
+            # print(root, subs)
             if subs[0][:-2] in root and isinstance(root[subs[0][:-2]], list):
                 root[subs[0][:-2]].append({})
             else:
@@ -59,6 +66,7 @@ def generate_json(component):
         # print(struct["body"]["component"]["structuredBody"]["component"])
     return struct
 
+
 for root, dirs, files in os.walk("./OK", topdown=False):
     # print(root, dirs, files)
     out = []
@@ -73,7 +81,7 @@ for root, dirs, files in os.walk("./OK", topdown=False):
     for line in data:
         component_id = line.split("\"")[1]
         component_sub = line.split("/")[1:]
-        print(root, component_id, component_sub)
+        # print(root, component_id, component_sub)
         if component_id in components:
             components[component_id] = insert_sub(components[component_id], "/".join(component_sub))
         else:

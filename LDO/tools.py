@@ -32,6 +32,9 @@ def to_xml(obj: Any) -> Any:
             continue
         # member = member.replace('_', '-')
 
+        if member == "xsit":
+            member = "xsi:type"
+
         # if object is None, add empty tag
         if item is not None:
             # Add list sub-elements
