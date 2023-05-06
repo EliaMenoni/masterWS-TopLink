@@ -20,7 +20,7 @@ class Log(models.Model):
 
 class ERROR():
     def __init__(self, error_text:str):
-        self._NAME = "ERROR BLOCK"
+        self._NAME = "ERROR"
         self._TEXT = error_text
 
 class ID():
@@ -49,6 +49,8 @@ class ID():
                 self.root = json_data["root"]
                 self.extension = json_data["extension"]
                 self.assigningAuthorityName = json_data["assigningAuthorityName"]
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
             self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
@@ -59,21 +61,64 @@ class CODE():
         self._NAME = name
         self._TEXT = ""
 
-        if isinstance(json_data, str):
+        # SOLO PER TEST
+        if type(json_data) is str:
             self._TEXT = json_data
-        else:
-            self.displayName = json_data.get("displayName")
-            self.codeSystemName = json_data.get("codeSystemName")
-            self.codeSystem = json_data.get("codeSystem")
-            self.code = json_data.get("code")
-            self.xsit = json_data.get("xsi:type")
+            return
 
-            if json_data.get("translation") is not None and isinstance(json_data.get("translation"), dict):
-                self._01translation = CODE("translation", json_data) if json_data.get("translation") is not None else None
-            elif json_data.get("translation") is not None and isinstance(json_data.get("translation"), str):
-                self._01translation = DATA("translation", "????")
+        try:
+            if name == "code":
+                self.code = json_data["code"]
+                self.codeSystem = json_data["codeSystem"]
+                self.codeSystemName = json_data["codeSystemName"]
+                self.displayName = json_data["displayName"]
+                self._01_translation = CODE("translation", json_data) if "translation" in json_data else None
+            elif name == "translation":
+                self.code = json_data["code"]
+                self.codeSystem = json_data["codeSystem"]
+                self.codeSystemName = json_data["codeSystemName"]
+                self.displayName = json_data["displayName"]
+            elif name == "administrativeGenderCode":
+                self.code = json_data["code"]
+                self.codeSystem = json_data["codeSystem"]
+                self.codeSystemName = json_data["codeSystemName"]
+                self.displayName = json_data["displayName"] if "displayName" in json_data else None
+            elif name == "value":
+                self.code = json_data["code"]
+                self.codeSystem = json_data["codeSystem"]
+                self.xsit = json_data["xsi:type"] if "xsi:type" in json_data else None #???
+                self.codeSystemName = json_data["codeSystemName"] if "codeSystemName" in json_data else None #???
+                self.displayName = json_data["displayName"] if "displayName" in json_data else None
+            elif name == "realmCode":
+                self.code = json_data["code"]
+            elif name == "administrationUnitCode":
+                self.code = json_data["code"]
+            elif name == "routeCode":
+                self.code = json_data["code"]
+            elif name == "statusCode":
+                self.code = json_data["code"] # COMPLETED
+            elif name == "languageCode":
+                self.code = json_data["code"]
+            elif name == "confidentialityCode":
+                self.code = json_data["code"]
+                self.codeSystem = json_data["codeSystem"]
+                self.codeSystemName = json_data["codeSystemName"]
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+            # self.displayName = json_data.get("displayName")
+            # self.codeSystemName = json_data.get("codeSystemName")
+            # self.codeSystem = json_data.get("codeSystem")
+            # self.code = json_data.get("code")
+            # self.xsit = json_data.get("xsi:type")
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
+            # if json_data.get("translation") is not None and isinstance(json_data.get("translation"), dict):
+            #     self._01translation = CODE("translation", json_data) if json_data.get("translation") is not None else None
+            # elif json_data.get("translation") is not None and isinstance(json_data.get("translation"), str):
+            #     self._01translation = DATA("translation", "????")
 
-            self._02originalText = TEXT("originalText", json_data) if json_data.get("originalText") is not None else None
+            # self._02originalText = TEXT("originalText", json_data) if json_data.get("originalText") is not None else None
 class DATA():
     def __init__(self, name:str, data):
         self._NAME = name
@@ -306,7 +351,7 @@ class OBSERVATION():
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
         self._NAME = name
         self._TEXT = ""
-        # print(json_data)
+
         self.moodCode = json_data.get("moodCode")
         self.classCode = json_data.get("classCode")
         self._01code = CODE("code", json_data)
@@ -350,7 +395,7 @@ class SUPPLY():
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
         self._NAME = name
         self._TEXT = ""
-        print(json_data)
+
         self.moodCode = json_data.get("moodCode")
         self.classCode = json_data.get("classCode")
         self._01quantity = QUANTITY("quantity", json_data) if json_data.get("quantity") is not None else None
@@ -391,7 +436,7 @@ class QUANTITY():
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
-        print(json_data)
+
         self.value = json_data.get("value")
         self.unit = json_data.get("unit")
 
@@ -452,7 +497,7 @@ class ITEM():
         self.component = COMPONENT("component", json_data)
 class COMPONENT():
     def __init__(self, name:str, json_data, index:int = None):
-        # print(json_data)
+
         json_data = json_data.get(name) if index is None else json_data.get(name)[index]
         self._NAME = name
         self._TEXT = json_data.get("value") if json_data.get("value") is not None else ""
