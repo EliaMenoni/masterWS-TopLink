@@ -140,20 +140,6 @@ class DATA():
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
             self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
-        # if isinstance(data, str):
-        #     self._TEXT = data
-        # else:
-        #     data = data.get(name)
-        #     self._TEXT = ""
-        #
-        #     if not isinstance(data, dict):
-        #         self._TEXT = data
-        #     elif "value" in data:
-        #         self._TEXT = ""
-        #         self.value = data.get("value")
-        #     elif "code" in data:
-        #         self._TEXT = ""
-        #         self.code = data.get("code")
 
 class DOCUMENT():
     def __init__(self, name:str, json_data):
