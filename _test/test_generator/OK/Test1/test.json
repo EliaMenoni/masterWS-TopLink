@@ -11,16 +11,16 @@
     },
     "typeId": {
       "root": "2.16.840.1.11.113883.1.3",
-      "extension": "@wild"
+      "extension": "POCD_MT000040UV02"
     },
     "templateId": {
       "root": "2.16.840.1.113883.2.9.10.2.10.1.5",
       "extension": "1.2"
     },
     "id": {
-      "root": "@set",
-      "extension": "@set",
-      "assignedAuthorityName": "@set"
+      "root": "2.16.840.1.113883.2.9.2.120.4.4",
+      "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+      "assigningAuthorityName": "Regione Lazio"
     },
     "code": {
       "code": "34105-7",
@@ -28,84 +28,79 @@
       "codeSystemName": "LOINC",
       "displayName": "Lettera di dimissione ospedaliera"
     },
-    "title": "@wild",
+    "title": "Lettera di dimissione ospedaliera",
     "effectiveTime": {
-      "value": "@wild"
+      "value": "20220417100000+0100"
     },
     "confidentialityCode": {
-      "code": "@wild",
+      "code": "N",
       "codeSystem": "2.16.840.1.113883.5.25",
-      "codeSystemName": "HL7 Confidentialy",
+      "codeSystemName": "Confidentialy",
       "displayName": "Normal"
     },
     "languageCode": {
       "code": "it-IT"
     },
     "versionNumber": {
-      "value": "@wild"
+      "value": "1"
     },
     "relatedDocument": {
-      "typeCode": "@wild",
-      "setId": {
-        "root": "@wild",
-        "extension": "@wild",
-        "assignedAuthorityName": "@wild"
-      },
-      "versionNumber": {
-        "value": "@wild"
-      },
+      "typeCode": "RPLC",
       "parentDocument": {
         "id": {
-          "root": "@set",
-          "extension": "@set"
+          "root": "2.16.840.1.113883.2.9.2.120.4.4",
+          "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+          "assigningAuthorityName": "Regione Liguria"
         },
         "setId": {
-          "root": "@wild",
-          "extension": "@wild",
-          "assignedAuthorityName": "@wild"
+          "root": "2.16.840.1.113883.2.9.2.99.4.4",
+          "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+          "assigningAuthorityName": "Regione Lazio"
         },
         "versionNumber": {
-          "value": "@wild"
+          "value": "1"
         }
       }
     },
     "recordTarget": {
       "patientRole": {
         "id": {
-          "root": "@wild",
-          "extension": "@wild",
-          "assigningAuthorityName": "@wild"
+          "root": "2.16.840.1.113883.2.9.4.3.2",
+          "extension": "RSSMRA22A01A399Z",
+          "assigningAuthorityName": "MEF"
         },
         "telecom": [
           {
-            "use": "@wild",
-            "value": "@wild"
+            "use": "HP",
+            "value": "mailto:prova.provax@example.com"
           }
         ],
         "patient": {
           "name": {
-            "family": "@wild",
-            "given": "@wild"
+            "family": "Esempio",
+            "given": "Test"
           },
           "administrativeGenderCode": {
-            "code": "@wild",
+            "code": "M",
             "codeSystem": "2.16.840.1.113883.5.1",
             "codeSystemName": "H7 AdministrativeGender",
-            "displayName": "@wild"
+            "displayName": "Maschio"
           },
           "birthTime": {
-            "value": "@wild"
+            "value": "19800329"
           },
           "birthPlace": {
-            "addr": "@wild",
-            "censusTract": "@wild"
+            "addr": {
+              "city": "Cirie",
+              "censusTract": "001086"
+            }
           }
         }
       }
     },
     "author": {
       "time": {
-        "value": "@wild"
+        "value": "20220417093000+0100"
       },
       "assignedAuthor": {
         "classCode": "ASSIGNED",
@@ -141,7 +136,8 @@
         "representedCustodianOrganization": {
           "id": {
             "root": "2.16.840.1.113883.2.9.4.1.1",
-            "value": "@wild"
+            "extension": "130106",
+            "assigningAuthorityName": "Ministero della Salute"
           },
           "name": {
             "family": "@wild",

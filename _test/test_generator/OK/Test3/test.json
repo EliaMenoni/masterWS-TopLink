@@ -11,16 +11,16 @@
     },
     "typeId": {
       "root": "2.16.840.1.11.113883.1.3",
-      "extension": "@wild"
+      "extension": "POCD_MT000040UV02"
     },
     "templateId": {
       "root": "2.16.840.1.113883.2.9.10.2.10.1.5",
       "extension": "1.2"
     },
     "id": {
-      "root": "@set",
-      "extension": "@set",
-      "assignedAuthorityName": "@set"
+      "root": "2.16.840.1.113883.2.9.2.120.4.4",
+      "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+      "assigningAuthorityName": "Regione Lazio"
     },
     "code": {
       "code": "34105-7",
@@ -28,84 +28,79 @@
       "codeSystemName": "LOINC",
       "displayName": "Lettera di dimissione ospedaliera"
     },
-    "title": "@wild",
+    "title": "Lettera di dimissione ospedaliera",
     "effectiveTime": {
-      "value": "@wild"
+      "value": "20220417100000+0100"
     },
     "confidentialityCode": {
-      "code": "@wild",
+      "code": "N",
       "codeSystem": "2.16.840.1.113883.5.25",
-      "codeSystemName": "HL7 Confidentialy",
+      "codeSystemName": "Confidentialy",
       "displayName": "Normal"
     },
     "languageCode": {
       "code": "it-IT"
     },
     "versionNumber": {
-      "value": "@wild"
+      "value": "1"
     },
     "relatedDocument": {
-      "typeCode": "@wild",
-      "setId": {
-        "root": "@wild",
-        "extension": "@wild",
-        "assignedAuthorityName": "@wild"
-      },
-      "versionNumber": {
-        "value": "@wild"
-      },
+      "typeCode": "RPLC",
       "parentDocument": {
         "id": {
-          "root": "@set",
-          "extension": "@set"
+          "root": "2.16.840.1.113883.2.9.2.120.4.4",
+          "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+          "assigningAuthorityName": "Regione Liguria"
         },
         "setId": {
-          "root": "@wild",
-          "extension": "@wild",
-          "assignedAuthorityName": "@wild"
+          "root": "2.16.840.1.113883.2.9.2.99.4.4",
+          "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+          "assigningAuthorityName": "Regione Lazio"
         },
         "versionNumber": {
-          "value": "@wild"
+          "value": "1"
         }
       }
     },
     "recordTarget": {
       "patientRole": {
         "id": {
-          "root": "@wild",
-          "extension": "@wild",
-          "assigningAuthorityName": "@wild"
+          "root": "2.16.840.1.113883.2.9.4.3.2",
+          "extension": "RSSMRA22A01A399Z",
+          "assigningAuthorityName": "MEF"
         },
         "telecom": [
           {
-            "use": "@wild",
-            "value": "@wild"
+            "use": "HP",
+            "value": "mailto:prova.provax@example.com"
           }
         ],
         "patient": {
           "name": {
-            "family": "@wild",
-            "given": "@wild"
+            "family": "Esempio",
+            "given": "Test"
           },
           "administrativeGenderCode": {
-            "code": "@wild",
+            "code": "M",
             "codeSystem": "2.16.840.1.113883.5.1",
             "codeSystemName": "H7 AdministrativeGender",
-            "displayName": "@wild"
+            "displayName": "Maschio"
           },
           "birthTime": {
-            "value": "@wild"
+            "value": "19800329"
           },
           "birthPlace": {
-            "addr": "@wild",
-            "censusTract": "@wild"
+            "addr": {
+              "city": "Cirie",
+              "censusTract": "001086"
+            }
           }
         }
       }
     },
     "author": {
       "time": {
-        "value": "@wild"
+        "value": "20220417093000+0100"
       },
       "assignedAuthor": {
         "classCode": "ASSIGNED",
@@ -141,7 +136,8 @@
         "representedCustodianOrganization": {
           "id": {
             "root": "2.16.840.1.113883.2.9.4.1.1",
-            "value": "@wild"
+            "extension": "130106",
+            "assigningAuthorityName": "Ministero della Salute"
           },
           "name": {
             "family": "@wild",
@@ -300,30 +296,30 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr168",
-                "codeSystem": "@attr169",
-                "codeSystemName": "@attr170",
-                "displayName ": "@attr171"
+                "code": "@attr167",
+                "codeSystem": "@attr168",
+                "codeSystemName": "@attr169",
+                "displayName": "@attr170"
               },
-              "title": "@value35",
-              "text": "@value36",
+              "title": "@value36",
+              "text": "@value37",
               "entry": {
                 "observation": [
                   {
-                    "classCode": "@attr172",
-                    "moodCode ": "@attr173",
+                    "classCode": "@attr171",
+                    "moodCode ": "@attr172",
                     "code": {
-                      "code": "@attr174",
-                      "codeSystem": "@attr175",
-                      "codeSystemName": "@attr176",
-                      "displayName": "@attr177"
+                      "code": "@attr173",
+                      "codeSystem": "@attr174",
+                      "codeSystemName": "@attr175",
+                      "displayName": "@attr176"
                     },
                     "value": {
-                      "xsi:type": "@attr178",
-                      "code": "@attr179",
-                      "codeSystem": "@attr180",
-                      "codeSystemName": "@attr181",
-                      "displayName": "@attr182"
+                      "xsi:type": "@attr177",
+                      "code": "@attr178",
+                      "codeSystem": "@attr179",
+                      "codeSystemName": "@attr180",
+                      "displayName": "@attr181"
                     }
                   }
                 ]
@@ -335,83 +331,45 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr183",
-                "codeSystem": "@attr184",
-                "codeSystemName": "@attr185",
-                "displayName ": "@attr186"
+                "code": "@attr182",
+                "codeSystem": "@attr183",
+                "codeSystemName": "@attr184",
+                "displayName": "@attr185"
               },
-              "title": "@value37",
-              "text": "@value38",
+              "title": "@value38",
+              "text": "@value39",
               "component": {
                 "section": [
                   {
                     "code": {
-                      "code": "@attr187",
-                      "codeSystem": "@attr188",
-                      "codeSystemName": "@attr189",
-                      "displayName ": "@attr190"
+                      "code": "@attr186",
+                      "codeSystem": "@attr187",
+                      "codeSystemName": "@attr188",
+                      "displayName": "@attr189"
                     },
                     "ID": "Anamnesi",
-                    "title": "@value39",
-                    "text": "@value40",
+                    "title": "@value40",
+                    "text": "@value41",
                     "entry": {
                       "observation": [
                         {
-                          "classCode": "@attr191",
-                          "moodCode": "@attr192",
+                          "classCode": "@attr190",
+                          "moodCode": "@attr191",
                           "code": {
-                            "code": "@attr193",
-                            "codeSystem": "@attr194",
-                            "codeSystemName": "@attr195",
-                            "displayName": "@attr196"
+                            "code": "@attr192",
+                            "codeSystem": "@attr193",
+                            "codeSystemName": "@attr194",
+                            "displayName": "@attr195"
                           },
                           "statusCode": {
-                            "code": "@attr197"
+                            "code": "@attr196"
                           },
                           "effectiveTime": {
                             "low": {
+                              "value": "@attr197"
+                            },
+                            "high": {
                               "value": "@attr198"
-                            },
-                            "high": {
-                              "value": "@attr199"
-                            }
-                          },
-                          "value": "@value41",
-                          "entryRelationship": {
-                            "observation": [
-                              {
-                                "code": {
-                                  "code": "@attr200",
-                                  "codeSystem": "@attr201",
-                                  "codeSystemName": "@attr202",
-                                  "displayName": "@attr203"
-                                },
-                                "value": {
-                                  "code": "@attr204",
-                                  "codeSystem": "@attr205"
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "classCode": "@attr206",
-                          "moodCode": "@attr207",
-                          "code": {
-                            "code": "@attr208",
-                            "codeSystem": "@attr209",
-                            "codeSystemName": "@attr210",
-                            "displayName": "@attr211"
-                          },
-                          "statusCode": {
-                            "code": "@attr212"
-                          },
-                          "effectiveTime": {
-                            "low": {
-                              "value": "@attr213"
-                            },
-                            "high": {
-                              "value": "@attr214"
                             }
                           },
                           "value": "@value42",
@@ -419,41 +377,79 @@
                             "observation": [
                               {
                                 "code": {
-                                  "code": "@attr215",
-                                  "codeSystem": "@attr216",
-                                  "codeSystemName": "@attr217",
-                                  "displayName": "@attr218"
-                                },
-                                "statusCode": {
-                                  "code": "@attr219"
+                                  "code": "@attr199",
+                                  "codeSystem": "@attr200",
+                                  "codeSystemName": "@attr201",
+                                  "displayName": "@attr202"
                                 },
                                 "value": {
-                                  "code": "@attr220",
-                                  "codeSystem": "@attr221"
+                                  "code": "@attr203",
+                                  "codeSystem": "@attr204"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "classCode": "@attr205",
+                          "moodCode": "@attr206",
+                          "code": {
+                            "code": "@attr207",
+                            "codeSystem": "@attr208",
+                            "codeSystemName": "@attr209",
+                            "displayName": "@attr210"
+                          },
+                          "statusCode": {
+                            "code": "@attr211"
+                          },
+                          "effectiveTime": {
+                            "low": {
+                              "value": "@attr212"
+                            },
+                            "high": {
+                              "value": "@attr213"
+                            }
+                          },
+                          "value": "@value43",
+                          "entryRelationship": {
+                            "observation": [
+                              {
+                                "code": {
+                                  "code": "@attr214",
+                                  "codeSystem": "@attr215",
+                                  "codeSystemName": "@attr216",
+                                  "displayName": "@attr217"
+                                },
+                                "statusCode": {
+                                  "code": "@attr218"
+                                },
+                                "value": {
+                                  "code": "@attr219",
+                                  "codeSystem": "@attr220"
                                 },
                                 "text": {
                                   "reference": {
-                                    "value": "@attr222"
+                                    "value": "@attr221"
                                   }
                                 }
                               },
                               {
                                 "code": {
-                                  "code": "@attr223",
-                                  "codeSystem": "@attr224",
-                                  "codeSystemName": "@attr225",
-                                  "displayName": "@attr226"
+                                  "code": "@attr222",
+                                  "codeSystem": "@attr223",
+                                  "codeSystemName": "@attr224",
+                                  "displayName": "@attr225"
                                 },
                                 "statusCode": {
-                                  "code": "@attr227"
+                                  "code": "@attr226"
                                 },
                                 "value": {
-                                  "code": "@attr228",
-                                  "codeSystem": "@attr229"
+                                  "code": "@attr227",
+                                  "codeSystem": "@attr228"
                                 },
                                 "text": {
                                   "reference": {
-                                    "value": "@attr230"
+                                    "value": "@attr229"
                                   }
                                 }
                               }
@@ -465,25 +461,25 @@
                   },
                   {
                     "code": {
-                      "code": "@attr231",
-                      "codeSystem": "@attr232",
-                      "codeSystemName": "@attr233",
-                      "displayName ": "@attr234"
+                      "code": "@attr230",
+                      "codeSystem": "@attr231",
+                      "codeSystemName": "@attr232",
+                      "displayName": "@attr233"
                     },
                     "ID": "Esame_Obiettivo",
-                    "title": "@value43",
-                    "text": "@value44"
+                    "title": "@value44",
+                    "text": "@value45"
                   },
                   {
                     "code": {
-                      "code": "@attr235",
-                      "codeSystem": "@attr236",
-                      "codeSystemName": "@attr237",
-                      "displayName ": "@attr238"
+                      "code": "@attr234",
+                      "codeSystem": "@attr235",
+                      "codeSystemName": "@attr236",
+                      "displayName": "@attr237"
                     },
                     "ID": "Terapia_Farmacologica_Ingresso",
-                    "title": "@value45",
-                    "text": "@value46"
+                    "title": "@value46",
+                    "text": "@value47"
                   }
                 ]
               }
@@ -494,13 +490,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr239",
-                "codeSystem": "@attr240",
-                "codeSystemName": "@attr241",
-                "displayName ": "@attr242"
+                "code": "@attr238",
+                "codeSystem": "@attr239",
+                "codeSystemName": "@attr240",
+                "displayName": "@attr241"
               },
-              "title": "@value47",
-              "text": "@value48"
+              "title": "@value48",
+              "text": "@value49"
             }
           },
           {
@@ -508,31 +504,31 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr243",
-                "codeSystem": "@attr244",
-                "codeSystemName": "@attr245",
-                "displayName ": "@attr246"
+                "code": "@attr242",
+                "codeSystem": "@attr243",
+                "codeSystemName": "@attr244",
+                "displayName": "@attr245"
               },
-              "title": "@value49",
-              "text": "@value50",
+              "title": "@value50",
+              "text": "@value51",
               "entry": {
                 "observation": [
                   {
-                    "classCode": "@attr247",
-                    "moodCode": "@attr248",
+                    "classCode": "@attr246",
+                    "moodCode": "@attr247",
                     "code": {
-                      "code": "@attr249",
-                      "codeSystem": "@attr250",
-                      "codeSystemName": "@attr251",
-                      "displayName": "@attr252"
+                      "code": "@attr248",
+                      "codeSystem": "@attr249",
+                      "codeSystemName": "@attr250",
+                      "displayName": "@attr251"
                     },
                     "effectiveTime": {
-                      "value": "@attr253",
+                      "value": "@attr252",
                       "low": {
-                        "value": "@attr254"
+                        "value": "@attr253"
                       },
                       "high": {
-                        "value": "@attr255"
+                        "value": "@attr254"
                       }
                     }
                   }
@@ -545,13 +541,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr256",
-                "codeSystem": "@attr257",
-                "codeSystemName": "@attr258",
-                "displayName ": "@attr259"
+                "code": "@attr255",
+                "codeSystem": "@attr256",
+                "codeSystemName": "@attr257",
+                "displayName": "@attr258"
               },
-              "title": "@value51",
-              "text": "@value52"
+              "title": "@value52",
+              "text": "@value53"
             }
           },
           {
@@ -559,44 +555,44 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr260",
-                "codeSystem": "@attr261",
-                "codeSystemName": "@attr262",
-                "displayName ": "@attr263"
+                "code": "@attr259",
+                "codeSystem": "@attr260",
+                "codeSystemName": "@attr261",
+                "displayName": "@attr262"
               },
-              "title": "@value53",
-              "text": "@value54",
+              "title": "@value54",
+              "text": "@value55",
               "entry": {
                 "procedure": [
                   {
                     "code": {
-                      "code": "@attr264",
-                      "codeSystem": "@attr265",
-                      "codeSystemName": "@attr266",
-                      "displayName": "@attr267"
+                      "code": "@attr263",
+                      "codeSystem": "@attr264",
+                      "codeSystemName": "@attr265",
+                      "displayName": "@attr266"
                     },
                     "text": {
                       "reference": {
-                        "value": "@attr268"
+                        "value": "@attr267"
                       }
                     },
                     "statusCode": {
-                      "code": "@attr269"
+                      "code": "@attr268"
                     },
                     "effectiveTime": {
-                      "value": "@attr270",
+                      "value": "@attr269",
                       "low": {
-                        "value": "@attr271"
+                        "value": "@attr270"
                       },
                       "high": {
-                        "value": "@attr272"
+                        "value": "@attr271"
                       }
                     },
                     "entryRelationship": {
-                      "typeCode": "@attr273",
+                      "typeCode": "@attr272",
                       "observation": [
                         {
-                          "code": "@value55"
+                          "code": "@value56"
                         }
                       ]
                     }
@@ -610,73 +606,73 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr274",
-                "codeSystem": "@attr275",
-                "codeSystemName": "@attr276",
-                "displayName ": "@attr277"
+                "code": "@attr273",
+                "codeSystem": "@attr274",
+                "codeSystemName": "@attr275",
+                "displayName": "@attr276"
               },
-              "title": "@value56",
-              "text": "@value57",
+              "title": "@value57",
+              "text": "@value58",
               "entry": {
                 "substanceAdministration": [
                   {
-                    "moodCode ": "@attr278",
-                    "classCode": "@attr279",
+                    "moodCode ": "@attr277",
+                    "classCode": "@attr278",
                     "text": {
                       "reference": {
-                        "value": "@attr280"
+                        "value": "@attr279"
                       }
                     },
                     "statusCode": {
-                      "code": "@attr281"
+                      "code": "@attr280"
                     },
                     "effectiveTime": {
                       "period": {
-                        "value": "@attr282",
-                        "unit": "@attr283"
+                        "value": "@attr281",
+                        "unit": "@attr282"
                       }
                     },
                     "routeCode": {
-                      "code": "@attr284"
+                      "code": "@attr283"
                     },
                     "consumable": {
                       "manufacturedProduct": {
                         "manufacturedMaterial": {
                           "code": {
-                            "code": "@attr285",
-                            "codeSystem": "@attr286",
-                            "codeSystemName": "@attr287",
-                            "displayName": "@attr288",
+                            "code": "@attr284",
+                            "codeSystem": "@attr285",
+                            "codeSystemName": "@attr286",
+                            "displayName": "@attr287",
                             "translation": {
-                              "code": "@attr289",
-                              "codeSystem": "@attr290",
-                              "codeSystemName": "@attr291",
-                              "displayName": "@attr292"
+                              "code": "@attr288",
+                              "codeSystem": "@attr289",
+                              "codeSystemName": "@attr290",
+                              "displayName": "@attr291"
                             }
                           }
                         }
                       }
                     },
                     "performer": {
-                      "time": "@value58",
+                      "time": "@value59",
                       "assignedEntity": {
-                        "id": "@value59",
+                        "id": "@value60",
                         "assignedPerson": {
                           "name": {
-                            "family": "@value60",
-                            "given": "@value61"
+                            "family": "@value61",
+                            "given": "@value62"
                           }
                         }
                       }
                     },
                     "participant": {
-                      "time": "@value62",
+                      "time": "@value63",
                       "participantRole": {
-                        "id": "@value63",
+                        "id": "@value64",
                         "playingEntity": {
                           "name": {
-                            "family": "@value64",
-                            "given": "@value65"
+                            "family": "@value65",
+                            "given": "@value66"
                           }
                         }
                       }
@@ -685,14 +681,12 @@
                       "observation": [
                         {
                           "code": {
-                            "code": "@attr293",
-                            "codeSystem": "@attr294",
-                            "codeSystemName": "@attr295",
-                            "displayName": "@attr296"
+                            "code": "@attr292",
+                            "codeSystem": "@attr293",
+                            "codeSystemName": "@attr294",
+                            "displayName": "@attr295"
                           },
-                          "value": {
-                            "value": "@attr297"
-                          }
+                          "value": "@value67"
                         }
                       ]
                     }
@@ -706,30 +700,30 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr298",
-                "codeSystem": "@attr299",
-                "codeSystemName": "@attr300",
-                "displayName ": "@attr301"
+                "code": "@attr296",
+                "codeSystem": "@attr297",
+                "codeSystemName": "@attr298",
+                "displayName": "@attr299"
               },
-              "title": "@value66",
-              "text": "@value67",
+              "title": "@value68",
+              "text": "@value69",
               "entry": {
                 "observation": [
                   {
-                    "moodCode ": "@attr302",
-                    "classCode": "@attr303",
+                    "moodCode ": "@attr300",
+                    "classCode": "@attr301",
                     "code": {
-                      "code": "@attr304",
-                      "codeSystem": "@attr305",
-                      "codeSystemName": "@attr306",
-                      "displayName": "@attr307"
+                      "code": "@attr302",
+                      "codeSystem": "@attr303",
+                      "codeSystemName": "@attr304",
+                      "displayName": "@attr305"
                     },
                     "value": {
-                      "code": "@attr308",
-                      "codeSystem": "@attr309",
-                      "codeSystemName": "@attr310",
-                      "displayName": "@attr311",
-                      "translation": "@value68"
+                      "code": "@attr306",
+                      "codeSystem": "@attr307",
+                      "codeSystemName": "@attr308",
+                      "displayName": "@attr309",
+                      "translation": "@value70"
                     }
                   }
                 ]
@@ -741,84 +735,84 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr312",
-                "codeSystem": "@attr313",
-                "codeSystemName": "@attr314",
-                "displayName ": "@attr315"
+                "code": "@attr310",
+                "codeSystem": "@attr311",
+                "codeSystemName": "@attr312",
+                "displayName": "@attr313"
               },
-              "title": "@value69",
-              "text": "@value70",
+              "title": "@value71",
+              "text": "@value72",
               "entry": {
                 "substanceAdministration": [
                   {
-                    "moodCode ": "@attr316",
-                    "classCode": "@attr317",
+                    "moodCode ": "@attr314",
+                    "classCode": "@attr315",
                     "text": {
                       "reference": {
-                        "value": "@attr318"
+                        "value": "@attr316"
                       }
                     },
                     "statusCode": {
-                      "code": "@attr319"
+                      "code": "@attr317"
                     },
                     "effectiveTime": {
                       "low": {
-                        "value": "@attr320"
+                        "value": "@attr318"
                       },
                       "high": {
-                        "value": "@attr321"
+                        "value": "@attr319"
                       }
                     },
                     "routeCode": {
-                      "code": "@attr322"
+                      "code": "@attr320"
                     },
                     "approachSiteCode": {
-                      "code": "@attr323"
+                      "code": "@attr321"
                     },
                     "doseQuantity": {
                       "low": {
-                        "value": "@attr324",
-                        "unit": "@attr325"
+                        "value": "@attr322",
+                        "unit": "@attr323"
                       },
                       "high": {
-                        "value": "@attr326",
-                        "unit": "@attr327"
+                        "value": "@attr324",
+                        "unit": "@attr325"
                       }
                     },
                     "rateQuantity": {
                       "low": {
-                        "value": "@attr328"
+                        "value": "@attr326"
                       },
                       "high": {
-                        "value": "@attr329"
+                        "value": "@attr327"
                       }
                     },
                     "consumable": {
                       "manufacturedProduct": {
                         "manufacturedMaterial": {
                           "code": {
-                            "code": "@attr330",
-                            "codeSystem": "@attr331",
-                            "codeSystemName": "@attr332",
-                            "displayName": "@attr333",
+                            "code": "@attr328",
+                            "codeSystem": "@attr329",
+                            "codeSystemName": "@attr330",
+                            "displayName": "@attr331",
                             "translation": {
-                              "code": "@attr334",
-                              "codeSystem": "@attr335",
-                              "codeSystemName": "@attr336",
-                              "displayName": "@attr337"
+                              "code": "@attr332",
+                              "codeSystem": "@attr333",
+                              "codeSystemName": "@attr334",
+                              "displayName": "@attr335"
                             }
                           }
                         }
                       }
                     },
                     "participant": {
-                      "time": "@value71",
+                      "time": "@value73",
                       "participantRole": {
-                        "id": "@value72",
+                        "id": "@value74",
                         "playingEntity": {
                           "name": {
-                            "family": "@value73",
-                            "given": "@value74"
+                            "family": "@value75",
+                            "given": "@value76"
                           }
                         }
                       }
@@ -827,33 +821,29 @@
                       "observation": [
                         {
                           "code": {
-                            "code": "@attr338",
-                            "codeSystem": "@attr339",
-                            "codeSystemName": "@attr340",
-                            "displayName": "@attr341"
+                            "code": "@attr336",
+                            "codeSystem": "@attr337",
+                            "codeSystemName": "@attr338",
+                            "displayName": "@attr339"
                           },
-                          "value": {
-                            "value": "@attr342"
-                          }
+                          "value": "@value77"
                         },
                         {
                           "code": {
-                            "code": "@attr343",
-                            "codeSystem": "@attr344",
-                            "codeSystemName": "@attr345",
-                            "displayName": "@attr346"
+                            "code": "@attr340",
+                            "codeSystem": "@attr341",
+                            "codeSystemName": "@attr342",
+                            "displayName": "@attr343"
                           },
-                          "value": {
-                            "value": "@attr347"
-                          }
+                          "value": "@value78"
                         }
                       ],
                       "supply": [
                         {
-                          "classCode": "@attr348",
-                          "moodCode": "@attr349",
+                          "classCode": "@attr344",
+                          "moodCode": "@attr345",
                           "quantity": {
-                            "value": "@attr350"
+                            "value": "@attr346"
                           }
                         }
                       ]
@@ -868,13 +858,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr351",
-                "codeSystem": "@attr352",
-                "codeSystemName": "@attr353",
-                "displayName ": "@attr354"
+                "code": "@attr347",
+                "codeSystem": "@attr348",
+                "codeSystemName": "@attr349",
+                "displayName": "@attr350"
               },
-              "title": "@value75",
-              "text": "@value76"
+              "title": "@value79",
+              "text": "@value80"
             }
           }
         ]

@@ -11,16 +11,16 @@
     },
     "typeId": {
       "root": "2.16.840.1.11.113883.1.3",
-      "extension": "@wild"
+      "extension": "POCD_MT000040UV02"
     },
     "templateId": {
       "root": "2.16.840.1.113883.2.9.10.2.10.1.5",
       "extension": "1.2"
     },
     "id": {
-      "root": "@set",
-      "extension": "@set",
-      "assignedAuthorityName": "@set"
+      "root": "2.16.840.1.113883.2.9.2.120.4.4",
+      "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+      "assigningAuthorityName": "Regione Lazio"
     },
     "code": {
       "code": "34105-7",
@@ -28,84 +28,79 @@
       "codeSystemName": "LOINC",
       "displayName": "Lettera di dimissione ospedaliera"
     },
-    "title": "@wild",
+    "title": "Lettera di dimissione ospedaliera",
     "effectiveTime": {
-      "value": "@wild"
+      "value": "20220417100000+0100"
     },
     "confidentialityCode": {
-      "code": "@wild",
+      "code": "N",
       "codeSystem": "2.16.840.1.113883.5.25",
-      "codeSystemName": "HL7 Confidentialy",
+      "codeSystemName": "Confidentialy",
       "displayName": "Normal"
     },
     "languageCode": {
       "code": "it-IT"
     },
     "versionNumber": {
-      "value": "@wild"
+      "value": "1"
     },
     "relatedDocument": {
-      "typeCode": "@wild",
-      "setId": {
-        "root": "@wild",
-        "extension": "@wild",
-        "assignedAuthorityName": "@wild"
-      },
-      "versionNumber": {
-        "value": "@wild"
-      },
+      "typeCode": "RPLC",
       "parentDocument": {
         "id": {
-          "root": "@set",
-          "extension": "@set"
+          "root": "2.16.840.1.113883.2.9.2.120.4.4",
+          "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+          "assigningAuthorityName": "Regione Liguria"
         },
         "setId": {
-          "root": "@wild",
-          "extension": "@wild",
-          "assignedAuthorityName": "@wild"
+          "root": "2.16.840.1.113883.2.9.2.99.4.4",
+          "extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
+          "assigningAuthorityName": "Regione Lazio"
         },
         "versionNumber": {
-          "value": "@wild"
+          "value": "1"
         }
       }
     },
     "recordTarget": {
       "patientRole": {
         "id": {
-          "root": "@wild",
-          "extension": "@wild",
-          "assigningAuthorityName": "@wild"
+          "root": "2.16.840.1.113883.2.9.4.3.2",
+          "extension": "RSSMRA22A01A399Z",
+          "assigningAuthorityName": "MEF"
         },
         "telecom": [
           {
-            "use": "@wild",
-            "value": "@wild"
+            "use": "HP",
+            "value": "mailto:prova.provax@example.com"
           }
         ],
         "patient": {
           "name": {
-            "family": "@wild",
-            "given": "@wild"
+            "family": "Esempio",
+            "given": "Test"
           },
           "administrativeGenderCode": {
-            "code": "@wild",
+            "code": "M",
             "codeSystem": "2.16.840.1.113883.5.1",
             "codeSystemName": "H7 AdministrativeGender",
-            "displayName": "@wild"
+            "displayName": "Maschio"
           },
           "birthTime": {
-            "value": "@wild"
+            "value": "19800329"
           },
           "birthPlace": {
-            "addr": "@wild",
-            "censusTract": "@wild"
+            "addr": {
+              "city": "Cirie",
+              "censusTract": "001086"
+            }
           }
         }
       }
     },
     "author": {
       "time": {
-        "value": "@wild"
+        "value": "20220417093000+0100"
       },
       "assignedAuthor": {
         "classCode": "ASSIGNED",
@@ -141,7 +136,8 @@
         "representedCustodianOrganization": {
           "id": {
             "root": "2.16.840.1.113883.2.9.4.1.1",
-            "value": "@wild"
+            "extension": "130106",
+            "assigningAuthorityName": "Ministero della Salute"
           },
           "name": {
             "family": "@wild",
@@ -607,25 +603,25 @@
                       }
                     },
                     "administrationUnitCode": {
-                      "code": "@value28"
+                      "code": "@attr142"
                     },
                     "consumable": {
                       "manufacturedProduct": {
                         "manufacturedMaterial": {
                           "code": {
-                            "code": "@attr142",
-                            "codeSystem": "@attr143",
-                            "codeSystemName": "@attr144",
-                            "displayName": "@attr145",
+                            "code": "@attr143",
+                            "codeSystem": "@attr144",
+                            "codeSystemName": "@attr145",
+                            "displayName": "@attr146",
                             "translation": {
-                              "code": "@attr146",
-                              "codeSystem": "@attr147",
-                              "codeSystemName": "@attr148",
-                              "displayName": "@attr149"
+                              "code": "@attr147",
+                              "codeSystem": "@attr148",
+                              "codeSystemName": "@attr149",
+                              "displayName": "@attr150"
                             },
                             "originalText": {
                               "reference": {
-                                "value": "@attr150"
+                                "value": "@attr151"
                               }
                             }
                           }
@@ -633,13 +629,13 @@
                       }
                     },
                     "participant": {
-                      "time": "@value29",
+                      "time": "@value28",
                       "participantRole": {
-                        "id": "@value30",
+                        "id": "@value29",
                         "playingEntity": {
                           "name": {
-                            "family": "@value31",
-                            "given": "@value32"
+                            "family": "@value30",
+                            "given": "@value31"
                           }
                         }
                       }
@@ -648,14 +644,12 @@
                       "observation": [
                         {
                           "code": {
-                            "code": "@attr151",
-                            "codeSystem": "@attr152",
-                            "codeSystemName": "@attr153",
-                            "displayName": "@attr154"
+                            "code": "@attr152",
+                            "codeSystem": "@attr153",
+                            "codeSystemName": "@attr154",
+                            "displayName": "@attr155"
                           },
-                          "value": {
-                            "value": "@attr155"
-                          }
+                          "value": "@value32"
                         },
                         {
                           "code": {
@@ -664,17 +658,15 @@
                             "codeSystemName": "@attr158",
                             "displayName": "@attr159"
                           },
-                          "value": {
-                            "value": "@attr160"
-                          }
+                          "value": "@value33"
                         }
                       ],
                       "supply": [
                         {
-                          "classCode": "@attr161",
-                          "moodCode": "@attr162",
+                          "classCode": "@attr160",
+                          "moodCode": "@attr161",
                           "quantity": {
-                            "value": "@attr163"
+                            "value": "@attr162"
                           }
                         }
                       ]
@@ -689,13 +681,13 @@
             "typeCode": "COMP",
             "section": {
               "code": {
-                "code": "@attr164",
-                "codeSystem": "@attr165",
-                "codeSystemName": "@attr166",
-                "displayName": "@attr167"
+                "code": "@attr163",
+                "codeSystem": "@attr164",
+                "codeSystemName": "@attr165",
+                "displayName": "@attr166"
               },
-              "title": "@value33",
-              "text": "@value34"
+              "title": "@value34",
+              "text": "@value35"
             }
           }
         ]
