@@ -18,19 +18,39 @@ class Log(models.Model):
         else:
             return "[" + self.time + "] " + self.user + " - " + self.status + " [" + self.error_code + "]"
 
+class ERROR():
+    def __init__(self, error_text:str):
+        self._NAME = "ERROR BLOCK"
+        self._TEXT = error_text
+
 class ID():
-    def __init__(self, name:str, json_data, value:str = ""):
+    def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
-        self._TEXT = value
+        self._TEXT = ""
 
-        if isinstance(json_data, str):
+        if type(json_data) is str:
             self._TEXT = json_data
-        else:
-            self.assigningAuthorityName = json_data.get("assigningAuthorityName")
-            self.assignedAuthorityName = json_data.get("assignedAuthorityName")
-            self.extension = json_data.get("extension")
-            self.root = json_data.get("root")
+            return
+        try:
+            if name == "setId":
+                self.root = json_data["root"]
+                self.extension = json_data["extension"]
+                self.assigningAuthorityName = json_data["assigningAuthorityName"]
+            elif name == "typeId":
+                self.root = json_data["root"]
+                self.extension = json_data["extension"]
+            elif name == "templateId":
+                self.root = json_data["root"]
+                self.extension = json_data["extension"]
+            elif name == "id":
+                self.root = json_data["root"]
+                self.extension = json_data["extension"]
+                self.assigningAuthorityName = json_data["assigningAuthorityName"]
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
+
 class CODE():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
@@ -130,11 +150,20 @@ class LOCATION():
         self._NAME = name
         self._TEXT = ""
 
-        self.addr = DATA("addr", json_data) if json_data.get("addr") is not None else None
+        self.addr = ADDR("addr", json_data) if json_data.get("addr") is not None else None
         self.censusTract = DATA("censusTract", json_data) if json_data.get("censusTract") is not None else None
         self.name = DATA("name", json_data) if json_data.get("name") is not None else None
 
         self.healthCareFacility = HEALTHCAREFACILITY("healthCareFacility", json_data) if json_data.get("healthCareFacility") is not None else None
+class ADDR():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        self._01city = DATA("city", json_data) if json_data.get("city") is not None else None
+        self._01censusTract = DATA("censusTract", json_data) if json_data.get("censusTract") is not None else None
+
 class PATIENT():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
@@ -275,7 +304,7 @@ class OBSERVATION():
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
         self._NAME = name
         self._TEXT = ""
-        print(json_data)
+        # print(json_data)
         self.moodCode = json_data.get("moodCode")
         self.classCode = json_data.get("classCode")
         self._01code = CODE("code", json_data)
