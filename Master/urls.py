@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+# from rest_framework.authtoken import views
 
 # SERVICES
 from LDO import urls as ldo
@@ -22,4 +23,5 @@ from LDO import urls as ldo
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('LDO/', include(ldo)),
+    # path('api-token-auth/',views.obtain_auth_token,name='api-token-auth')
 ]

@@ -1,2 +1,0 @@
-# @name Basic Request
-GET http://{{host}}:{{port}}/LDO/compose/{{test_id}}
