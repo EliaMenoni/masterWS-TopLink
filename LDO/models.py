@@ -337,15 +337,34 @@ class LOCATION:
 
 
 class ADDR:
-    """  """
+    """ This class is converted to XML. Used to structure blocks with the same structure as ADDR """
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self._01city = DATA("city", json_data) if json_data.get("city") is not None else None
-        self._01censusTract = DATA("censusTract", json_data) if json_data.get("censusTract") is not None else None
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "addr":
+                self.use = json_data["use"] if "use" in json_data else None
+                self.city = DATA("city", json_data)
+                self.censusTract = DATA("censusTract", json_data)
+                self.state = DATA("state", json_data) if "state" in json_data else None
+                self.country = DATA("country", json_data) if "country" in json_data else None
+                self.county = DATA("county", json_data) if "county" in json_data else None
+                self.postalCode = DATA("postalCode", json_data) if "postalCode" in json_data else None
+                self.streetAddressLine = DATA("streetAddressLine", json_data) if "streetAddressLine" in json_data else None
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class PATIENT:
