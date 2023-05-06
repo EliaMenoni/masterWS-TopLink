@@ -147,26 +147,24 @@ class DOCUMENT():
         self._NAME = name
         self._TEXT = ""
 
-        self.id = ID("id", json_data) if json_data.get("id") is not None else None
-
-        self.typeCode = json_data.get("typeCode")
-        self.setId = ID("setId", json_data) if json_data.get("setId") is not None else None
-        self.versionNumber = DATA("versionNumber", json_data) if json_data.get("versionNumber") is not None else None
-        self.parentDocument = DOCUMENT("parentDocument", json_data) if json_data.get("parentDocument") is not None else None
-
         # SOLO PER TEST
-        # if type(json_data) is str:
-        #     self._TEXT = json_data
-        #     return
-        #
-        # try:
-        #     if name == "setId":
-        #
-        #     else:
-        #         print(f"Block {name} not found for class {self.__class__.__name__}")
-        # except:
-        #     print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-        #     self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "relatedDocument":
+                self.typeCode = json_data["typeCode"]
+                self._01_parentDocument = DOCUMENT("parentDocument", json_data)
+            elif name == "parentDocument":
+                self.id = ID("id", json_data)
+                self.setId = ID("setId", json_data)
+                self.versionNumber = DATA("versionNumber", json_data)
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
 
 class TELECOM():
     def __init__(self, name:str, json_data, index:int = None):
