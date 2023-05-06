@@ -368,17 +368,30 @@ class ADDR:
 
 
 class PATIENT:
-    """  """
+    """ This class is converted to XML. Used to structure blocks with the same structure as PATIENT """
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self.name = NAME("name", json_data)
-        self.administrativeGenderCode = CODE("administrativeGenderCode", json_data)
-        self.birthTime = DATA("birthTime", json_data)
-        self.birthPlace = LOCATION("birthPlace", json_data)
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "patient":
+                self.name = NAME("name", json_data)
+                self.administrativeGenderCode = CODE("administrativeGenderCode", json_data)
+                self.birthTime = DATA("birthTime", json_data)
+                self.birthPlace = LOCATION("birthPlace", json_data)
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class ROLE:
