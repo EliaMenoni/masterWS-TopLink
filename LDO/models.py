@@ -29,9 +29,11 @@ class ID():
         self._NAME = name
         self._TEXT = ""
 
+        # SOLO PER TEST
         if type(json_data) is str:
             self._TEXT = json_data
             return
+
         try:
             if name == "setId":
                 self.root = json_data["root"]
