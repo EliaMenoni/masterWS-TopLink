@@ -281,46 +281,59 @@ class ORGANIZATION:
             self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
-# class ORGANIZATION:
-#     """  """
-#
-#     def __init__(self, name: str, json_data):
-#         json_data = json_data.get(name)
-#         self._NAME = name
-#         self._TEXT = ""
-#
-#         self.id = ID("id", json_data)
-#         self.name = DATA("name", json_data)
-#         self.asOrganizationPartOf = ORGANIZATION("asOrganizationPartOf", json_data)
-#         self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
-
-
 class HEALTHCAREFACILITY:
-    """  """
+    """ This class is converted to XML. Used to structure blocks with the same structure as HEALTHCAREFACILITY """
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self.id = ID("id", json_data)
-        self.location = LOCATION("location", json_data)
-        self.serviceProviderOrganization = ORGANIZATION("serviceProviderOrganization", json_data)
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "healthCareFacility":
+                self.id = ID("id", json_data)
+                self.location = LOCATION("location", json_data)
+                self.serviceProviderOrganization = ORGANIZATION("serviceProviderOrganization", json_data)
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class LOCATION:
-    """  """
+    """ This class is converted to XML. Used to structure blocks with the same structure as HEALTHCAREFACILITY """
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self.addr = ADDR("addr", json_data) if json_data.get("addr") is not None else None
-        self.censusTract = DATA("censusTract", json_data) if json_data.get("censusTract") is not None else None
-        self.name = DATA("name", json_data) if json_data.get("name") is not None else None
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
 
-        self.healthCareFacility = HEALTHCAREFACILITY("healthCareFacility", json_data) if json_data.get("healthCareFacility") is not None else None
+        try:
+            if name == "location":
+                self.name = DATA("name", json_data) if "name" in json_data else None
+                self.censusTract = DATA("censusTract", json_data) if "censusTract" in json_data else None
+                self.addr = ADDR("addr", json_data) if "addr" in json_data else None
+                self.healthCareFacility = HEALTHCAREFACILITY("healthCareFacility", json_data) if "healthCareFacility" in json_data else None
+            elif name == "birthPlace":
+                self.addr = ADDR("addr", json_data) if "addr" in json_data else None
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class ADDR:
