@@ -1,8 +1,10 @@
 from django.db import models
 from . import tools
-from dict2xml import dict2xml
+
+
 class Log(models.Model):
     """ LOG """
+
     ID = models.AutoField(name="ID", primary_key=True)
     time = models.DateTimeField(name="Timestamp", auto_now=True)
     user = models.CharField(name="User", max_length=50)
@@ -17,6 +19,7 @@ class Log(models.Model):
             return "[" + self.time + "] " + self.user + " - " + self.status
         else:
             return "[" + self.time + "] " + self.user + " - " + self.status + " [" + self.error_code + "]"
+
 
 class ERROR():
     def __init__(self, error_text:str):
@@ -172,8 +175,20 @@ class TELECOM():
         self._NAME = name
         self._TEXT = ""
 
-        self.use = json_data.get("use")
-        self.value = json_data.get("value")
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "telecom":
+                self.use = json_data["use"]
+                self.value = json_data["value"]
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
 class NAME():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
