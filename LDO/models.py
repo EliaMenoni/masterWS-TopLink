@@ -53,7 +53,7 @@ class ID():
                 print(f"Block {name} not found for class {self.__class__.__name__}")
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
+            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
 
 class CODE():
     def __init__(self, name:str, json_data):
@@ -99,43 +99,62 @@ class CODE():
                 self.code = json_data["code"] # COMPLETED
             elif name == "languageCode":
                 self.code = json_data["code"]
+            elif name == "signatureCode":
+                self.code = json_data["code"]
             elif name == "confidentialityCode":
                 self.code = json_data["code"]
                 self.codeSystem = json_data["codeSystem"]
                 self.codeSystemName = json_data["codeSystemName"]
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
-            # self.displayName = json_data.get("displayName")
-            # self.codeSystemName = json_data.get("codeSystemName")
-            # self.codeSystem = json_data.get("codeSystem")
-            # self.code = json_data.get("code")
-            # self.xsit = json_data.get("xsi:type")
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
-            # if json_data.get("translation") is not None and isinstance(json_data.get("translation"), dict):
-            #     self._01translation = CODE("translation", json_data) if json_data.get("translation") is not None else None
-            # elif json_data.get("translation") is not None and isinstance(json_data.get("translation"), str):
-            #     self._01translation = DATA("translation", "????")
+            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
 
             # self._02originalText = TEXT("originalText", json_data) if json_data.get("originalText") is not None else None
-class DATA():
-    def __init__(self, name:str, data):
-        self._NAME = name
-        if isinstance(data, str):
-            self._TEXT = data
-        else:
-            data = data.get(name)
-            self._TEXT = ""
 
-            if not isinstance(data, dict):
-                self._TEXT = data
-            elif "value" in data:
-                self._TEXT = ""
-                self.value = data.get("value")
-            elif "code" in data:
-                self._TEXT = ""
-                self.code = data.get("code")
+class DATA():
+    def __init__(self, name:str, json_data):
+        json_data = json_data.get(name)
+        self._NAME = name
+        self._TEXT = ""
+
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "versionNumber":
+                self.value = json_data["value"]
+            elif name == "effectiveTime":
+                self.value = json_data["value"]
+            elif name == "birthTime":
+                self.value = json_data["value"]
+            elif name == "time":
+                self.value = json_data["value"]
+            elif name == "low" or name == "high":
+                self.value = json_data["value"]
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
+        # if isinstance(data, str):
+        #     self._TEXT = data
+        # else:
+        #     data = data.get(name)
+        #     self._TEXT = ""
+        #
+        #     if not isinstance(data, dict):
+        #         self._TEXT = data
+        #     elif "value" in data:
+        #         self._TEXT = ""
+        #         self.value = data.get("value")
+        #     elif "code" in data:
+        #         self._TEXT = ""
+        #         self.code = data.get("code")
+
 class DOCUMENT():
     def __init__(self, name:str, json_data):
         json_data = json_data.get(name)
@@ -148,6 +167,21 @@ class DOCUMENT():
         self.setId = ID("setId", json_data) if json_data.get("setId") is not None else None
         self.versionNumber = DATA("versionNumber", json_data) if json_data.get("versionNumber") is not None else None
         self.parentDocument = DOCUMENT("parentDocument", json_data) if json_data.get("parentDocument") is not None else None
+
+        # SOLO PER TEST
+        # if type(json_data) is str:
+        #     self._TEXT = json_data
+        #     return
+        #
+        # try:
+        #     if name == "setId":
+        #
+        #     else:
+        #         print(f"Block {name} not found for class {self.__class__.__name__}")
+        # except:
+        #     print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+        #     self.ERROR = ERROR(f"ERROR generating block {name}. Input Data:\n{str(json_data)}")
+
 class TELECOM():
     def __init__(self, name:str, json_data, index:int = None):
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
@@ -295,7 +329,7 @@ class AUTHENTICATOR():
         self._TEXT = ""
 
         self.time = DATA("time", json_data)
-        self.signatureCode = DATA("signatureCode", json_data)
+        self.signatureCode = CODE("signatureCode", json_data)
         self.assignedEntity = ASSIGNED("assignedEntity", json_data)
         self.representedOrganization = REPRESENTED("representedOrganization", json_data)
 class TIME():
@@ -359,7 +393,7 @@ class OBSERVATION():
         self._04effectiveTime = TIME("effectiveTime", json_data) if json_data.get("effectiveTime") is not None else None
         if json_data.get("value") is not None:
             if "value" in json_data.get("value"):
-                self._05value = DATA("value", json_data)
+                self._05value = CODE("value", json_data)
             else:
                 self._05value = CODE("value", json_data)
         self._06entryRelationship = ENTRY("entryRelationship", json_data) if json_data.get("entryRelationship") is not None else None
