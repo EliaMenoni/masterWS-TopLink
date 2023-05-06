@@ -1,5 +1,0 @@
-# @name Basic Request
-POST http://{{host}}:{{port}}/LDO/compose/
-Content-Type: application/json
-
-< ../test_generator/OK/Test2/test.json

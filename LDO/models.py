@@ -24,9 +24,21 @@ class Log(models.Model):
 class ERROR:
     """ This class is converted to a ERROR block inside the generated XML to make error location easy """
 
-    def __init__(self, error_text: str):
+    def __init__(self, type: str, error_text: str):
         self._NAME = "ERROR"
         self._TEXT = error_text
+
+        self.type = type
+
+    @staticmethod
+    def generate_class_definition_error(name: str, json_data):
+        print(f"DEFINITION error for block {name}. Replacing with DEFINITION ERROR BLOCK inside XML")
+        return ERROR("DEFINITION", f"\nERROR inside block {name} structure. Error generated from:\n{str(json_data)}")
+
+    @staticmethod
+    def generate_class_structure_error(name: str, class_name: str):
+        print(f"FOUND error for block {name}. Replacing with FOUND ERROR BLOCK inside XML")
+        return ERROR("FOUND", f"\nERROR generating block {name}.\nType not found for class {class_name}")
 
 
 class ID:
@@ -59,9 +71,10 @@ class ID:
                 self.assigningAuthorityName = json_data["assigningAuthorityName"]
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class CODE:
@@ -118,9 +131,10 @@ class CODE:
                 self.codeSystemName = json_data["codeSystemName"]
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
             # self._02originalText = TEXT("originalText", json_data) if json_data.get("originalText") is not None else None
 
@@ -151,9 +165,10 @@ class DATA:
                 self.value = json_data["value"]
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class DOCUMENT:
@@ -179,9 +194,10 @@ class DOCUMENT:
                 self.versionNumber = DATA("versionNumber", json_data)
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class TELECOM:
@@ -203,9 +219,10 @@ class TELECOM:
                 self.value = json_data["value"]
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
-            self.ERROR = ERROR(f"\nERROR generating block {name}. Input Data:\n{str(json_data)}")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
 class NAME:

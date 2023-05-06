@@ -269,7 +269,8 @@
 							"name": "@wild",
 							"telecom": [
 								{
-									"value": "@wild:@wild"
+									"use": "HP",
+									"value": "@wild"
 								}
 							],
 							"asOrganizationPartOf": {
