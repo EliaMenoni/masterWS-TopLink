@@ -136,6 +136,7 @@ class CODE:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
             self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
+            # DA AGGIUNGERE A TEXT
             # self._02originalText = TEXT("originalText", json_data) if json_data.get("originalText") is not None else None
 
 
@@ -226,41 +227,72 @@ class TELECOM:
 
 
 class NAME:
-    """  """
+    """ This class is converted to XML. Used to structure blocks with the same structure as NAME """
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self.family = DATA("family", json_data)
-        self.given = DATA("given", json_data)
-        self.prefix = DATA("prefix", json_data) if json_data.get("prefix") is not None else None
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "name":
+                self.family = DATA("family", json_data)
+                self.given = DATA("given", json_data)
+                self.prefix = DATA("prefix", json_data) if "prefix" in json_data else None
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
-class ORGANIZATIONPART:
-    """  """
+class ORGANIZATION:
+    """ This class is converted to XML. Used to structure blocks with the same structure as ORGANIZATION """
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
         self._TEXT = ""
 
-        self.id = ID("id", json_data)
+        # SOLO PER TEST
+        if type(json_data) is str:
+            self._TEXT = json_data
+            return
+
+        try:
+            if name == "asOrganizationPartOf":
+                self.id = ID("id", json_data)
+            elif name == "serviceProviderOrganization":
+                self.id = ID("id", json_data)
+                self.name = DATA("name", json_data)
+                self.asOrganizationPartOf = ORGANIZATION("asOrganizationPartOf", json_data)
+                self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
+            else:
+                print(f"Block {name} not found for class {self.__class__.__name__}")
+                self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
+        except:
+            print(f"Error generating {name} block. Replacing with ERROR BLOCK")
+            self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
 
-class SERVICEPROVIDER:
-    """  """
-
-    def __init__(self, name: str, json_data):
-        json_data = json_data.get(name)
-        self._NAME = name
-        self._TEXT = ""
-
-        self.id = ID("id", json_data)
-        self.name = DATA("name", json_data)
-        self.asOrganizationPartOf = ORGANIZATIONPART("asOrganizationPartOf", json_data)
-        self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
+# class ORGANIZATION:
+#     """  """
+#
+#     def __init__(self, name: str, json_data):
+#         json_data = json_data.get(name)
+#         self._NAME = name
+#         self._TEXT = ""
+#
+#         self.id = ID("id", json_data)
+#         self.name = DATA("name", json_data)
+#         self.asOrganizationPartOf = ORGANIZATION("asOrganizationPartOf", json_data)
+#         self.telecom = [TELECOM("telecom", json_data, i) for i, _ in enumerate(json_data.get("telecom"))]
 
 
 class HEALTHCAREFACILITY:
@@ -273,7 +305,7 @@ class HEALTHCAREFACILITY:
 
         self.id = ID("id", json_data)
         self.location = LOCATION("location", json_data)
-        self.serviceProviderOrganization = SERVICEPROVIDER("serviceProviderOrganization", json_data)
+        self.serviceProviderOrganization = ORGANIZATION("serviceProviderOrganization", json_data)
 
 
 class LOCATION:
