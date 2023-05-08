@@ -7,3 +7,15 @@ __pycache__/
 /LDO/_test/HTTP_REQUESTS/RESPONSE/
 /Makefile
 /make.bat
+/_static/
+/Documentation/
+/Documentation/_build/
+/Documentation/_static/
+/Documentation/_templates/
+/Documentation/conf.py
+/Documentation/index.rst
+/Documentation/LDO.rst
+/Documentation/LDO.Test.rst
+/Documentation/LDO.Test.test_generator.rst
+/Documentation/make.bat
+/Documentation/Makefile
