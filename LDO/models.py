@@ -22,7 +22,10 @@ class Log(models.Model):
 
 
 class ERROR:
-    """ This class is converted to a ERROR block inside the generated XML to make error location easy """
+    """
+    :model: 'ERRORE'
+    This class is converted to a ERROR block inside the generated XML to make error location easy
+    """
 
     def __init__(self, type: str, error_text: str):
         self._NAME = "ERROR"
