@@ -37,6 +37,8 @@ class ERROR:
 
         ..  code-block:: xml
             :caption: Error block preview
+            :linenos:
+
 
             <ERROR type="DEFINITION">
                 <!-- Error Text -->
@@ -57,6 +59,8 @@ class ERROR:
 
         ..  code-block:: xml
             :caption: Error block preview
+            :linenos:
+
 
             <ERROR type="STRUCTURE">
                 <!-- Error Text -->
@@ -103,11 +107,12 @@ class ID:
     def _generate_setid(self, json_data):
         """ Populate Class ID based on setId structure
 
-        STRUCTURE
-        ~~~~~~~~~
-        * **root** - Required
-        * **extension** - Required
-        * **assigningAuthorityName** - Required
+        ..  admonition:: XML Structure
+            :class: tip
+
+            ..  code-block:: xml
+
+                <setId root="REQUIRED" extension="REQUIRED" assigningAuthorityName="REQUIRED">
 
         :param json_data: Json Data refering to Block content
         """
@@ -118,10 +123,12 @@ class ID:
     def _generate_typeid(self, json_data):
         """ Populate Class ID based on typeId structure
 
-        STRUCTURE
-        ~~~~~~~~~
-        * **root** - Required
-        * **extension** - Required
+        ..  admonition:: XML Structure
+            :class: tip
+
+            ..  code-block:: xml
+
+                <typeId root="REQUIRED" extension="REQUIRED">
 
         :param json_data: Json Data refering to Block content
         """
@@ -131,10 +138,12 @@ class ID:
     def _generate_templateid(self, json_data):
         """ Populate Class ID based on templateId structure
 
-        STRUCTURE
-        ~~~~~~~~~
-        * **root** - Required
-        * **extension** - Required
+        ..  admonition:: XML Structure
+            :class: tip
+
+            ..  code-block:: xml
+
+                <setId root="REQUIRED" extension="REQUIRED">
 
         :param json_data: Json Data refering to Block content
         """
@@ -142,14 +151,14 @@ class ID:
         self.extension = json_data["extension"]
 
     def _generate_id(self, json_data):
+        """ Populate Class ID based on setId structure
 
-        """ Populate Class ID based on id structure
+        ..  admonition:: XML Structure
+            :class: tip
 
-        STRUCTURE
-        ~~~~~~~~~
-        * **root** - Required
-        * **extension** - Required
-        * **assigningAuthorityName** - Required
+            ..  code-block:: xml
+
+                <setId root="REQUIRED" extension="REQUIRED" assigningAuthorityName="REQUIRED">
 
         :param json_data: Json Data refering to Block content
         """
