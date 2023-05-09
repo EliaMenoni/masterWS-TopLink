@@ -55,7 +55,7 @@ def insert_sub(root, sub:str, edited = None):
         return root
 
 def generate_json(component):
-    struct_file = open("./cargo.json")
+    struct_file = open("cargo.json")
     struct:json = json.load(struct_file)
     struct_file.close()
     struct["body"]["component"]["structuredBody"]["component"] = []
@@ -67,7 +67,7 @@ def generate_json(component):
     return struct
 
 
-for root, dirs, files in os.walk("./OK", topdown=False):
+for root, dirs, files in os.walk("OK", topdown=False):
     # print(root, dirs, files)
     out = []
     components = {}
