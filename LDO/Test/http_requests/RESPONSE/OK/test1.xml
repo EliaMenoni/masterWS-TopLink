@@ -1,0 +1,171 @@
+<ClinicalDocument xmlns:ns0="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+    <setId assigningAuthorityName="@set" extension="@set" root="@set"/>
+    <realmCode code="IT"/>
+    <typeId extension="POCD_MT000040UV02" root="2.16.840.1.11.113883.1.3"/>
+    <templateId extension="1.2" root="2.16.840.1.113883.2.9.10.2.10.1.5"/>
+    <id assigningAuthorityName="Regione Lazio" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" root="2.16.840.1.113883.2.9.2.120.4.4"/>
+    <code code="34105-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lettera di dimissione ospedaliera"/>
+    <title>Lettera di dimissione ospedaliera</title>
+    <effectiveTime value="20220417100000+0100"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentialy"/>
+    <languageCode code="it-IT"/>
+    <versionNumber value="1"/>
+    <relatedDocument typeCode="RPLC">
+        <parentDocument>
+            <id assigningAuthorityName="Regione Liguria" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" root="2.16.840.1.113883.2.9.2.120.4.4"/>
+            <setId assigningAuthorityName="Regione Lazio" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" root="2.16.840.1.113883.2.9.2.99.4.4"/>
+            <versionNumber value="1"/>
+        </parentDocument>
+    </relatedDocument>
+    <recordTarget>
+        <patientRole>
+            <id assigningAuthorityName="MEF" extension="RSSMRA22A01A399Z" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <telecom use="HP" value="mailto:prova.provax@example.com"/>
+            <patient>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="H7 AdministrativeGender" displayName="Maschio"/>
+                <birthPlace>
+                    <addr>
+                        <censusTract>001086</censusTract>
+                        <city>Cirie</city>
+                    </addr>
+                </birthPlace>
+                <birthTime value="19800329"/>
+                <name>
+                    <family>Esempio</family>
+                    <given>Test</given>
+                </name>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <assignedAuthor classCode="ASSIGNED">
+            <assignedPerson>
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                </name>
+            </assignedPerson>
+            <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <telecom use="HP" value="@wild"/>
+            <telecom use="HP" value="@wild"/>
+            <telecom use="HP" value="@wild"/>
+        </assignedAuthor>
+        <time value="20220417093000+0100"/>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id assigningAuthorityName="Ministero della Salute" extension="130106" root="2.16.840.1.113883.2.9.4.1.1"/>
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                </name>
+                <telecom use="HP" value="@wild"/>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+        <assignedEntity>
+            <assignedPerson>
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                    <prefix>@wild</prefix>
+                </name>
+            </assignedPerson>
+            <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <telecom use="@wild" value="@wild"/>
+        </assignedEntity>
+        <representedOrganization>
+            <assignedAuthor classCode="ASSIGNED">
+                <assignedPerson>
+                    <name>
+                        <family>@wild</family>
+                        <given>@wild</given>
+                    </name>
+                </assignedPerson>
+                <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+                <telecom use="HP" value="@wild"/>
+                <telecom use="HP" value="@wild"/>
+                <telecom use="HP" value="@wild"/>
+            </assignedAuthor>
+            <time value="@wild"/>
+        </representedOrganization>
+        <signatureCode code="S"/>
+        <time value="@wild"/>
+    </legalAuthenticator>
+    <componentOf>
+        <encompassingEncounter>
+            <effectiveTime>
+                <high value="@wild"/>
+                <low value="@wild"/>
+            </effectiveTime>
+            <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <location>
+                <healthCareFacility>
+                    <id assigningAuthorityName="Ministero della Salute" extension="@wild" root="2.16.840.1.113883.2.9.4.1.6"/>
+                    <location>
+                        <name>@wild</name>
+                    </location>
+                    <serviceProviderOrganization>
+                        <asOrganizationPartOf>
+                            <id assigningAuthorityName="Ministero della Salute" extension="@wild" root="2.16.840.1.113883.2.9.4.1.6"/>
+                        </asOrganizationPartOf>
+                        <id assigningAuthorityName="Ministero della Salute" extension="@wild" root="2.16.840.1.113883.2.9.4.1.6"/>
+                        <name>@wild</name>
+                        <telecom use="HP" value="@wild"/>
+                    </serviceProviderOrganization>
+                </healthCareFacility>
+            </location>
+            <responsibleParty>
+                <assignedEntity>
+                    <assignedPerson>
+                        <name>
+                            <family>@wild</family>
+                            <given>@wild</given>
+                        </name>
+                    </assignedPerson>
+                    <id assigningAuthorityName="@wild" extension="@wild" root="2.16.1.113883.2.9.4.3.2"/>
+                    <telecom use="HP" value="@wild"/>
+                </assignedEntity>
+            </responsibleParty>
+        </encompassingEncounter>
+    </componentOf>
+    <component>
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+            <component ID="Motivo_Ricovero" typeCode="COMP">
+                <section>
+                    <code code="@attr0" codeSystem="@attr1" codeSystemName="@attr2" displayName="@attr3"/>
+                    <title>@value0</title>
+                    <text>@value1</text>
+                    <entry>
+                        <observation classCode="@attr4" moodCode="@attr5">
+                            <code code="@attr6" codeSystem="@attr7" codeSystemName="@attr8" displayName="@attr9"/>
+                            <value code="@attr11" codeSystem="@attr12" codeSystemName="@attr13" displayName="@attr14" xsi:type="@attr10"/>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <component ID="Decorso_ospedaliero" typeCode="COMP">
+                <section>
+                    <code code="@attr15" codeSystem="@attr16" codeSystemName="@attr17" displayName="@attr18"/>
+                    <title>@value2</title>
+                    <text>@value3</text>
+                </section>
+            </component>
+            <component ID="Condizioni_paziente_diagnosi_dimissione" typeCode="COMP">
+                <section>
+                    <code code="@attr19" codeSystem="@attr20" codeSystemName="@attr21" displayName="@attr22"/>
+                    <title>@value4</title>
+                    <text>@value5</text>
+                    <entry>
+                        <observation moodCode="@attr23">
+                            <code code="@attr24" codeSystem="@attr25" codeSystemName="@attr26" displayName="@attr27"/>
+                            <value code="@attr28" codeSystem="@attr29" codeSystemName="@attr30" displayName="@attr31"/>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

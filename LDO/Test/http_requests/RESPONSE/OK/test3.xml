@@ -1,0 +1,380 @@
+<ClinicalDocument xmlns:ns0="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+    <setId assigningAuthorityName="@set" extension="@set" root="@set"/>
+    <realmCode code="IT"/>
+    <typeId extension="POCD_MT000040UV02" root="2.16.840.1.11.113883.1.3"/>
+    <templateId extension="1.2" root="2.16.840.1.113883.2.9.10.2.10.1.5"/>
+    <id assigningAuthorityName="Regione Lazio" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" root="2.16.840.1.113883.2.9.2.120.4.4"/>
+    <code code="34105-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lettera di dimissione ospedaliera"/>
+    <title>Lettera di dimissione ospedaliera</title>
+    <effectiveTime value="20220417100000+0100"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentialy"/>
+    <languageCode code="it-IT"/>
+    <versionNumber value="1"/>
+    <relatedDocument typeCode="RPLC">
+        <parentDocument>
+            <id assigningAuthorityName="Regione Liguria" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" root="2.16.840.1.113883.2.9.2.120.4.4"/>
+            <setId assigningAuthorityName="Regione Lazio" extension="030702.LCNLDE90L47H501Q.20220420112426.DW322E34" root="2.16.840.1.113883.2.9.2.99.4.4"/>
+            <versionNumber value="1"/>
+        </parentDocument>
+    </relatedDocument>
+    <recordTarget>
+        <patientRole>
+            <id assigningAuthorityName="MEF" extension="RSSMRA22A01A399Z" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <telecom use="HP" value="mailto:prova.provax@example.com"/>
+            <patient>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="H7 AdministrativeGender" displayName="Maschio"/>
+                <birthPlace>
+                    <addr>
+                        <censusTract>001086</censusTract>
+                        <city>Cirie</city>
+                    </addr>
+                </birthPlace>
+                <birthTime value="19800329"/>
+                <name>
+                    <family>Esempio</family>
+                    <given>Test</given>
+                </name>
+            </patient>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <assignedAuthor classCode="ASSIGNED">
+            <assignedPerson>
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                </name>
+            </assignedPerson>
+            <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <telecom use="HP" value="@wild"/>
+            <telecom use="HP" value="@wild"/>
+            <telecom use="HP" value="@wild"/>
+        </assignedAuthor>
+        <time value="20220417093000+0100"/>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id assigningAuthorityName="Ministero della Salute" extension="130106" root="2.16.840.1.113883.2.9.4.1.1"/>
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                </name>
+                <telecom use="HP" value="@wild"/>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+        <assignedEntity>
+            <assignedPerson>
+                <name>
+                    <family>@wild</family>
+                    <given>@wild</given>
+                    <prefix>@wild</prefix>
+                </name>
+            </assignedPerson>
+            <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <telecom use="@wild" value="@wild"/>
+        </assignedEntity>
+        <representedOrganization>
+            <assignedAuthor classCode="ASSIGNED">
+                <assignedPerson>
+                    <name>
+                        <family>@wild</family>
+                        <given>@wild</given>
+                    </name>
+                </assignedPerson>
+                <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+                <telecom use="HP" value="@wild"/>
+                <telecom use="HP" value="@wild"/>
+                <telecom use="HP" value="@wild"/>
+            </assignedAuthor>
+            <time value="@wild"/>
+        </representedOrganization>
+        <signatureCode code="S"/>
+        <time value="@wild"/>
+    </legalAuthenticator>
+    <componentOf>
+        <encompassingEncounter>
+            <effectiveTime>
+                <high value="@wild"/>
+                <low value="@wild"/>
+            </effectiveTime>
+            <id assigningAuthorityName="MEF" extension="@wild" root="2.16.840.1.113883.2.9.4.3.2"/>
+            <location>
+                <healthCareFacility>
+                    <id assigningAuthorityName="Ministero della Salute" extension="@wild" root="2.16.840.1.113883.2.9.4.1.6"/>
+                    <location>
+                        <name>@wild</name>
+                    </location>
+                    <serviceProviderOrganization>
+                        <asOrganizationPartOf>
+                            <id assigningAuthorityName="Ministero della Salute" extension="@wild" root="2.16.840.1.113883.2.9.4.1.6"/>
+                        </asOrganizationPartOf>
+                        <id assigningAuthorityName="Ministero della Salute" extension="@wild" root="2.16.840.1.113883.2.9.4.1.6"/>
+                        <name>@wild</name>
+                        <telecom use="HP" value="@wild"/>
+                    </serviceProviderOrganization>
+                </healthCareFacility>
+            </location>
+            <responsibleParty>
+                <assignedEntity>
+                    <assignedPerson>
+                        <name>
+                            <family>@wild</family>
+                            <given>@wild</given>
+                        </name>
+                    </assignedPerson>
+                    <id assigningAuthorityName="@wild" extension="@wild" root="2.16.1.113883.2.9.4.3.2"/>
+                    <telecom use="HP" value="@wild"/>
+                </assignedEntity>
+            </responsibleParty>
+        </encompassingEncounter>
+    </componentOf>
+    <component>
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+            <component ID="Motivo_Ricovero" typeCode="COMP">
+                <section>
+                    <code code="@attr167" codeSystem="@attr168" codeSystemName="@attr169" displayName="@attr170"/>
+                    <title>@value36</title>
+                    <text>@value37</text>
+                    <entry>
+                        <observation classCode="@attr171">
+                            <code code="@attr173" codeSystem="@attr174" codeSystemName="@attr175" displayName="@attr176"/>
+                            <value code="@attr178" codeSystem="@attr179" codeSystemName="@attr180" displayName="@attr181" xsi:type="@attr177"/>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <component ID="Inquadramento_clinico_iniziale" typeCode="COMP">
+                <section>
+                    <code code="@attr182" codeSystem="@attr183" codeSystemName="@attr184" displayName="@attr185"/>
+                    <title>@value38</title>
+                    <text>@value39</text>
+                    <component>
+                        <section ID="Anamnesi">
+                            <code code="@attr186" codeSystem="@attr187" codeSystemName="@attr188" displayName="@attr189"/>
+                            <title>@value40</title>
+                            <text>@value41</text>
+                            <entry>
+                                <observation classCode="@attr190" moodCode="@attr191">
+                                    <code code="@attr192" codeSystem="@attr193" codeSystemName="@attr194" displayName="@attr195"/>
+                                    <statusCode code="@attr196"/>
+                                    <effectiveTime>
+                                        <high value="@attr198"/>
+                                        <low value="@attr197"/>
+                                    </effectiveTime>
+                                    <value>@value42</value>
+                                    <entryRelationship>
+                                        <observation>
+                                            <code code="@attr199" codeSystem="@attr200" codeSystemName="@attr201" displayName="@attr202"/>
+                                            <value code="@attr203" codeSystem="@attr204"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                                <observation classCode="@attr205" moodCode="@attr206">
+                                    <code code="@attr207" codeSystem="@attr208" codeSystemName="@attr209" displayName="@attr210"/>
+                                    <statusCode code="@attr211"/>
+                                    <effectiveTime>
+                                        <high value="@attr213"/>
+                                        <low value="@attr212"/>
+                                    </effectiveTime>
+                                    <value>@value43</value>
+                                    <entryRelationship>
+                                        <observation>
+                                            <code code="@attr214" codeSystem="@attr215" codeSystemName="@attr216" displayName="@attr217"/>
+                                            <statusCode code="@attr218"/>
+                                            <value code="@attr219" codeSystem="@attr220"/>
+                                            <text>
+                                                <reference value="@attr221"/>
+                                            </text>
+                                        </observation>
+                                        <observation>
+                                            <code code="@attr222" codeSystem="@attr223" codeSystemName="@attr224" displayName="@attr225"/>
+                                            <statusCode code="@attr226"/>
+                                            <value code="@attr227" codeSystem="@attr228"/>
+                                            <text>
+                                                <reference value="@attr229"/>
+                                            </text>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entry>
+                        </section>
+                        <section ID="Esame_Obiettivo">
+                            <code code="@attr230" codeSystem="@attr231" codeSystemName="@attr232" displayName="@attr233"/>
+                            <title>@value44</title>
+                            <text>@value45</text>
+                        </section>
+                        <section ID="Terapia_Farmacologica_Ingresso">
+                            <code code="@attr234" codeSystem="@attr235" codeSystemName="@attr236" displayName="@attr237"/>
+                            <title>@value46</title>
+                            <text>@value47</text>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <component ID="Decorso_ospedaliero" typeCode="COMP">
+                <section>
+                    <code code="@attr238" codeSystem="@attr239" codeSystemName="@attr240" displayName="@attr241"/>
+                    <title>@value48</title>
+                    <text>@value49</text>
+                </section>
+            </component>
+            <component ID="Complicanze" typeCode="COMP">
+                <section>
+                    <code code="@attr242" codeSystem="@attr243" codeSystemName="@attr244" displayName="@attr245"/>
+                    <title>@value50</title>
+                    <text>@value51</text>
+                    <entry>
+                        <observation classCode="@attr246" moodCode="@attr247">
+                            <code code="@attr248" codeSystem="@attr249" codeSystemName="@attr250" displayName="@attr251"/>
+                            <effectiveTime>
+                                <high value="@attr254"/>
+                                <low value="@attr253"/>
+                            </effectiveTime>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <component ID="Riscontri_accertamenti_significativi" typeCode="COMP">
+                <section>
+                    <code code="@attr255" codeSystem="@attr256" codeSystemName="@attr257" displayName="@attr258"/>
+                    <title>@value52</title>
+                    <text>@value53</text>
+                </section>
+            </component>
+            <component ID="Procedure_eseguite_durante_ricovero" typeCode="COMP">
+                <section>
+                    <code code="@attr259" codeSystem="@attr260" codeSystemName="@attr261" displayName="@attr262"/>
+                    <title>@value54</title>
+                    <text>@value55</text>
+                    <entry/>
+                </section>
+            </component>
+            <component ID="Terapia_farmacologica_effettuata_durante_ricovero" typeCode="COMP">
+                <section>
+                    <code code="@attr273" codeSystem="@attr274" codeSystemName="@attr275" displayName="@attr276"/>
+                    <title>@value57</title>
+                    <text>@value58</text>
+                    <entry>
+                        <substanceAdministration classCode="@attr278">
+                            <statusCode code="@attr280"/>
+                            <effectiveTime>
+                                <high value="null"/>
+                                <low value="null"/>
+                            </effectiveTime>
+                            <routeCode code="@attr283"/>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <manufacturedMaterial>
+                                        <code code="@attr284" codeSystem="@attr285" codeSystemName="@attr286" displayName="@attr287">
+                                            <translation code="@attr288" codeSystem="@attr289" codeSystemName="@attr290" displayName="@attr291"/>
+                                        </code>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                            <participant>
+                                <time>@value63</time>
+                                <participantRole>
+                                    <id>@value64</id>
+                                    <playingEntity>
+                                        <name>
+                                            <family>@value65</family>
+                                            <given>@value66</given>
+                                        </name>
+                                    </playingEntity>
+                                </participantRole>
+                            </participant>
+                            <entryRelationship>
+                                <observation>
+                                    <code code="@attr292" codeSystem="@attr293" codeSystemName="@attr294" displayName="@attr295"/>
+                                    <value>@value67</value>
+                                </observation>
+                            </entryRelationship>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component ID="Condizioni_paziente_diagnosi_dimissione" typeCode="COMP">
+                <section>
+                    <code code="@attr296" codeSystem="@attr297" codeSystemName="@attr298" displayName="@attr299"/>
+                    <title>@value68</title>
+                    <text>@value69</text>
+                    <entry>
+                        <observation classCode="@attr301">
+                            <code code="@attr302" codeSystem="@attr303" codeSystemName="@attr304" displayName="@attr305"/>
+                            <value code="@attr306" codeSystem="@attr307" codeSystemName="@attr308" displayName="@attr309"/>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            <component ID="Terapia_farmacologica_dimissione" typeCode="COMP">
+                <section>
+                    <code code="@attr310" codeSystem="@attr311" codeSystemName="@attr312" displayName="@attr313"/>
+                    <title>@value71</title>
+                    <text>@value72</text>
+                    <entry>
+                        <substanceAdministration classCode="@attr315">
+                            <statusCode code="@attr317"/>
+                            <effectiveTime>
+                                <high value="@attr319"/>
+                                <low value="@attr318"/>
+                            </effectiveTime>
+                            <routeCode code="@attr320"/>
+                            <doseQuantity>
+                                <high unit="@attr325" value="@attr324"/>
+                                <low unit="@attr323" value="@attr322"/>
+                            </doseQuantity>
+                            <rateQuantity>
+                                <high value="@attr327"/>
+                                <low value="@attr326"/>
+                            </rateQuantity>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <manufacturedMaterial>
+                                        <code code="@attr328" codeSystem="@attr329" codeSystemName="@attr330" displayName="@attr331">
+                                            <translation code="@attr332" codeSystem="@attr333" codeSystemName="@attr334" displayName="@attr335"/>
+                                        </code>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                            <participant>
+                                <time>@value73</time>
+                                <participantRole>
+                                    <id>@value74</id>
+                                    <playingEntity>
+                                        <name>
+                                            <family>@value75</family>
+                                            <given>@value76</given>
+                                        </name>
+                                    </playingEntity>
+                                </participantRole>
+                            </participant>
+                            <entryRelationship>
+                                <observation>
+                                    <code code="@attr336" codeSystem="@attr337" codeSystemName="@attr338" displayName="@attr339"/>
+                                    <value>@value77</value>
+                                </observation>
+                                <observation>
+                                    <code code="@attr340" codeSystem="@attr341" codeSystemName="@attr342" displayName="@attr343"/>
+                                    <value>@value78</value>
+                                </observation>
+                                <supply classCode="@attr344" moodCode="@attr345">
+                                    <quantity value="@attr346"/>
+                                </supply>
+                            </entryRelationship>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component ID="Istruzioni_followup" typeCode="COMP">
+                <section>
+                    <code code="@attr347" codeSystem="@attr348" codeSystemName="@attr349" displayName="@attr350"/>
+                    <title>@value79</title>
+                    <text>@value80</text>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

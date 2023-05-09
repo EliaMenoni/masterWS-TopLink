@@ -22,10 +22,7 @@ class Log(models.Model):
 
 
 class ERROR:
-    """
-    :model: 'ERRORE'
-    This class is converted to a ERROR block inside the generated XML to make error location easy
-    """
+    """ This class is converted to a ERROR block inside the generated XML to make error location easy """
 
     def __init__(self, type: str, error_text: str):
         self._NAME = "ERROR"
@@ -35,18 +32,48 @@ class ERROR:
 
     @staticmethod
     def generate_class_definition_error(name: str, json_data):
+        """ Generate error Code to be inserted in XML. This will make error location easier.
+        Error Type is **DEFINITION** error: one or more of the required attributes are missing
+
+        ..  code-block:: xml
+            :caption: Error block preview
+
+            <ERROR type="DEFINITION">
+                <!-- Error Text -->
+            </ERROR>
+
+        :param name: Parent Block Name
+        :param json_data: Json Data refering to Block content
+        :return: Object type
+        :rtype: ERROR
+        """
         print(f"DEFINITION error for block {name}. Replacing with DEFINITION ERROR BLOCK inside XML")
         return ERROR("DEFINITION", f"\nERROR inside block {name} structure. Error generated from:\n{str(json_data)}")
 
     @staticmethod
     def generate_class_structure_error(name: str, class_name: str):
+        """ Generate error Code to be inserted in XML. This will make error location easier.
+        Error Type is **STRUCTURE** error: the current block (**name** given by param) is not listed as a possible block configuration
+
+        ..  code-block:: xml
+            :caption: Error block preview
+
+            <ERROR type="STRUCTURE">
+                <!-- Error Text -->
+            </ERROR>
+
+        :param name: Parent Block Name
+        :param class_name: Name of the Class which generate the error
+        :return: Object type
+        :rtype: ERROR
+        """
         print(f"FOUND error for block {name}. Replacing with FOUND ERROR BLOCK inside XML")
         return ERROR("FOUND", f"\nERROR generating block {name}.\nType not found for class {class_name}")
 
 
 class ID:
     """ This class is converted to XML. Used to structure blocks with the same structure as ID """
-    
+
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
@@ -59,25 +86,77 @@ class ID:
 
         try:
             if name == "setId":
-                self.root = json_data["root"]
-                self.extension = json_data["extension"]
-                self.assigningAuthorityName = json_data["assigningAuthorityName"]
+                self._generate_setid(json_data)
             elif name == "typeId":
-                self.root = json_data["root"]
-                self.extension = json_data["extension"]
+                self._generate_typeid(json_data)
             elif name == "templateId":
-                self.root = json_data["root"]
-                self.extension = json_data["extension"]
+                self._generate_templateid(json_data)
             elif name == "id":
-                self.root = json_data["root"]
-                self.extension = json_data["extension"]
-                self.assigningAuthorityName = json_data["assigningAuthorityName"]
+                self._generate_id(json_data)
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
                 self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
             self.ERROR = ERROR.generate_class_definition_error(name, json_data)
+
+    def _generate_setid(self, json_data):
+        """ Populate Class ID based on setId structure
+
+        STRUCTURE
+        ~~~~~~~~~
+        * **root** - Required
+        * **extension** - Required
+        * **assigningAuthorityName** - Required
+
+        :param json_data: Json Data refering to Block content
+        """
+        self.root = json_data["root"]
+        self.extension = json_data["extension"]
+        self.assigningAuthorityName = json_data["assigningAuthorityName"]
+
+    def _generate_typeid(self, json_data):
+        """ Populate Class ID based on typeId structure
+
+        STRUCTURE
+        ~~~~~~~~~
+        * **root** - Required
+        * **extension** - Required
+
+        :param json_data: Json Data refering to Block content
+        """
+        self.root = json_data["root"]
+        self.extension = json_data["extension"]
+
+    def _generate_templateid(self, json_data):
+        """ Populate Class ID based on templateId structure
+
+        STRUCTURE
+        ~~~~~~~~~
+        * **root** - Required
+        * **extension** - Required
+
+        :param json_data: Json Data refering to Block content
+        """
+        self.root = json_data["root"]
+        self.extension = json_data["extension"]
+
+    def _generate_id(self, json_data):
+
+        """ Populate Class ID based on id structure
+
+        STRUCTURE
+        ~~~~~~~~~
+        * **root** - Required
+        * **extension** - Required
+        * **assigningAuthorityName** - Required
+
+        :param json_data: Json Data refering to Block content
+        """
+        self.root = json_data["root"]
+        self.extension = json_data["extension"]
+        self.assigningAuthorityName = json_data["assigningAuthorityName"]
+
 
 
 class CODE:
@@ -354,20 +433,28 @@ class ADDR:
 
         try:
             if name == "addr":
-                self.use = json_data["use"] if "use" in json_data else None
-                self.city = DATA("city", json_data)
-                self.censusTract = DATA("censusTract", json_data)
-                self.state = DATA("state", json_data) if "state" in json_data else None
-                self.country = DATA("country", json_data) if "country" in json_data else None
-                self.county = DATA("county", json_data) if "county" in json_data else None
-                self.postalCode = DATA("postalCode", json_data) if "postalCode" in json_data else None
-                self.streetAddressLine = DATA("streetAddressLine", json_data) if "streetAddressLine" in json_data else None
+                self.__generate_addr(json_data)
             else:
                 print(f"Block {name} not found for class {self.__class__.__name__}")
                 self.ERROR = ERROR.generate_class_structure_error(name, self.__class__.__name__)
         except:
             print(f"Error generating {name} block. Replacing with ERROR BLOCK")
             self.ERROR = ERROR.generate_class_definition_error(name, json_data)
+
+    def __generate_addr(self, json_data):
+        """ Generate an ADDR block
+        :param json_data: json forma data refering to ADDR
+        :type json_data: dict, required
+        """
+
+        self.use = json_data["use"] if "use" in json_data else None
+        self.city = DATA("city", json_data)
+        self.censusTract = DATA("censusTract", json_data)
+        self.state = DATA("state", json_data) if "state" in json_data else None
+        self.country = DATA("country", json_data) if "country" in json_data else None
+        self.county = DATA("county", json_data) if "county" in json_data else None
+        self.postalCode = DATA("postalCode", json_data) if "postalCode" in json_data else None
+        self.streetAddressLine = DATA("streetAddressLine", json_data) if "streetAddressLine" in json_data else None
 
 
 class PATIENT:
@@ -398,7 +485,7 @@ class PATIENT:
 
 
 class ROLE:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -415,7 +502,7 @@ class ROLE:
 
 
 class ENTITY:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -426,7 +513,7 @@ class ENTITY:
 
 
 class REPRESENTED:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -441,7 +528,7 @@ class REPRESENTED:
 
 
 class ASSIGNED:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -459,7 +546,7 @@ class ASSIGNED:
 
 
 class AUTHOR:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -471,7 +558,7 @@ class AUTHOR:
 
 
 class CUSTODIAN:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -482,7 +569,7 @@ class CUSTODIAN:
 
 
 class TARGET:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -493,7 +580,7 @@ class TARGET:
 
 
 class AUTHENTICATOR:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -507,7 +594,7 @@ class AUTHENTICATOR:
 
 
 class TIME:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -526,7 +613,7 @@ class TIME:
 
 
 class RESPONSIBLE:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -537,7 +624,7 @@ class RESPONSIBLE:
 
 
 class ENCOUNTER:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -551,7 +638,7 @@ class ENCOUNTER:
 
 
 class COMPONENTOF:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -562,7 +649,7 @@ class COMPONENTOF:
 
 
 class STRCUTUREDBODY:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -575,7 +662,7 @@ class STRCUTUREDBODY:
 
 
 class OBSERVATION:
-    """  """
+    
 
     def __init__(self, name: str, json_data, index: int = None):
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
@@ -597,7 +684,7 @@ class OBSERVATION:
 
 
 class ENTRY:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -609,7 +696,7 @@ class ENTRY:
 
 
 class SUBSTANCEADMINISTRATION:
-    """  """
+    
 
     def __init__(self, name: str, json_data, index: int = None):
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
@@ -630,7 +717,7 @@ class SUBSTANCEADMINISTRATION:
 
 
 class SUPPLY:
-    """  """
+    
 
     def __init__(self, name: str, json_data, index: int = None):
         json_data = json_data.get(name) if index == None else json_data.get(name)[index]
@@ -643,7 +730,7 @@ class SUPPLY:
 
 
 class PARTICIPANT:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -655,7 +742,7 @@ class PARTICIPANT:
 
 
 class CONSUMABLE:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -666,7 +753,7 @@ class CONSUMABLE:
 
 
 class MANUFACTUREDPRODUCT:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -677,7 +764,7 @@ class MANUFACTUREDPRODUCT:
 
 
 class MANUFACTUREDMATERIAL:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -688,7 +775,7 @@ class MANUFACTUREDMATERIAL:
 
 
 class QUANTITY:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -703,7 +790,7 @@ class QUANTITY:
 
 
 class SECTION:
-    """  """
+    
 
     def __init__(self, name: str, json_data, index: int = None):
         json_data = json_data.get(name) if index is None else json_data.get(name)[index]
@@ -727,7 +814,7 @@ class SECTION:
 
 
 class TEXT:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -742,7 +829,7 @@ class TEXT:
 
 
 class REFERENCE:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -753,7 +840,7 @@ class REFERENCE:
 
 
 class TEXT_LIST:
-    """  """
+    
 
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
@@ -764,7 +851,7 @@ class TEXT_LIST:
 
 
 class ITEM:
-    """  """
+    
 
     def __init__(self, name: str, json_data, index: int = None):
         json_data = json_data[index].get(name)
@@ -775,7 +862,7 @@ class ITEM:
 
 
 class COMPONENT:
-    """  """
+    
 
     def __init__(self, name: str, json_data, index: int = None):
 
@@ -796,7 +883,7 @@ class COMPONENT:
 
 
 class LDO:
-    """  """
+    
 
     def __init__(self, JSON):
         self._NAME = "ClinicalDocument"
