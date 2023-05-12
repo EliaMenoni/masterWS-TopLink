@@ -3,8 +3,9 @@ from . import tools
 
 
 class Log(models.Model):
-    """ LOG """
+    """ The LOG class manage the DB schema and function to track execution logs. """
 
+    #: ID for log entry. Autonumber.
     ID = models.AutoField(name="ID", primary_key=True)
     time = models.DateTimeField(name="Timestamp", auto_now=True)
     user = models.CharField(name="User", max_length=50)
@@ -105,32 +106,57 @@ class ID:
             self.ERROR = ERROR.generate_class_definition_error(name, json_data)
 
     def _generate_setid(self, json_data):
-        """ Populate Class ID based on setId structure
+        """ Populate Class ID based on setId structure. Used to manage the document versioning
 
-        ..  admonition:: XML Structure
-            :class: tip
+        :param json_data: Json Data referring to Block content
+
+        ..  admonition:: Structure
+            :class: toggle danger
+
+            ..  csv-table::
+                :align: left
+                :class: longtable
+                :header: Attribute, Status
+
+                root, REQUIRED
+                extension, REQUIRED
+                assigningAuthorityName, REQUIRED
+
+        ..  admonition:: Generated XML
+            :class: toggle tip
 
             ..  code-block:: xml
 
-                <setId root="REQUIRED" extension="REQUIRED" assigningAuthorityName="REQUIRED">
+                <setId root="code" extension="code" assigningAuthorityName="name">
 
-        :param json_data: Json Data refering to Block content
         """
         self.root = json_data["root"]
         self.extension = json_data["extension"]
-        self.assigningAuthorityName = json_data["assigningAuthorityName"]
+        self.assigningAuthorityName = json_data["assigningAuthorityName"] if "assigningAuthorityName" in json_data else None
 
     def _generate_typeid(self, json_data):
         """ Populate Class ID based on typeId structure
 
-        ..  admonition:: XML Structure
-            :class: tip
+        :param json_data: Json Data referring to Block content
+
+        ..  admonition:: Structure
+            :class: toggle danger
+
+            ..  csv-table::
+                :align: left
+                :class: longtable
+                :header: Attribute, Status
+
+                root, REQUIRED
+                extension, REQUIRED
+
+        ..  admonition:: Generated XML
+            :class: toggle tip
 
             ..  code-block:: xml
 
-                <typeId root="REQUIRED" extension="REQUIRED">
+                <setId root="code" extension="code">
 
-        :param json_data: Json Data refering to Block content
         """
         self.root = json_data["root"]
         self.extension = json_data["extension"]
@@ -138,14 +164,26 @@ class ID:
     def _generate_templateid(self, json_data):
         """ Populate Class ID based on templateId structure
 
-        ..  admonition:: XML Structure
-            :class: tip
+        :param json_data: Json Data referring to Block content
+
+        ..  admonition:: Structure
+            :class: toggle danger
+
+            ..  csv-table::
+                :align: left
+                :class: longtable
+                :header: Attribute, Status
+
+                root, REQUIRED
+                extension, REQUIRED
+
+        ..  admonition:: Generated XML
+            :class: toggle tip
 
             ..  code-block:: xml
 
-                <setId root="REQUIRED" extension="REQUIRED">
+                <setId root="code" extension="code">
 
-        :param json_data: Json Data refering to Block content
         """
         self.root = json_data["root"]
         self.extension = json_data["extension"]
@@ -153,14 +191,27 @@ class ID:
     def _generate_id(self, json_data):
         """ Populate Class ID based on setId structure
 
-        ..  admonition:: XML Structure
-            :class: tip
+        :param json_data: Json Data referring to Block content
+
+        ..  admonition:: Structure
+            :class: toggle danger
+
+            ..  csv-table::
+                :align: left
+                :class: longtable
+                :header: Attribute, Status
+
+                root, REQUIRED
+                extension, REQUIRED
+                assigningAuthorityName, REQUIRED
+
+        ..  admonition:: Generated XML
+            :class: toggle tip
 
             ..  code-block:: xml
 
-                <setId root="REQUIRED" extension="REQUIRED" assigningAuthorityName="REQUIRED">
+                <setId root="code" extension="code" assigningAuthorityName="name">
 
-        :param json_data: Json Data refering to Block content
         """
         self.root = json_data["root"]
         self.extension = json_data["extension"]
