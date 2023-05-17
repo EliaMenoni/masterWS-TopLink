@@ -67,7 +67,7 @@ def generate_json(component):
     return struct
 
 
-for root, dirs, files in os.walk("OK", topdown=False):
+for root, dirs, files in os.walk(".", topdown=False):
     # print(root, dirs, files)
     out = []
     components = {}

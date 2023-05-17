@@ -545,8 +545,6 @@ class PATIENT:
 
 
 class ROLE:
-    
-
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
@@ -924,7 +922,7 @@ class ITEM:
 class COMPONENT:
     
 
-    def __init__(self, name: str, json_data, index: int = None):
+    def __init__(self, name: str, json_data, index: int = None)q
 
         json_data = json_data.get(name) if index is None else json_data.get(name)[index]
         self._NAME = name

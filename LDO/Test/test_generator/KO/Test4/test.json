@@ -1,0 +1,377 @@
+{
+  "schemaLocation": "urn:hl7-org:v3 CDA.xsd",
+  "header": {
+    "ClinicalDocument": {
+      "realmCode": {
+        "code": "@val"
+      },
+      "typeId": {
+        "root": "@val",
+        "extension": "@val"
+      },
+      "templateId": {
+        "root": "@val",
+        "extension": "@val"
+      },
+      "id": {
+        "root": "@val",
+        "extension": "@val",
+        "assigningAuthorityName": "@val"
+      },
+      "code": {
+        "code": "@val",
+        "codeSystem": "@val",
+        "codeSystemName": "@val",
+        "displayName": "@val",
+        "translation": {
+          "code": "@val",
+          "codeSystem": "@val",
+          "codeSystemName": "@val",
+          "displayName": "@val"
+        }
+      },
+      "title": "@val",
+      "sdtc:statusCode": "@val",
+      "effectiveTime": {
+        "value": "@val"
+      },
+      "confidentialityCode": {
+        "code": "@val",
+        "codeSystem": "@val",
+        "codeSystemName": "@val",
+        "displayName": "@val"
+      },
+      "languageCode": {
+        "code": "@val"
+      },
+      "setId": {
+        "root": "@val",
+        "extension": "@val",
+        "assigningAuthorityName": "@val"
+      },
+      "versionNumber": {
+        "value": "@val"
+      },
+      "recordTarget": {
+        "patientRole": {
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "addr": {
+            "use": "@val",
+            "country": "@val",
+            "state": "@val",
+            "county": "@val",
+            "censusTract": "@val",
+            "postalCode": "@val",
+            "streetAddressLine": "@val"
+          },
+          "telecom": {
+            "use": "@val",
+            "value": "@val"
+          },
+          "patient": {
+            "name": {
+              "family": "@val",
+              "given": "@val"
+            },
+            "administrativeGenderCode": {
+              "code": "@val",
+              "codeSystem": "@val",
+              "codeSystemName": "@val",
+              "displayName": "@val"
+            },
+            "birthTime": "@val",
+            "birthPlace": {
+              "place": {
+                "addr": {
+                  "city": "@val",
+                  "censusTract": "@val"
+                }
+              }
+            },
+            "guardian": "@val"
+          },
+          "providerOrganization": "@val"
+        }
+      },
+      "author": {
+        "time": {
+          "value": "@val"
+        },
+        "assignedAuthor": {
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "addr": "@val",
+          "telecom": "@val",
+          "assignedPerson": {
+            "name": {
+              "family": "@val",
+              "given": "@val"
+            }
+          },
+          "representedOrganization": {
+            "id": "@val"
+          }
+        }
+      },
+      "dataEnterer": {
+        "time": "@val",
+        "assignedEntity": {
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "assignedPerson": {
+            "name": "@val"
+          }
+        }
+      },
+      "custodian": {
+        "assignedCustodian": {
+          "representedCustodianOrganization": {
+            "id": {
+              "root": "@val",
+              "extension": "@val",
+              "assigningAuthorityName": "@val"
+            },
+            "name": "@val",
+            "telecom": "@val",
+            "addr": "@val"
+          }
+        }
+      },
+      "informationRecipient": {
+        "intendedRecipient": {
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "informationRecipient": {
+            "name": "@val"
+          }
+        }
+      },
+      "legalAuthenticator": {
+        "time": {
+          "value": "@val"
+        },
+        "signatureCode": {
+          "code": "@val"
+        },
+        "assignedEntity": {
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "addr": "@val",
+          "telecom": "@val",
+          "assignedPerson": {
+            "name": {
+              "family": "@val",
+              "given": "@val",
+              "prefix": "@val"
+            }
+          },
+          "representedOrganization": "@val"
+        }
+      },
+      "participant": {
+        "typeCode": "@val",
+        "associatedEntity": {
+          "classCode": "@val",
+          "id": "@val",
+          "associatedPerson": {
+            "name": "@val"
+          }
+        }
+      },
+      "inFulfillmentOf": {
+        "order": {
+          "classCode": "@val",
+          "moodCode": "@val",
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "priorityCode": {
+            "code": "@val",
+            "codeSystem": "@val",
+            "codeSystemName": "@val",
+            "displayName": "@val"
+          }
+        }
+      },
+      "relatedDocument": {
+        "typeCode": "@val",
+        "parentDocument": {
+          "id": {
+            "root": "@val",
+            "extension": "@val",
+            "assigningAuthorityName": "@val"
+          },
+          "setId": "@val",
+          "versionNumber": "@val"
+        }
+      },
+      "componentOf": {
+        "encompassingEncounter": {
+          "id": "@val",
+          "effectiveTime": {
+            "low": {
+              "value": "@val"
+            },
+            "high": {
+              "value": "@val"
+            }
+          },
+          "responsibleParty": {
+            "assignedEntity": {
+              "id": {
+                "root": "@val",
+                "extension": "@val",
+                "assigningAuthorityName": "@val"
+              },
+              "code": "@val",
+              "assignedPerson": {
+                "name": {
+                  "family": "@val",
+                  "given": "@val"
+                }
+              }
+            }
+          },
+          "location": {
+            "healthCareFacility": {
+              "id": {
+                "root": "@val",
+                "extension": "@val",
+                "assigningAuthorityName": "@val"
+              },
+              "location": {
+                "name": "@val"
+              },
+              "serviceProviderOrganization": {
+                "id": {
+                  "root": "@val",
+                  "extension": "@val"
+                },
+                "name": "@val",
+                "telecom": "@val",
+                "asOrganizationPartOf": {
+                  "id": {
+                    "root": "@val",
+                    "extension": "@val",
+                    "assigningAuthorityName": "@val"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "body": {
+    "component": {
+      "structuredBody": {
+        "classCode": "DOCBODY",
+        "moodCode": "EVN",
+        "component": [
+          {
+            "ID": "Motivo_Ricovero",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr0",
+                "codeSystem": "@attr1",
+                "codeSystemName": "@attr2",
+                "displayName": "@attr3"
+              },
+              "title": "@value0",
+              "text": "@value1",
+              "entry": {
+                "observation": [
+                  {
+                    "classCode": "@attr4",
+                    "moodCode": "@attr5",
+                    "code": {
+                      "code": "@attr6",
+                      "codeSystem": "@attr7",
+                      "codeSystemName": "@attr8",
+                      "displayName": "@attr9"
+                    },
+                    "value": {
+                      "xsi:type": "@attr10",
+                      "code": "@attr11",
+                      "codeSystem": "@attr12",
+                      "codeSystemName": "@attr13",
+                      "displayName": "@attr14"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "ID": "Decorso_ospedaliero",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr15",
+                "codeSystem": "@attr16",
+                "codeSystemName": "@attr17",
+                "displayName": "@attr18"
+              },
+              "title": "@value2",
+              "text": "@value3"
+            }
+          },
+          {
+            "ID": "Condizioni_paziente_diagnosi_dimissione",
+            "typeCode": "COMP",
+            "section": {
+              "code": {
+                "code": "@attr19",
+                "codeSystem": "@attr20",
+                "codeSystemName": "@attr21",
+                "displayName": "@attr22"
+              },
+              "title": "@value4",
+              "text": "@value5",
+              "entry": {
+                "observation": [
+                  {
+                    "moodCode": "@attr23",
+                    "code": {
+                      "code": "@attr24",
+                      "codeSystem": "@attr25",
+                      "codeSystemName": "@attr26",
+                      "displayName": "@attr27"
+                    },
+                    "value": {
+                      "code": "@attr28",
+                      "codeSystem": "@attr29",
+                      "codeSystemName": "@attr30",
+                      "displayName": "@attr31",
+                      "translation": "@value6"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
