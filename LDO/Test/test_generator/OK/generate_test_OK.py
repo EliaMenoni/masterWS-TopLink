@@ -68,6 +68,8 @@ def generate_json(component):
 
 
 for root, dirs, files in os.walk(".", topdown=False):
+    if "src.txt" not in files:
+        break
     # print(root, dirs, files)
     out = []
     components = {}

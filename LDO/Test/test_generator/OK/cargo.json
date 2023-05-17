@@ -7,92 +7,92 @@
 			"assigningAuthorityName": "@set"
 		},
 		"realmCode": {
-			"code": "IT"
+			"code": "@wild"
 		},
 		"typeId": {
-			"root": "2.16.840.1.11.113883.1.3",
-			"extension": "POCD_MT000040UV02"
+			"root": "@wild",
+			"extension": "@wild"
 		},
 		"templateId": {
-			"root": "2.16.840.1.113883.2.9.10.2.10.1.5",
-			"extension": "1.2"
+			"root": "@wild",
+			"extension": "@wild"
 		},
 		"id": {
-			"root": "2.16.840.1.113883.2.9.2.120.4.4",
-			"extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
-			"assigningAuthorityName": "Regione Lazio"
+			"root": "@wild",
+			"extension": "@wild",
+			"assigningAuthorityName": "@wild"
 		},
 		"code": {
-			"code": "34105-7",
-			"codeSystem": "2.16.840.1.113883.6.1",
-			"codeSystemName": "LOINC",
-			"displayName": "Lettera di dimissione ospedaliera"
+			"code": "@wild",
+			"codeSystem": "@wild",
+			"codeSystemName": "@wild",
+			"displayName": "@wild"
 		},
-		"title": "Lettera di dimissione ospedaliera",
+		"title": "@wild",
 		"effectiveTime": {
-			"value": "20220417100000+0100"
+			"value": "@wild"
 		},
 		"confidentialityCode": {
-			"code": "N",
-			"codeSystem": "2.16.840.1.113883.5.25",
-			"codeSystemName": "Confidentialy",
-			"displayName": "Normal"
+			"code": "@wild",
+			"codeSystem": "@wild",
+			"codeSystemName": "@wild",
+			"displayName": "@wild"
 		},
 		"languageCode": {
-			"code": "it-IT"
+			"code": "@wild"
 		},
 		"versionNumber": {
-			"value": "1"
+			"value": "@wild"
 		},
 		"relatedDocument": {
-			"typeCode": "RPLC",
+			"typeCode": "@wild",
 			"parentDocument": {
 				"id": {
-					"root": "2.16.840.1.113883.2.9.2.120.4.4",
-					"extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
-					"assigningAuthorityName": "Regione Liguria"
+					"root": "@wild",
+					"extension": "@wild",
+					"assigningAuthorityName": "@wild"
 				},
 				"setId": {
-					"root": "2.16.840.1.113883.2.9.2.99.4.4",
-					"extension": "030702.LCNLDE90L47H501Q.20220420112426.DW322E34",
-					"assigningAuthorityName": "Regione Lazio"
+					"root": "@wild",
+					"extension": "@wild",
+					"assigningAuthorityName": "@wild"
 				},
 				"versionNumber": {
-					"value": "1"
+					"value": "@wild"
 				}
 			}
 		},
 		"recordTarget": {
 			"patientRole": {
 				"id": {
-					"root": "2.16.840.1.113883.2.9.4.3.2",
-					"extension": "RSSMRA22A01A399Z",
-					"assigningAuthorityName": "MEF"
+					"root": "@wild",
+					"extension": "@wild",
+					"assigningAuthorityName": "@wild"
 				},
 				"telecom": [
 					{
-						"use": "HP",
-						"value": "mailto:prova.provax@example.com"
+						"use": "@wild",
+						"value": "@wild"
 					}
 				],
 				"patient": {
 					"name": {
-						"family": "Esempio",
-						"given": "Test"
+						"family": "@wild",
+						"given": "@wild"
 					},
 					"administrativeGenderCode": {
-						"code": "M",
-						"codeSystem": "2.16.840.1.113883.5.1",
-						"codeSystemName": "H7 AdministrativeGender",
-						"displayName": "Maschio"
+						"code": "@wild",
+						"codeSystem": "@wild",
+						"codeSystemName": "@wild",
+						"displayName": "@wild"
 					},
 					"birthTime": {
-						"value": "19800329"
+						"value": "@wild"
 					},
 					"birthPlace": {
 						"addr": {
-							"city": "Cirie",
-							"censusTract": "001086"
+							"city": "@wild",
+							"censusTract": "@wild"
 						}
 					}
 				}
@@ -100,13 +100,13 @@
 		},
 		"author": {
 			"time": {
-				"value": "20220417093000+0100"
+				"value": "@wild"
 			},
 			"assignedAuthor": {
-				"classCode": "ASSIGNED",
+				"classCode": "@wild",
 				"id": {
-					"root": "2.16.840.1.113883.2.9.4.3.2",
-					"assigningAuthorityName": "MEF",
+					"root": "@wild",
+					"assigningAuthorityName": "@wild",
 					"extension": "@wild"
 				},
 				"assignedPerson": {
@@ -117,15 +117,15 @@
 				},
 				"telecom": [
 					{
-						"use": "HP",
+						"use": "@wild",
 						"value": "@wild"
 					},
 					{
-						"use": "HP",
+						"use": "@wild",
 						"value": "@wild"
 					},
 					{
-						"use": "HP",
+						"use": "@wild",
 						"value": "@wild"
 					}
 				]
@@ -135,9 +135,9 @@
 			"assignedCustodian": {
 				"representedCustodianOrganization": {
 					"id": {
-						"root": "2.16.840.1.113883.2.9.4.1.1",
-						"extension": "130106",
-						"assigningAuthorityName": "Ministero della Salute"
+						"root": "@wild",
+						"extension": "@wild",
+						"assigningAuthorityName": "@wild"
 					},
 					"name": {
 						"family": "@wild",
@@ -145,7 +145,7 @@
 					},
 					"telecom": [
 						{
-							"use": "HP",
+							"use": "@wild",
 							"value": "@wild"
 						}
 					]
@@ -157,13 +157,13 @@
 				"value": "@wild"
 			},
 			"signatureCode": {
-				"code": "S"
+				"code": "@wild"
 			},
 			"assignedEntity": {
 				"id": {
-					"root": "2.16.840.1.113883.2.9.4.3.2",
+					"root": "@wild",
 					"extension": "@wild",
-					"assigningAuthorityName": "MEF"
+					"assigningAuthorityName": "@wild"
 				},
 				"telecom": [
 					{
@@ -184,10 +184,10 @@
 					"value": "@wild"
 				},
 				"assignedAuthor": {
-					"classCode": "ASSIGNED",
+					"classCode": "@wild",
 					"id": {
-						"root": "2.16.840.1.113883.2.9.4.3.2",
-						"assigningAuthorityName": "MEF",
+						"root": "@wild",
+						"assigningAuthorityName": "@wild",
 						"extension": "@wild"
 					},
 					"assignedPerson": {
@@ -198,15 +198,15 @@
 					},
 					"telecom": [
 						{
-							"use": "HP",
+							"use": "@wild",
 							"value": "@wild"
 						},
 						{
-							"use": "HP",
+							"use": "@wild",
 							"value": "@wild"
 						},
 						{
-							"use": "HP",
+							"use": "@wild",
 							"value": "@wild"
 						}
 					]
@@ -216,9 +216,9 @@
 		"componentOf": {
 			"encompassingEncounter": {
 				"id": {
-					"root": "2.16.840.1.113883.2.9.4.3.2",
+					"root": "@wild",
 					"extension": "@wild",
-					"assigningAuthorityName": "MEF"
+					"assigningAuthorityName": "@wild"
 				},
 				"effectiveTime": {
 					"low": {
@@ -231,11 +231,11 @@
 				"responsibleParty": {
 					"assignedEntity": {
 						"id": {
-							"root": "2.16.1.113883.2.9.4.3.2",
+							"root": "@wild",
 							"extension": "@wild",
 							"assigningAuthorityName": "@wild"
 						},
-						"code": "RESPRSN",
+						"code": "@wild",
 						"assignedPerson": {
 							"name": {
 								"family": "@wild",
@@ -244,7 +244,7 @@
 						},
 						"telecom": [
 							{
-								"use": "HP",
+								"use": "@wild",
 								"value": "@wild"
 							}
 						]
@@ -253,31 +253,31 @@
 				"location": {
 					"healthCareFacility": {
 						"id": {
-							"root": "2.16.840.1.113883.2.9.4.1.6",
+							"root": "@wild",
 							"extension": "@wild",
-							"assigningAuthorityName": "Ministero della Salute"
+							"assigningAuthorityName": "@wild"
 						},
 						"location": {
 							"name": "@wild"
 						},
 						"serviceProviderOrganization": {
 							"id": {
-								"root": "2.16.840.1.113883.2.9.4.1.6",
+								"root": "@wild",
 								"extension": "@wild",
-								"assigningAuthorityName": "Ministero della Salute"
+								"assigningAuthorityName": "@wild"
 							},
 							"name": "@wild",
 							"telecom": [
 								{
-									"use": "HP",
+									"use": "@wild",
 									"value": "@wild"
 								}
 							],
 							"asOrganizationPartOf": {
 								"id": {
-									"root": "2.16.840.1.113883.2.9.4.1.6",
+									"root": "@wild",
 									"extension": "@wild",
-									"assigningAuthorityName": "Ministero della Salute"
+									"assigningAuthorityName": "@wild"
 								}
 							}
 						}
@@ -289,8 +289,8 @@
 	"body": {
 		"component": {
 			"structuredBody": {
-				"classCode": "DOCBODY",
-				"moodCode": "EVN",
+				"classCode": "@wild",
+				"moodCode": "@wild",
 				"component": [
 				
 				]
