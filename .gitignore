@@ -4,7 +4,9 @@ venv/
 .idea/
 __pycache__/
 */__pycache__/
-/LDO/_test/HTTP_REQUESTS/RESPONSE/
 /Documentation/*
 !/Documentation/_build
 /Documentation/_build/.doctrees
+/FSE_CDA/Test/http_requests/RESPONSE
+/FSE_CDA/Documentazione/
+/FSE_CDA/Test/

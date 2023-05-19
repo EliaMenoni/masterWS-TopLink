@@ -2,5 +2,5 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('compose/', views.composeLDO, name="compose"),
+    path('LDO/compose/', views.composeLDO, name="ldo-compose"),
 ]

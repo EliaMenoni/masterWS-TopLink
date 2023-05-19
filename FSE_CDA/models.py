@@ -1,6 +1,6 @@
 from django.db import models
 from . import tools
-
+# import settings
 
 class Log(models.Model):
     """ The LOG class manage the DB schema and function to track execution logs. """
@@ -218,7 +218,6 @@ class ID:
         self.assigningAuthorityName = json_data["assigningAuthorityName"]
 
 
-
 class CODE:
     """ This class is converted to XML. Used to structure blocks with the same structure as CODE """
     
@@ -250,11 +249,12 @@ class CODE:
                 self.codeSystemName = json_data["codeSystemName"]
                 self.displayName = json_data["displayName"] if "displayName" in json_data else None
             elif name == "value":
-                self.code = json_data["code"]
-                self.codeSystem = json_data["codeSystem"]
-                self.xsit = json_data["xsi:type"] if "xsi:type" in json_data else None  # ???
-                self.codeSystemName = json_data["codeSystemName"] if "codeSystemName" in json_data else None  # ???
-                self.displayName = json_data["displayName"] if "displayName" in json_data else None
+                pass
+                # self.code = json_data["code"]
+                # self.codeSystem = json_data["codeSystem"]
+                # self.xsit = json_data["xsi:type"] if "xsi:type" in json_data else None  # ???
+                # self.codeSystemName = json_data["codeSystemName"] if "codeSystemName" in json_data else None  # ???
+                # self.displayName = json_data["displayName"] if "displayName" in json_data else None
             elif name == "realmCode":
                 self.code = json_data["code"]
             elif name == "administrationUnitCode":
@@ -545,8 +545,6 @@ class PATIENT:
 
 
 class ROLE:
-    
-
     def __init__(self, name: str, json_data):
         json_data = json_data.get(name)
         self._NAME = name
@@ -932,7 +930,7 @@ class COMPONENT:
 
         self.structuredBody = STRCUTUREDBODY("structuredBody", json_data) if json_data.get("structuredBody") is not None else None
 
-        self.ID = json_data.get("ID")
+        # self.ID = json_data.get("ID")
         self.typeCode = json_data.get("typeCode")
 
         if json_data.get("section") is not None:
@@ -943,37 +941,48 @@ class COMPONENT:
 
 
 class LDO:
-    
 
     def __init__(self, JSON):
         self._NAME = "ClinicalDocument"
         self._TEXT = ""
 
-        self.xmlnsns0 = ("xmlns:ns0", "urn:hl7-org:v3")
+        self.xmlnsns0 = ("xmlns", "urn:hl7-org:v3")
         self.xmlnsxsi = ("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance")
         self.xsi = ("xsi:schemaLocation", "urn:hl7-org:v3 CDA.xsd")
+        self.sdtc = ("xmlns:sdtc", "urn:hl7-org:sdtc")
+        self.sdtc = ("xmlns:voc", "urn:hl7-org:v3/voc")
 
         json_data = JSON.get("header")
-        self._10setId = ID("setId", json_data)
-        self._11realmCode = CODE("realmCode", json_data)
-        self._12typeId = ID("typeId", json_data)
-        self._13templateId = ID("templateId", json_data)
+        self._12realmCode = CODE("realmCode", json_data) if "realmCode" in json_data else None
+        self._10typeId = ID("typeId", json_data)
+        self._13templateId = ID("templateId", json_data) if "templateId" in json_data else None
         self._14id = ID("id", json_data)
         self._15code = CODE("code", json_data)
-        self._16title = DATA("title", json_data)
+        self._16title = DATA("title", json_data) if "title" in json_data else None
         self._17effectiveTime = DATA("effectiveTime", json_data)
         self._18confidentialityCode = CODE("confidentialityCode", json_data)
-        self._19languageCode = CODE("languageCode", json_data)
-        self._20versionNumber = DATA("versionNumber", json_data)
-        self._21relatedDocument = DOCUMENT("relatedDocument", json_data)
-        self._22recordTarget = TARGET("recordTarget", json_data)
-        self._23author = AUTHOR("author", json_data)
+        self._19languageCode = CODE("languageCode", json_data) if "languageCode" in json_data else None
+        self._11setId = ID("setId", json_data) if "setId" in json_data else None
+        self._20versionNumber = DATA("versionNumber", json_data) if "versionNumber" in json_data else None
+        self._22recordTarget = TARGET("recordTarget", json_data) #NO MAX
+        self._23author = AUTHOR("author", json_data) #NO MAX
         self._24custodian = CUSTODIAN("custodian", json_data)
-        self._25legalAuthenticator = AUTHENTICATOR("legalAuthenticator", json_data)
-        self._26componentOf = COMPONENTOF("componentOf", json_data)
+        self._25legalAuthenticator = AUTHENTICATOR("legalAuthenticator", json_data) if "legalAuthenticator" in json_data else None #NO MAX
+        self._21relatedDocument = DOCUMENT("relatedDocument", json_data) if "relatedDocument" in json_data else None #NO MAX
+        self._26componentOf = COMPONENTOF("componentOf", json_data) if "componentOf" in json_data else None
+        # copyTime optional
+        # dataEnterer optional
+        # informant optional NO MAX
+        # informationRecipient optional NO MAX
+        # authenticator optional NO MAX
+        # inFulfillmentOf optional NO MAX
+        # documentationOf optional NO MAX
+        # authorization optional NO MAX
+        # participant optional NO MAX
 
         json_data = JSON.get("body")
         self._27component = COMPONENT("component", json_data)
 
     def to_XML(self):
+
         return tools.object_to_xml(self)
