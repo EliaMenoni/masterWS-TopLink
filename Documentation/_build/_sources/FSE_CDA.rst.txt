@@ -1,0 +1,24 @@
+Modulo FSE_CDA
+==============
+Integrazione con Gateway FSE CDA
+
+Componenti
+----------
+
+Modelli generatori per XML CDA2
+~~~~~~~~
+.. automodule:: FSE_CDA.models
+   :members:
+   :private-members:
+   :no-undoc-members:
+   :show-inheritance:
+   :exclude-members: ERROR, Log
+
+Gestione
+~~~~~~~~~
+.. automodule:: FSE_CDA.models
+   :members: ERROR, Log
+   :private-members:
+   :no-undoc-members:
+   :show-inheritance:
+
