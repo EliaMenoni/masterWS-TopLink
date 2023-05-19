@@ -18,11 +18,11 @@ from django.urls import path, include
 # from rest_framework.authtoken import views
 
 # SERVICES
-from LDO import urls as ldo
+from FSE_CDA import urls as ldo
 
 urlpatterns = [
     # path('admin/doc/', include('django.contrib.admindocs.urls')),
     path('admin/', admin.site.urls),
-    path('LDO/', include(ldo)),
+    path('FSE_CDA/', include(ldo)),
     # path('api-token-auth/',views.obtain_auth_token,name='api-token-auth')
 ]

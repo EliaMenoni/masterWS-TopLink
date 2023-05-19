@@ -1,5 +1,5 @@
 from typing import Any, List, Dict
-from xml.etree import ElementTree as et
+from xml.etree import ElementTree as ET
 from . import models
 def get_members(obj: object) -> List[str]:
     """ Helper function
@@ -53,7 +53,7 @@ def to_xml(obj: Any) -> Any:
 
     try:
         if obj._NAME:
-            root = et.Element(obj._NAME, tags)
+            root = ET.Element(obj._NAME, tags)
         else:
             raise Exception("Name attribute can't be empty.")
     except (AttributeError, TypeError) as ex:
@@ -81,9 +81,9 @@ def to_xml(obj: Any) -> Any:
 def object_to_xml(obj: Any) -> Any:
     """ Convert the given class object to xml document str.
     """
-    return et.tostring(element=to_xml(obj), encoding="UTF-8")
+    return ET.tostring(element=to_xml(obj), encoding="UTF-8", xml_declaration=True)
 
 def compose_LDO(json_data):
-    LDO = models.LDO(json_data)
+    ldo = models.LDO(json_data)
 
-    return LDO
+    return ldo
