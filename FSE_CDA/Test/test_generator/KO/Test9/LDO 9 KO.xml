@@ -17,7 +17,7 @@
 			<patient>
 				<name>
 					<family>Test</family>
-					<given></given>
+					
 				</name>
 				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="HL7 AdministrativeGender" displayName="Maschio" />
 				<birthTime value="19800329"/>
@@ -168,33 +168,6 @@
 	</componentOf>
 	
 	<component>
-		<structuredBody moodCode="EVN" classCode="DOCBODY">
-			<component typeCode="COMP">
-				<section ID="Motivo_del_Ricovero">
-					<code code="46241-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosi di accettazione"/>
-					<title>Motivo del ricovero</title>
-					<text>
-						<list>
-							<item>
-								<content ID="DIAG-1">Disturbo di panico</content>
-							</item>
-							<item>
-								<content ID="DIAG-2">Ipertiroidismo</content>
-							</item>	
-						</list>
-					</text>
-					<entry>
-						<observation classCode="OBS" moodCode="EVN">
-							<code code="8646-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosi di Accettazione Opsedaliera"/>
-							<value xsi:type="CD" code="300.01" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" displayName="Disturbo di panico">
-								<!--translation code="[CODICE_DIAGNOSI]" codeSystem="2.16.99" codeSystemName="Catalogo Ultraspecialisitco Locale" displayName="[DESCRIZIONE_DETTAGLIO_DIAGNOSI]"/-->
-							</value>
-						</observation>
-					</entry>
-				</section>
-			</component>
-			
-			<component>
 		<structuredBody moodCode="EVN" classCode="DOCBODY">
 			<component typeCode="COMP">
 				<section ID="Motivo_del_Ricovero">
