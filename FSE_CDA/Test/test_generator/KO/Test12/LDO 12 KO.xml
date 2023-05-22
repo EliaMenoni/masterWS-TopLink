@@ -289,7 +289,7 @@
 				<section ID="Decorso_Ospedaliero">
 					<code code="8648-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Decorso Ospedaliero"/>
 					<title>Decorso Ospedaliero</title>
-					<text></text>
+					
 				</section>
 			</component>
 			
