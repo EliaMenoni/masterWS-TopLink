@@ -229,7 +229,6 @@
 									<code code="75326-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problem"/>
 									<statusCode code="completed"/>
 									<effectiveTime>
-										<low value=""/>
 									</effectiveTime>
 									<value xsi:type="CD" code="153.5" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="Tumori dell'appendice"/>
 									<entryRelationship typeCode="REFR" inversionInd='false'>
@@ -281,20 +280,15 @@
 						</section>
 					</component>
 					
+					
+				</section>
 			</component>	
 
 			<component typeCode="COMP">
 				<section ID="Decorso_Ospedaliero">
 					<code code="8648-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Decorso Ospedaliero"/>
 					<title>Decorso Ospedaliero</title>
-					<text>
-						<paragraph>
-							Il paziente giungeva alla nostra attenzione sintomatico per 
-							scompenso cardiaco acuto. Durante il ricovero è stato ottenuto un 
-							ripristino dello stato di compenso emodinamico mediante trattamento 
-							farmacologico intensivo. 
-						</paragraph>
-					</text>
+					<text>Decorso</text>
 				</section>
 			</component>
 			
@@ -333,8 +327,6 @@
 					</text>
 				</section>
 			</component>
-			
-			
 			<component typeCode="COMP">
 				<section ID="PROCEDURE_ESEGUITE_DURANTE_RICOVERO">
 					<code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Procedures Document"/>
@@ -366,8 +358,6 @@
 					</entry>	
 				</section>
 			</component>
-			
-
 			<component typeCode="COMP">
 				<section ID="TERAPIA_FARMACOLOGICA_DURANTE_RICOVERO">
 					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Terapia Farmacologica"/>
