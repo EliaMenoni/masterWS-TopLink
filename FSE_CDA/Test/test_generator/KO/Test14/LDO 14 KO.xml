@@ -553,7 +553,7 @@
 							</text>
 							<statusCode code="active"/>
 							<effectiveTime xsi:type="IVL_TS">
-								<low value=""/>
+								
 							</effectiveTime>
 							<!-- Posologia -->
 							<effectiveTime operator="A" xsi:type="PIVL_TS" institutionSpecified="true">
