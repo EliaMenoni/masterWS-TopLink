@@ -17,10 +17,6 @@ ClinicalDocument/code/translation/@displayName
 ClinicalDocument/title
 ClinicalDocument/sdtc:statusCode
 ClinicalDocument/effectiveTime/@value
-ClinicalDocument/confidentialityCode/@code
-ClinicalDocument/confidentialityCode/@codeSystem
-ClinicalDocument/confidentialityCode/@codeSystemName
-ClinicalDocument/confidentialityCode/@displayName
 ClinicalDocument/languageCode/@code
 ClinicalDocument/setId/@root
 ClinicalDocument/setId/@extension
@@ -40,11 +36,11 @@ ClinicalDocument/recordTarget/patientRole/addr/streetAddressLine
 ClinicalDocument/recordTarget/patientRole/telecom/@use
 ClinicalDocument/recordTarget/patientRole/telecom/@value
 ClinicalDocument/recordTarget/patientRole/patient/name/family
+ClinicalDocument/recordTarget/patientRole/patient/name/given
 ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode/@code
 ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode/@codeSystem
 ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode/@codeSystemName
 ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode/@displayName
-ClinicalDocument/recordTarget/patientRole/patient/birthTime
 ClinicalDocument/recordTarget/patientRole/patient/birthPlace/place/addr/city
 ClinicalDocument/recordTarget/patientRole/patient/birthPlace/place/addr/censusTract
 ClinicalDocument/recordTarget/patientRole/patient/guardian
@@ -122,4 +118,3 @@ ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/s
 ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/telecom
 ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/asOrganizationPartOf/id/@root
 ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/asOrganizationPartOf/id/@extension
-ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/serviceProviderOrganization/asOrganizationPartOf/id/@assigningAuthorityName

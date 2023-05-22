@@ -35,6 +35,12 @@
       "effectiveTime": {
         "value": "@val"
       },
+      "confidentialityCode": {
+        "code": "@val",
+        "codeSystem": "@val",
+        "codeSystemName": "@val",
+        "displayName": "@val"
+      },
       "languageCode": {
         "code": "@val"
       },
@@ -78,6 +84,7 @@
               "codeSystemName": "@val",
               "displayName": "@val"
             },
+            "birthTime": "@val",
             "birthPlace": {
               "place": {
                 "addr": {
@@ -264,7 +271,8 @@
                 "asOrganizationPartOf": {
                   "id": {
                     "root": "@val",
-                    "extension": "@val"
+                    "extension": "@val",
+                    "assigningAuthorityName": "@val"
                   }
                 }
               }
