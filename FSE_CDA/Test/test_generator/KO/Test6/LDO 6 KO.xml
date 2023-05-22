@@ -13,7 +13,7 @@
 	<versionNumber value="1"/>
 	<recordTarget>
 		<patientRole>
-			<id root="2.16.840.1.113883.2.9.4.3.2" extension="MnnLEI00H08B83O" assigningAuthorityName="MEF"/>
+			<id root="2.16.840.1.113883.2.9.4.3.2" extension="MnnLEI00H08B832O" assigningAuthorityName="MEF"/>
 			<patient>
 				<name>
 					<family>Test</family>
